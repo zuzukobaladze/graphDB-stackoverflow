@@ -1,0 +1,1246 @@
+﻿[
+  {
+    "q": {
+      "identity": 42,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 67030913,
+        "body_markdown": "The alphabets are enumerated as A = 0, B = 1, C = 2, ... , Z = 25. Consider an encryption scheme where a character with value Ci in the plaintext is replaced by another character with value Cj using the formula Cj = (Ci + 5) % 26. After replacement, the resulting string is shuffled (permuted) at random to obtain the cipher text.
+
+Given a plain text and a possible cipher text, your task is to determine whether the cipher text can be formed from the plain text using the above mentioned scheme.
+
+(Assume that all the strings are in uppercase)
+
+Input Format:
+
+The first line of the input contains a string indicating the plain text.
+
+The second line of the input a string indicating a possible cipher text
+
+Output Format:
+
+Display Yes or No (no newline after the output)
+
+Example:
+
+Input:
+
+PYTHON
+TDMSUY
+
+Output:
+
+Yes
+
+Input:
+
+JOCPNPTEL
+JQYVSUTHO
+
+Output:
+
+No
+
+**Please answer in Python**",
+        "link": "https://stackoverflow.com/q/67030828",
+        "creation_date": 1618029076,
+        "answer_count": 3,
+        "title": "Given a plain text and a possible cipher text, determine whether the cipher text can be formed from the plain text using the mentioned scheme",
+        "uuid": 67030828,
+        "view_count": 1820
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:42"
+    },
+    "t": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "a": {
+      "identity": 3081,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": -1,
+        "is_accepted": false,
+        "body_markdown": "    a=input()
+    d={}
+    for i in a:
+      d[chr(((ord(i)-60)%26)+65)]=d.get(chr(((ord(i)-60)%26)+65),0)+1
+    b=input()
+    for i in b:
+      if d.get(i,0)&lt;=0:
+        print(&quot;No&quot;,end=&quot;&quot;)
+        break
+      d[i]-=1
+    else:
+      print(&quot;Yes&quot;,end=&quot;&quot;)",
+        "link": "https://stackoverflow.com/a/67030968",
+        "title": "Given a plain text and a possible cipher text, determine whether the cipher text can be formed from the plain text using the mentioned scheme",
+        "uuid": 67030968
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:3081"
+    }
+  },
+  {
+    "q": {
+      "identity": 42,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 67030913,
+        "body_markdown": "The alphabets are enumerated as A = 0, B = 1, C = 2, ... , Z = 25. Consider an encryption scheme where a character with value Ci in the plaintext is replaced by another character with value Cj using the formula Cj = (Ci + 5) % 26. After replacement, the resulting string is shuffled (permuted) at random to obtain the cipher text.
+
+Given a plain text and a possible cipher text, your task is to determine whether the cipher text can be formed from the plain text using the above mentioned scheme.
+
+(Assume that all the strings are in uppercase)
+
+Input Format:
+
+The first line of the input contains a string indicating the plain text.
+
+The second line of the input a string indicating a possible cipher text
+
+Output Format:
+
+Display Yes or No (no newline after the output)
+
+Example:
+
+Input:
+
+PYTHON
+TDMSUY
+
+Output:
+
+Yes
+
+Input:
+
+JOCPNPTEL
+JQYVSUTHO
+
+Output:
+
+No
+
+**Please answer in Python**",
+        "link": "https://stackoverflow.com/q/67030828",
+        "creation_date": 1618029076,
+        "answer_count": 3,
+        "title": "Given a plain text and a possible cipher text, determine whether the cipher text can be formed from the plain text using the mentioned scheme",
+        "uuid": 67030828,
+        "view_count": 1820
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:42"
+    },
+    "t": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "a": {
+      "identity": 3079,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": true,
+        "body_markdown": "&gt; [IPYNB Formatted Code Here][1]
+
+    s = input()
+    p = input()
+    #s = s[::-1]
+    t = &#39;&#39;
+    for c in s:
+      t+=chr((ord(c)+5-ord(&#39;A&#39;))%26 + ord(&#39;A&#39;))
+      
+    
+    def removeSpaces(string): 
+        string = string.replace(&#39; &#39;,&#39;&#39;) 
+        string = string.replace(&#39;,&#39;,&#39;&#39;)
+        return string.lower()
+    def check(t, p):
+         
+        # the sorted strings are checked 
+        if(sorted(t)== sorted(p)):
+            print(&quot;Yes&quot;,end=&#39;&#39;) 
+        else:
+            print(&quot;No&quot;,end=&#39;&#39;)         
+             
+    check(t, p)
+
+
+  [1]: https://roboticswithpython.com/week-12-iitropar-joy-of-computing-with-python-programming-nptel/",
+        "link": "https://stackoverflow.com/a/67030913",
+        "title": "Given a plain text and a possible cipher text, determine whether the cipher text can be formed from the plain text using the mentioned scheme",
+        "uuid": 67030913
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:3079"
+    }
+  },
+  {
+    "q": {
+      "identity": 42,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 67030913,
+        "body_markdown": "The alphabets are enumerated as A = 0, B = 1, C = 2, ... , Z = 25. Consider an encryption scheme where a character with value Ci in the plaintext is replaced by another character with value Cj using the formula Cj = (Ci + 5) % 26. After replacement, the resulting string is shuffled (permuted) at random to obtain the cipher text.
+
+Given a plain text and a possible cipher text, your task is to determine whether the cipher text can be formed from the plain text using the above mentioned scheme.
+
+(Assume that all the strings are in uppercase)
+
+Input Format:
+
+The first line of the input contains a string indicating the plain text.
+
+The second line of the input a string indicating a possible cipher text
+
+Output Format:
+
+Display Yes or No (no newline after the output)
+
+Example:
+
+Input:
+
+PYTHON
+TDMSUY
+
+Output:
+
+Yes
+
+Input:
+
+JOCPNPTEL
+JQYVSUTHO
+
+Output:
+
+No
+
+**Please answer in Python**",
+        "link": "https://stackoverflow.com/q/67030828",
+        "creation_date": 1618029076,
+        "answer_count": 3,
+        "title": "Given a plain text and a possible cipher text, determine whether the cipher text can be formed from the plain text using the mentioned scheme",
+        "uuid": 67030828,
+        "view_count": 1820
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:42"
+    },
+    "t": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "a": {
+      "identity": 3080,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": false,
+        "body_markdown": "Thanks guys this is what i came up with 
+
+    `x=input()
+    y=input()
+    a=&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;
+    t=&#39;&#39;
+    for i in x:
+      c=a.index(i)
+      cj=(c+5)%26
+      t=t+a[cj]
+    if(sorted(y)==sorted(t)):
+      print(&quot;Yes&quot;,end=&#39;&#39;)
+    else:
+      print(&quot;No&quot;,end=&#39;&#39;)`",
+        "link": "https://stackoverflow.com/a/67030960",
+        "title": "Given a plain text and a possible cipher text, determine whether the cipher text can be formed from the plain text using the mentioned scheme",
+        "uuid": 67030960
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:3080"
+    }
+  },
+  {
+    "q": {
+      "identity": 325,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I have my community 4.1.1 neo4j service installed on the ubuntu commandline running on my windows machine. I have been using neo4j steadily for a month or two now, just recently it has prevented me from accessing the neo4j database, it will say this in neo4j browser:
+
+`Database &#39;neo4j&#39; is unavailable. Run :sysinfo for more info.`
+
+I have tried uninstalling neo4j and reinstalling but that has not worked either. I tried playing around with the default listen address previously, but now with the reinstall all config data is back to normal. Running ./neo4j-community-4.1.1/bin/cypher-shell under bin does not work. It says:
+
+`Unable to establish connection in 3000ms`
+
+If I run ./neo4j-community-4.1.1/bin/cypher-shell -a 192.168.0.19 it says:
+
+`Database &#39;neo4j&#39; is unavailable`
+
+When I run ./neo4j-community-4.1.1/bin/neo4j-admin check-consistency --database=neo4j it also states:
+
+`.2020-08-18 22:12:16.868+0000 WARN [o.n.c.ConsistencyCheckService] Index was dirty on startup which means it was not shutdown correctly and need to be cleaned up with a successful recovery.
+        Index file: /home/thomp105/neo4j-community-4.1.1/data/databases/neo4j/neostore.relationshipgroupstore.db.id.`
+
+I would love to reset everything from scratch but I am unsure how
+At this point I cannot even access the browser at localhost:7474. It hangs indefinitely trying to load.
+
+I am truly stumped. Anyone have any advice on how I navigate this issue?
+",
+        "link": "https://stackoverflow.com/q/63477398",
+        "creation_date": 1597789138,
+        "answer_count": 2,
+        "title": "Database &#39;neo4j&#39; is unavailable. Cannot reset neo4j database",
+        "uuid": 63477398,
+        "view_count": 1291
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:325"
+    },
+    "t": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "a": {
+      "identity": 3375,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": false,
+        "body_markdown": "I had this problem running on a linux server. The server was up but got this error on any query: `Database &#39;neo4j&#39; is unavailable.` To troubleshoot I ran `sudo neo4j console` and the problem went away. When I ran the console as user ne04j the problem came back.
+
+    $ /usr/share/neo4j/bin/neo4j console
+    Directories in use:
+      home:         /var/lib/neo4j
+      config:       /etc/neo4j
+      logs:         /var/log/neo4j
+      plugins:      /var/lib/neo4j/plugins
+      import:       /var/lib/neo4j/import
+      data:         /var/lib/neo4j/data
+      certificates: /var/lib/neo4j/certificates
+      run:          /var/run/neo4j
+
+So I tried: `sudo chown -R neo4j:neo4j /var/lib/neo4j/data` and the problem went away. Apparently when I&#39;d done a restore of the database I&#39;d run the neo4j server as root and when the system runs neo4j it does it as the user neo4j so couldn&#39;t read any of its data.  It seems that an error like this would warrant an easy to parse error message but verbosity is not the neo4j way.",
+        "link": "https://stackoverflow.com/a/67141522",
+        "title": "Database &#39;neo4j&#39; is unavailable. Cannot reset neo4j database",
+        "uuid": 67141522
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:3375"
+    }
+  },
+  {
+    "q": {
+      "identity": 325,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I have my community 4.1.1 neo4j service installed on the ubuntu commandline running on my windows machine. I have been using neo4j steadily for a month or two now, just recently it has prevented me from accessing the neo4j database, it will say this in neo4j browser:
+
+`Database &#39;neo4j&#39; is unavailable. Run :sysinfo for more info.`
+
+I have tried uninstalling neo4j and reinstalling but that has not worked either. I tried playing around with the default listen address previously, but now with the reinstall all config data is back to normal. Running ./neo4j-community-4.1.1/bin/cypher-shell under bin does not work. It says:
+
+`Unable to establish connection in 3000ms`
+
+If I run ./neo4j-community-4.1.1/bin/cypher-shell -a 192.168.0.19 it says:
+
+`Database &#39;neo4j&#39; is unavailable`
+
+When I run ./neo4j-community-4.1.1/bin/neo4j-admin check-consistency --database=neo4j it also states:
+
+`.2020-08-18 22:12:16.868+0000 WARN [o.n.c.ConsistencyCheckService] Index was dirty on startup which means it was not shutdown correctly and need to be cleaned up with a successful recovery.
+        Index file: /home/thomp105/neo4j-community-4.1.1/data/databases/neo4j/neostore.relationshipgroupstore.db.id.`
+
+I would love to reset everything from scratch but I am unsure how
+At this point I cannot even access the browser at localhost:7474. It hangs indefinitely trying to load.
+
+I am truly stumped. Anyone have any advice on how I navigate this issue?
+",
+        "link": "https://stackoverflow.com/q/63477398",
+        "creation_date": 1597789138,
+        "answer_count": 2,
+        "title": "Database &#39;neo4j&#39; is unavailable. Cannot reset neo4j database",
+        "uuid": 63477398,
+        "view_count": 1291
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:325"
+    },
+    "t": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "a": {
+      "identity": 3374,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 3,
+        "is_accepted": false,
+        "body_markdown": "It&#39;s not easy to guess the issue without seeing your system, but may I ask if you can try to delete your default database, i.e. neo4j physically from the disk (e.g. rm -rf  /home/thomp105/neo4j-community-4.1.1/data/databases/neo4j/), and then try to create another database with different name instead (open neo4j.conf, search for dbms.active_database, which point out on default database, and change it to some other name)? ",
+        "link": "https://stackoverflow.com/a/63483223",
+        "title": "Database &#39;neo4j&#39; is unavailable. Cannot reset neo4j database",
+        "uuid": 63483223
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:3374"
+    }
+  },
+  {
+    "q": {
+      "identity": 325,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I have my community 4.1.1 neo4j service installed on the ubuntu commandline running on my windows machine. I have been using neo4j steadily for a month or two now, just recently it has prevented me from accessing the neo4j database, it will say this in neo4j browser:
+
+`Database &#39;neo4j&#39; is unavailable. Run :sysinfo for more info.`
+
+I have tried uninstalling neo4j and reinstalling but that has not worked either. I tried playing around with the default listen address previously, but now with the reinstall all config data is back to normal. Running ./neo4j-community-4.1.1/bin/cypher-shell under bin does not work. It says:
+
+`Unable to establish connection in 3000ms`
+
+If I run ./neo4j-community-4.1.1/bin/cypher-shell -a 192.168.0.19 it says:
+
+`Database &#39;neo4j&#39; is unavailable`
+
+When I run ./neo4j-community-4.1.1/bin/neo4j-admin check-consistency --database=neo4j it also states:
+
+`.2020-08-18 22:12:16.868+0000 WARN [o.n.c.ConsistencyCheckService] Index was dirty on startup which means it was not shutdown correctly and need to be cleaned up with a successful recovery.
+        Index file: /home/thomp105/neo4j-community-4.1.1/data/databases/neo4j/neostore.relationshipgroupstore.db.id.`
+
+I would love to reset everything from scratch but I am unsure how
+At this point I cannot even access the browser at localhost:7474. It hangs indefinitely trying to load.
+
+I am truly stumped. Anyone have any advice on how I navigate this issue?
+",
+        "link": "https://stackoverflow.com/q/63477398",
+        "creation_date": 1597789138,
+        "answer_count": 2,
+        "title": "Database &#39;neo4j&#39; is unavailable. Cannot reset neo4j database",
+        "uuid": 63477398,
+        "view_count": 1291
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:325"
+    },
+    "t": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "a": {
+      "identity": 3375,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": false,
+        "body_markdown": "I had this problem running on a linux server. The server was up but got this error on any query: `Database &#39;neo4j&#39; is unavailable.` To troubleshoot I ran `sudo neo4j console` and the problem went away. When I ran the console as user ne04j the problem came back.
+
+    $ /usr/share/neo4j/bin/neo4j console
+    Directories in use:
+      home:         /var/lib/neo4j
+      config:       /etc/neo4j
+      logs:         /var/log/neo4j
+      plugins:      /var/lib/neo4j/plugins
+      import:       /var/lib/neo4j/import
+      data:         /var/lib/neo4j/data
+      certificates: /var/lib/neo4j/certificates
+      run:          /var/run/neo4j
+
+So I tried: `sudo chown -R neo4j:neo4j /var/lib/neo4j/data` and the problem went away. Apparently when I&#39;d done a restore of the database I&#39;d run the neo4j server as root and when the system runs neo4j it does it as the user neo4j so couldn&#39;t read any of its data.  It seems that an error like this would warrant an easy to parse error message but verbosity is not the neo4j way.",
+        "link": "https://stackoverflow.com/a/67141522",
+        "title": "Database &#39;neo4j&#39; is unavailable. Cannot reset neo4j database",
+        "uuid": 67141522
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:3375"
+    }
+  },
+  {
+    "q": {
+      "identity": 325,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I have my community 4.1.1 neo4j service installed on the ubuntu commandline running on my windows machine. I have been using neo4j steadily for a month or two now, just recently it has prevented me from accessing the neo4j database, it will say this in neo4j browser:
+
+`Database &#39;neo4j&#39; is unavailable. Run :sysinfo for more info.`
+
+I have tried uninstalling neo4j and reinstalling but that has not worked either. I tried playing around with the default listen address previously, but now with the reinstall all config data is back to normal. Running ./neo4j-community-4.1.1/bin/cypher-shell under bin does not work. It says:
+
+`Unable to establish connection in 3000ms`
+
+If I run ./neo4j-community-4.1.1/bin/cypher-shell -a 192.168.0.19 it says:
+
+`Database &#39;neo4j&#39; is unavailable`
+
+When I run ./neo4j-community-4.1.1/bin/neo4j-admin check-consistency --database=neo4j it also states:
+
+`.2020-08-18 22:12:16.868+0000 WARN [o.n.c.ConsistencyCheckService] Index was dirty on startup which means it was not shutdown correctly and need to be cleaned up with a successful recovery.
+        Index file: /home/thomp105/neo4j-community-4.1.1/data/databases/neo4j/neostore.relationshipgroupstore.db.id.`
+
+I would love to reset everything from scratch but I am unsure how
+At this point I cannot even access the browser at localhost:7474. It hangs indefinitely trying to load.
+
+I am truly stumped. Anyone have any advice on how I navigate this issue?
+",
+        "link": "https://stackoverflow.com/q/63477398",
+        "creation_date": 1597789138,
+        "answer_count": 2,
+        "title": "Database &#39;neo4j&#39; is unavailable. Cannot reset neo4j database",
+        "uuid": 63477398,
+        "view_count": 1291
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:325"
+    },
+    "t": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "a": {
+      "identity": 3374,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 3,
+        "is_accepted": false,
+        "body_markdown": "It&#39;s not easy to guess the issue without seeing your system, but may I ask if you can try to delete your default database, i.e. neo4j physically from the disk (e.g. rm -rf  /home/thomp105/neo4j-community-4.1.1/data/databases/neo4j/), and then try to create another database with different name instead (open neo4j.conf, search for dbms.active_database, which point out on default database, and change it to some other name)? ",
+        "link": "https://stackoverflow.com/a/63483223",
+        "title": "Database &#39;neo4j&#39; is unavailable. Cannot reset neo4j database",
+        "uuid": 63483223
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:3374"
+    }
+  },
+  {
+    "q": {
+      "identity": 465,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 62367486,
+        "body_markdown": "
+
+When I run following query in 
+
+    CREATE CONSTRAINT Flight_flightId_constraint ON (f:Flight) ASSERT f.flightId IS UNIQUE
+
+I get following error : 
+
+ `Neo.ClientError.Statement.SyntaxError: Invalid input &#39;l&#39;: expected &#39;r/R&#39; or &#39;o/O&#39; (line 1, column 20 (offset: 19)) &quot;CREATE CONSTRAINT Flight_flightId_constraint ON (f:Flight)&quot;` ^
+
+This is from https://guides.neo4j.com/4.0-neo4j-modeling-exercises/04.html exercise. 
+
+I do not understand why I get this syntax error becuase I ran the query as it is in tutorial",
+        "link": "https://stackoverflow.com/q/62365265",
+        "creation_date": 1592080535,
+        "answer_count": 1,
+        "title": "Neo.ClientError.Statement.SyntaxError: Invalid input &#39;l&#39;: expected &#39;r/R&#39; or &#39;o/O&#39; (line 1, column 20 (offset: 19))",
+        "uuid": 62365265,
+        "view_count": 1201
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:465"
+    },
+    "t": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "a": {
+      "identity": 5769,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": true,
+        "body_markdown": "Looks like you are using older version of Neo4j. The guide you are referring is for latest Neo4j version.
+Constraint names are not supported in older versions hence it is throwing error.
+ 
+**You can modify your query as bellow:**
+
+    CREATE CONSTRAINT ON (f:Flight) ASSERT f.flightId IS UNIQUE
+
+",
+        "link": "https://stackoverflow.com/a/62367486",
+        "title": "Neo.ClientError.Statement.SyntaxError: Invalid input &#39;l&#39;: expected &#39;r/R&#39; or &#39;o/O&#39; (line 1, column 20 (offset: 19))",
+        "uuid": 62367486
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5769"
+    }
+  },
+  {
+    "q": {
+      "identity": 465,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 62367486,
+        "body_markdown": "
+
+When I run following query in 
+
+    CREATE CONSTRAINT Flight_flightId_constraint ON (f:Flight) ASSERT f.flightId IS UNIQUE
+
+I get following error : 
+
+ `Neo.ClientError.Statement.SyntaxError: Invalid input &#39;l&#39;: expected &#39;r/R&#39; or &#39;o/O&#39; (line 1, column 20 (offset: 19)) &quot;CREATE CONSTRAINT Flight_flightId_constraint ON (f:Flight)&quot;` ^
+
+This is from https://guides.neo4j.com/4.0-neo4j-modeling-exercises/04.html exercise. 
+
+I do not understand why I get this syntax error becuase I ran the query as it is in tutorial",
+        "link": "https://stackoverflow.com/q/62365265",
+        "creation_date": 1592080535,
+        "answer_count": 1,
+        "title": "Neo.ClientError.Statement.SyntaxError: Invalid input &#39;l&#39;: expected &#39;r/R&#39; or &#39;o/O&#39; (line 1, column 20 (offset: 19))",
+        "uuid": 62365265,
+        "view_count": 1201
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:465"
+    },
+    "t": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "a": {
+      "identity": 5769,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": true,
+        "body_markdown": "Looks like you are using older version of Neo4j. The guide you are referring is for latest Neo4j version.
+Constraint names are not supported in older versions hence it is throwing error.
+ 
+**You can modify your query as bellow:**
+
+    CREATE CONSTRAINT ON (f:Flight) ASSERT f.flightId IS UNIQUE
+
+",
+        "link": "https://stackoverflow.com/a/62367486",
+        "title": "Neo.ClientError.Statement.SyntaxError: Invalid input &#39;l&#39;: expected &#39;r/R&#39; or &#39;o/O&#39; (line 1, column 20 (offset: 19))",
+        "uuid": 62367486
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5769"
+    }
+  },
+  {
+    "q": {
+      "identity": 600,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 61447621,
+        "body_markdown": "I want to compare two lists in order to find the values in the first list which are not in the second and return them. thanks in advance guys 
+the code returns:  Filter is no longer supported 
+is there any alternative way to do this 
+
+```
+MATCH (cu:Customer{name: &quot;myCustomer&quot;})-[pu:PURCHASED]-&gt;(o:Order)-[*]-&gt;(cat:Category)
+MATCH (b:Book)-[:IS_a]-&gt;(cat)
+WITH COLLECT(DISTINCT pu.ISBN) AS purchasedbooks,COLLECT(DISTINCT b.ISBN) AS booksFromTheSameCategory
+RETURN FILTER( n IN booksFromTheSameCategory WHERE NOT n IN purchasedbooks ) as listC
+```
+
+
+",
+        "link": "https://stackoverflow.com/q/61446845",
+        "creation_date": 1587929429,
+        "answer_count": 1,
+        "title": "Neo4j Filter function is no longer supported",
+        "uuid": 61446845,
+        "view_count": 1072
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:600"
+    },
+    "t": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "a": {
+      "identity": 5908,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 6,
+        "is_accepted": true,
+        "body_markdown": "You can use the [list comprehension](https://neo4j.com/docs/cypher-manual/4.0/syntax/lists/#cypher-list-comprehension) syntax instead of the obsolete `filter` function:
+
+    MATCH (cu:Customer{name: &quot;myCustomer&quot;})-[pu:PURCHASED]-&gt;(o:Order)-[*]-&gt;(cat:Category)&lt;-[:IS_a]-(b:Book)
+    WITH COLLECT(DISTINCT pu.ISBN) AS purchasedbooks, COLLECT(DISTINCT b.ISBN) AS booksFromTheSameCategory
+    RETURN [n IN booksFromTheSameCategory WHERE NOT n IN purchasedbooks] as listC
+
+*You can see Cypher syntax change documentation on [this page](https://neo4j.com/docs/cypher-manual/4.0/deprecations-additions-removals-compatibility/#cypher-deprecations-additions-removals-4.0).*
+
+",
+        "link": "https://stackoverflow.com/a/61447621",
+        "title": "Neo4j Filter function is no longer supported",
+        "uuid": 61447621
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5908"
+    }
+  },
+  {
+    "q": {
+      "identity": 600,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 61447621,
+        "body_markdown": "I want to compare two lists in order to find the values in the first list which are not in the second and return them. thanks in advance guys 
+the code returns:  Filter is no longer supported 
+is there any alternative way to do this 
+
+```
+MATCH (cu:Customer{name: &quot;myCustomer&quot;})-[pu:PURCHASED]-&gt;(o:Order)-[*]-&gt;(cat:Category)
+MATCH (b:Book)-[:IS_a]-&gt;(cat)
+WITH COLLECT(DISTINCT pu.ISBN) AS purchasedbooks,COLLECT(DISTINCT b.ISBN) AS booksFromTheSameCategory
+RETURN FILTER( n IN booksFromTheSameCategory WHERE NOT n IN purchasedbooks ) as listC
+```
+
+
+",
+        "link": "https://stackoverflow.com/q/61446845",
+        "creation_date": 1587929429,
+        "answer_count": 1,
+        "title": "Neo4j Filter function is no longer supported",
+        "uuid": 61446845,
+        "view_count": 1072
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:600"
+    },
+    "t": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "a": {
+      "identity": 5908,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 6,
+        "is_accepted": true,
+        "body_markdown": "You can use the [list comprehension](https://neo4j.com/docs/cypher-manual/4.0/syntax/lists/#cypher-list-comprehension) syntax instead of the obsolete `filter` function:
+
+    MATCH (cu:Customer{name: &quot;myCustomer&quot;})-[pu:PURCHASED]-&gt;(o:Order)-[*]-&gt;(cat:Category)&lt;-[:IS_a]-(b:Book)
+    WITH COLLECT(DISTINCT pu.ISBN) AS purchasedbooks, COLLECT(DISTINCT b.ISBN) AS booksFromTheSameCategory
+    RETURN [n IN booksFromTheSameCategory WHERE NOT n IN purchasedbooks] as listC
+
+*You can see Cypher syntax change documentation on [this page](https://neo4j.com/docs/cypher-manual/4.0/deprecations-additions-removals-compatibility/#cypher-deprecations-additions-removals-4.0).*
+
+",
+        "link": "https://stackoverflow.com/a/61447621",
+        "title": "Neo4j Filter function is no longer supported",
+        "uuid": 61447621
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5908"
+    }
+  },
+  {
+    "q": {
+      "identity": 432,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I&#39;m trying to implement encrypt with AES/128/CBC, but I need to encrypt with a 64 bytes key, But I have the problem with the length.
+
+It is possible encrypt AES/128/CBC with a 64 bytes key or not, because I have the cipher algoritm in php with a 64 bytes key and it works, but not in java.
+
+This is the encrypt code:
+
+    
+	 public static String ALGORITHM = &quot;AES&quot;;
+	
+	 public static String AES_CBC_PADDING = &quot;AES/CBC/PKCS5Padding&quot;;
+
+	 public static byte[] encrypt(final byte[] key, final byte[] IV, final byte[] message) throws Exception {
+	  return AESManager.encryptDecrypt(Cipher.ENCRYPT_MODE, key, IV, message);
+	 }
+
+	 public static byte[] decrypt(final byte[] key, final byte[] IV, final byte[] message) throws Exception {
+	  return AESManager.encryptDecrypt(Cipher.DECRYPT_MODE, key, IV, message);
+	 }
+
+	 private static byte[] encryptDecrypt(final int mode, final byte[] key, 
+			 							final byte[] IV, final byte[] message) throws Exception {
+	  final Cipher cipher = Cipher.getInstance(AES_CBC_PADDING);
+	  final SecretKeySpec keySpec = new SecretKeySpec(key, ALGORITHM);
+	  final IvParameterSpec ivSpec = new IvParameterSpec(IV);
+	  cipher.init(mode, keySpec, ivSpec);
+	  return cipher.doFinal(message);
+	 }
+
+	 public static String getHex(byte[] data, int length) {
+	  StringBuffer sb = new StringBuffer();
+	  for (int i = 0; i &lt; length; i++) {
+	   String hexStr = Integer.toHexString(((int) data[i]) &amp; 0xFF);
+	   if (hexStr.length() &lt; 2) {
+	    sb.append(&quot;0&quot;).append(hexStr.toUpperCase());
+	   } else {
+	    sb.append(hexStr.toUpperCase());
+	   }
+	  }
+	  return sb.toString();
+	 }
+
+I have this error:
+
+    java.security.InvalidKeyException: Invalid AES key length: 64 bytes
+	at com.sun.crypto.provider.AESCrypt.init(AESCrypt.java:87)
+	at com.sun.crypto.provider.CipherBlockChaining.init(CipherBlockChaining.java:93)
+	at com.sun.crypto.provider.CipherCore.init(CipherCore.java:591)
+	at com.sun.crypto.provider.AESCipher.engineInit(AESCipher.java:346)
+	at javax.crypto.Cipher.implInit(Cipher.java:805)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:863)
+	at javax.crypto.Cipher.init(Cipher.java:1395)
+	at javax.crypto.Cipher.init(Cipher.java:1326)
+	at ec.otecel.tuenti.balance.util.AESManager.encryptDecrypt(AESManager.java)
+	at ec.otecel.tuenti.balance.util.AESManager.encrypt(AESManager.java)
+	at ec.otecel.tuenti.balance.util.FreemiumUtil.ciphertoFreemium(FreemiumUtil.java)
+	at ec.otecel.tuenti.balance.util.FreemiumUtil.main(FreemiumUtil.java)
+
+I have local_policy.jar and US_export_policy.jar in C:\Program Files\Java\jdk1.8.0_241\jre\lib\security
+so, what could be the problem ?
+
+
+
+",
+        "link": "https://stackoverflow.com/q/62562417",
+        "creation_date": 1593025772,
+        "title": "AES-128-CBC cipher in java",
+        "answer_count": 2,
+        "uuid": 62562417,
+        "view_count": 1048
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:432"
+    },
+    "t": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "a": {
+      "identity": 5729,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 3,
+        "is_accepted": false,
+        "body_markdown": "AES-128 requires a 16 byte key. The &quot;128&quot; in &quot;AES-128&quot; is the key size in bits. Divide by 8 to get the key size in bytes == 16 bytes.
+
+&gt;  I have the cipher algorithm in php with a 64 bytes key and it works
+
+I am.... skeptical. I suspect it&#39;s somehow deriving a 16 byte key from the 64 bytes.
+
+",
+        "link": "https://stackoverflow.com/a/62562813",
+        "title": "AES-128-CBC cipher in java",
+        "uuid": 62562813
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5729"
+    }
+  },
+  {
+    "q": {
+      "identity": 432,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I&#39;m trying to implement encrypt with AES/128/CBC, but I need to encrypt with a 64 bytes key, But I have the problem with the length.
+
+It is possible encrypt AES/128/CBC with a 64 bytes key or not, because I have the cipher algoritm in php with a 64 bytes key and it works, but not in java.
+
+This is the encrypt code:
+
+    
+	 public static String ALGORITHM = &quot;AES&quot;;
+	
+	 public static String AES_CBC_PADDING = &quot;AES/CBC/PKCS5Padding&quot;;
+
+	 public static byte[] encrypt(final byte[] key, final byte[] IV, final byte[] message) throws Exception {
+	  return AESManager.encryptDecrypt(Cipher.ENCRYPT_MODE, key, IV, message);
+	 }
+
+	 public static byte[] decrypt(final byte[] key, final byte[] IV, final byte[] message) throws Exception {
+	  return AESManager.encryptDecrypt(Cipher.DECRYPT_MODE, key, IV, message);
+	 }
+
+	 private static byte[] encryptDecrypt(final int mode, final byte[] key, 
+			 							final byte[] IV, final byte[] message) throws Exception {
+	  final Cipher cipher = Cipher.getInstance(AES_CBC_PADDING);
+	  final SecretKeySpec keySpec = new SecretKeySpec(key, ALGORITHM);
+	  final IvParameterSpec ivSpec = new IvParameterSpec(IV);
+	  cipher.init(mode, keySpec, ivSpec);
+	  return cipher.doFinal(message);
+	 }
+
+	 public static String getHex(byte[] data, int length) {
+	  StringBuffer sb = new StringBuffer();
+	  for (int i = 0; i &lt; length; i++) {
+	   String hexStr = Integer.toHexString(((int) data[i]) &amp; 0xFF);
+	   if (hexStr.length() &lt; 2) {
+	    sb.append(&quot;0&quot;).append(hexStr.toUpperCase());
+	   } else {
+	    sb.append(hexStr.toUpperCase());
+	   }
+	  }
+	  return sb.toString();
+	 }
+
+I have this error:
+
+    java.security.InvalidKeyException: Invalid AES key length: 64 bytes
+	at com.sun.crypto.provider.AESCrypt.init(AESCrypt.java:87)
+	at com.sun.crypto.provider.CipherBlockChaining.init(CipherBlockChaining.java:93)
+	at com.sun.crypto.provider.CipherCore.init(CipherCore.java:591)
+	at com.sun.crypto.provider.AESCipher.engineInit(AESCipher.java:346)
+	at javax.crypto.Cipher.implInit(Cipher.java:805)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:863)
+	at javax.crypto.Cipher.init(Cipher.java:1395)
+	at javax.crypto.Cipher.init(Cipher.java:1326)
+	at ec.otecel.tuenti.balance.util.AESManager.encryptDecrypt(AESManager.java)
+	at ec.otecel.tuenti.balance.util.AESManager.encrypt(AESManager.java)
+	at ec.otecel.tuenti.balance.util.FreemiumUtil.ciphertoFreemium(FreemiumUtil.java)
+	at ec.otecel.tuenti.balance.util.FreemiumUtil.main(FreemiumUtil.java)
+
+I have local_policy.jar and US_export_policy.jar in C:\Program Files\Java\jdk1.8.0_241\jre\lib\security
+so, what could be the problem ?
+
+
+
+",
+        "link": "https://stackoverflow.com/q/62562417",
+        "creation_date": 1593025772,
+        "title": "AES-128-CBC cipher in java",
+        "answer_count": 2,
+        "uuid": 62562417,
+        "view_count": 1048
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:432"
+    },
+    "t": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "a": {
+      "identity": 5730,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 1,
+        "is_accepted": false,
+        "body_markdown": "As stated by @dnault the en-/decryption key for AES-128 is 16 bytes long (AES-192 = 24 bytes, AES-256 = 32 bytes). You wrote that you are presenting a 64 character long key to the decryption method in PHP. My sample program shows that only the first 16 characters of the key were used.
+
+**Solution for your Java-app:** just use the first (seen from the left side) 16 bytes of your &quot;key&quot; for encryption and decryption:
+
+    &lt;?php
+        // https://stackoverflow.com/questions/62562417/aes-128-cbc-cipher-in-java/62562813#62562813
+        $method = &quot;AES-128-CBC&quot;;
+        $plaintext = &quot;Hello World&quot;;
+        $key = &quot;1234567890123456789012345678901234567890123456789012345678901234&quot;;
+        var_dump($key);
+        $iv =  &quot;\x08\x07\x05\x06\x04\x01\x02\x03\x12\x11\x0f\x10\x0e\x0b\x0c\x0d&quot;;
+        $encrypted = base64_encode(openssl_encrypt($plaintext, $method, $key, OPENSSL_RAW_DATA, $iv));
+        echo &#39;encrypted with key &#39; . $key . &#39; is &#39; . $encrypted . &#39;&lt;br&gt;&#39;. PHP_EOL;
+        // truncated key = first 16 characters as for aes-128-cbc
+        $key = &quot;1234567890123456&quot;;
+        var_dump($key);
+        $encrypted = base64_encode(openssl_encrypt($plaintext, $method, $key, OPENSSL_RAW_DATA, $iv));
+        echo &#39;encrypted with key &#39; . $key . &#39; is &#39; . $encrypted . &#39;&lt;br&gt;&#39;. PHP_EOL;
+    ?&gt;
+
+Result:
+
+    string(64) &quot;1234567890123456789012345678901234567890123456789012345678901234&quot;
+    encrypted with key 1234567890123456789012345678901234567890123456789012345678901234 is iLaK2e4sWLOb0KfGy7ZRsQ==&lt;br&gt;
+    string(16) &quot;1234567890123456&quot;
+    encrypted with key 1234567890123456                                                 is iLaK2e4sWLOb0KfGy7ZRsQ==&lt;br&gt;
+
+
+",
+        "link": "https://stackoverflow.com/a/62564115",
+        "title": "AES-128-CBC cipher in java",
+        "uuid": 62564115
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5730"
+    }
+  },
+  {
+    "q": {
+      "identity": 177,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 64614399,
+        "body_markdown": "I try to understand the use of YIELD in Cypher requests. 
+
+For example:
+
+    CALL db.labels() YIELD label
+    WHERE label CONTAINS &#39;User&#39;
+    RETURN count(label) AS numLabels
+
+But I don&#39;t understand why I have to use this and when. 
+Can someone explain me what is the use and when do I have to use it?
+
+",
+        "link": "https://stackoverflow.com/q/64612696",
+        "creation_date": 1604077089,
+        "answer_count": 1,
+        "title": "Cypher: what is the use of YIELD?",
+        "uuid": 64612696,
+        "view_count": 929
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:177"
+    },
+    "t": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "a": {
+      "identity": 3215,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 2,
+        "is_accepted": true,
+        "body_markdown": "You should read the [documentation](https://neo4j.com/docs/cypher-manual/current/clauses/call/#query-call-introduction) for `CALL` and `YIELD`.
+
+Here are a couple of snippets from the docs:
+
+&gt; Most procedures return a stream of records with a fixed set of result
+&gt; fields, similar to how running a Cypher query returns a stream of
+&gt; records. The `YIELD` sub-clause is used to explicitly select which of
+&gt; the available result fields are returned as newly-bound variables from
+&gt; the procedure call to the user or for further processing by the
+&gt; remaining query. Thus, in order to be able to use `YIELD`, the names
+&gt; (and types) of the output parameters need be known in advance. Each
+&gt; yielded result field may optionally be renamed using aliasing (i.e.
+&gt; resultFieldName `AS` newName). All new variables bound by a procedure
+&gt; call are added to the set of variables already bound in the current
+&gt; scope. It is an error if a procedure call tries to rebind a previously
+&gt; bound variable (i.e. a procedure call cannot shadow a variable that
+&gt; was previously bound in the current scope).
+
+&gt; Inside a larger query, the records returned from a procedure call with
+&gt; an explicit YIELD may be further filtered using a `WHERE` sub-clause
+&gt; followed by a predicate (similar to `WITH` …​ `WHERE` …​).
+&gt; 
+&gt; If the called procedure declares at least one result field, `YIELD` may
+&gt; generally not be omitted. However `YIELD` may always be omitted in a
+&gt; standalone procedure call. In this case, all result fields are yielded
+&gt; as newly-bound variables from the procedure call to the user.",
+        "link": "https://stackoverflow.com/a/64614399",
+        "title": "Cypher: what is the use of YIELD?",
+        "uuid": 64614399
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:3215"
+    }
+  },
+  {
+    "q": {
+      "identity": 177,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 64614399,
+        "body_markdown": "I try to understand the use of YIELD in Cypher requests. 
+
+For example:
+
+    CALL db.labels() YIELD label
+    WHERE label CONTAINS &#39;User&#39;
+    RETURN count(label) AS numLabels
+
+But I don&#39;t understand why I have to use this and when. 
+Can someone explain me what is the use and when do I have to use it?
+
+",
+        "link": "https://stackoverflow.com/q/64612696",
+        "creation_date": 1604077089,
+        "answer_count": 1,
+        "title": "Cypher: what is the use of YIELD?",
+        "uuid": 64612696,
+        "view_count": 929
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:177"
+    },
+    "t": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "a": {
+      "identity": 3215,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 2,
+        "is_accepted": true,
+        "body_markdown": "You should read the [documentation](https://neo4j.com/docs/cypher-manual/current/clauses/call/#query-call-introduction) for `CALL` and `YIELD`.
+
+Here are a couple of snippets from the docs:
+
+&gt; Most procedures return a stream of records with a fixed set of result
+&gt; fields, similar to how running a Cypher query returns a stream of
+&gt; records. The `YIELD` sub-clause is used to explicitly select which of
+&gt; the available result fields are returned as newly-bound variables from
+&gt; the procedure call to the user or for further processing by the
+&gt; remaining query. Thus, in order to be able to use `YIELD`, the names
+&gt; (and types) of the output parameters need be known in advance. Each
+&gt; yielded result field may optionally be renamed using aliasing (i.e.
+&gt; resultFieldName `AS` newName). All new variables bound by a procedure
+&gt; call are added to the set of variables already bound in the current
+&gt; scope. It is an error if a procedure call tries to rebind a previously
+&gt; bound variable (i.e. a procedure call cannot shadow a variable that
+&gt; was previously bound in the current scope).
+
+&gt; Inside a larger query, the records returned from a procedure call with
+&gt; an explicit YIELD may be further filtered using a `WHERE` sub-clause
+&gt; followed by a predicate (similar to `WITH` …​ `WHERE` …​).
+&gt; 
+&gt; If the called procedure declares at least one result field, `YIELD` may
+&gt; generally not be omitted. However `YIELD` may always be omitted in a
+&gt; standalone procedure call. In this case, all result fields are yielded
+&gt; as newly-bound variables from the procedure call to the user.",
+        "link": "https://stackoverflow.com/a/64614399",
+        "title": "Cypher: what is the use of YIELD?",
+        "uuid": 64614399
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:3215"
+    }
+  }
+]

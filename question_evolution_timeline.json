@@ -1,0 +1,3985 @@
+﻿[
+  {
+    "q": {
+      "identity": 52,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "Good day.
+I want to wrap the query below in a function with a parameter.
+
+    match p=((p1:p1)-[l]-(p2:p1))
+      where (p1.id in [269618,387956,390435,1178574,263256])
+        and (p2.id in [269618,387956,390435,1178574,263256])
+      return
+        upper(type(l)) as Type
+        ,case when id(startNode(l))=id(p1) then &#39;DOWN&#39; else &#39;UP&#39; end as Relation_Vector
+        ,p2.Short_Name as Visible_Name
+        ,l.Shares
+      ;
+
+Примерно так:
+
+    CREATE OR REPLACE FUNCTION f (IN text) &lt;-- 269618,387956,390435,1178574,263256
+      RETURNS TABLE (...)
+      LANGUAGE &#39;sql&#39;
+    AS $BODY$
+     -- text up
+    $BODY$;
+
+How can I pass a list of vertex IDs to the function?
+Thank you in advance for your answer.",
+        "link": "https://stackoverflow.com/q/65914866",
+        "creation_date": 1611733711,
+        "title": "Pass the parameter to cypher",
+        "answer_count": 0,
+        "uuid": 65914866,
+        "view_count": 29
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:52"
+    },
+    "r": {
+      "identity": 2222,
+      "start": 52,
+      "end": 2016,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:2222",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:52",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2016"
+    },
+    "all_tags": {
+      "identity": 2016,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "parameters",
+        "link": "https://stackoverflow.com/questions/tagged/parameters"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2016"
+    },
+    "a": null
+  },
+  {
+    "q": {
+      "identity": 52,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "Good day.
+I want to wrap the query below in a function with a parameter.
+
+    match p=((p1:p1)-[l]-(p2:p1))
+      where (p1.id in [269618,387956,390435,1178574,263256])
+        and (p2.id in [269618,387956,390435,1178574,263256])
+      return
+        upper(type(l)) as Type
+        ,case when id(startNode(l))=id(p1) then &#39;DOWN&#39; else &#39;UP&#39; end as Relation_Vector
+        ,p2.Short_Name as Visible_Name
+        ,l.Shares
+      ;
+
+Примерно так:
+
+    CREATE OR REPLACE FUNCTION f (IN text) &lt;-- 269618,387956,390435,1178574,263256
+      RETURNS TABLE (...)
+      LANGUAGE &#39;sql&#39;
+    AS $BODY$
+     -- text up
+    $BODY$;
+
+How can I pass a list of vertex IDs to the function?
+Thank you in advance for your answer.",
+        "link": "https://stackoverflow.com/q/65914866",
+        "creation_date": 1611733711,
+        "title": "Pass the parameter to cypher",
+        "answer_count": 0,
+        "uuid": 65914866,
+        "view_count": 29
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:52"
+    },
+    "r": {
+      "identity": 2223,
+      "start": 52,
+      "end": 1682,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:2223",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:52",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "all_tags": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "a": null
+  },
+  {
+    "q": {
+      "identity": 52,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "Good day.
+I want to wrap the query below in a function with a parameter.
+
+    match p=((p1:p1)-[l]-(p2:p1))
+      where (p1.id in [269618,387956,390435,1178574,263256])
+        and (p2.id in [269618,387956,390435,1178574,263256])
+      return
+        upper(type(l)) as Type
+        ,case when id(startNode(l))=id(p1) then &#39;DOWN&#39; else &#39;UP&#39; end as Relation_Vector
+        ,p2.Short_Name as Visible_Name
+        ,l.Shares
+      ;
+
+Примерно так:
+
+    CREATE OR REPLACE FUNCTION f (IN text) &lt;-- 269618,387956,390435,1178574,263256
+      RETURNS TABLE (...)
+      LANGUAGE &#39;sql&#39;
+    AS $BODY$
+     -- text up
+    $BODY$;
+
+How can I pass a list of vertex IDs to the function?
+Thank you in advance for your answer.",
+        "link": "https://stackoverflow.com/q/65914866",
+        "creation_date": 1611733711,
+        "title": "Pass the parameter to cypher",
+        "answer_count": 0,
+        "uuid": 65914866,
+        "view_count": 29
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:52"
+    },
+    "r": {
+      "identity": 2224,
+      "start": 52,
+      "end": 2042,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:2224",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:52",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2042"
+    },
+    "all_tags": {
+      "identity": 2042,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "agens-graph",
+        "link": "https://stackoverflow.com/questions/tagged/agens-graph"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2042"
+    },
+    "a": null
+  },
+  {
+    "q": {
+      "identity": 5534,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "Getting below error from neo4j while connecting via Java driver. It comes only when I try to create more than 50000 relationships in transaction. It is successful even in 30,000 
+
+```
+Connection to the database terminated. Please ensure that your database is listening on the correct host and port and that you have compatible encryption settings both on Neo4j server and driver. Note that the default encryption setting has changed in Neo4j 4.0.
+```
+
+I couldn&#39;t understand why its failing for 50000 records and its working for 30000 records. If there is some transaction size then the error could mention the same. Pleas help me to get around it
+
+I&#39;m using Neo4j Aura professional and java driver version is 4.1.1",
+        "link": "https://stackoverflow.com/q/65913592",
+        "creation_date": 1611726942,
+        "answer_count": 0,
+        "title": "Connection to the database terminated in Neo4j",
+        "uuid": 65913592,
+        "view_count": 119
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5534"
+    },
+    "r": {
+      "identity": 1865,
+      "start": 5534,
+      "end": 1695,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1865",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5534",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1695"
+    },
+    "all_tags": {
+      "identity": 1695,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "java",
+        "link": "https://stackoverflow.com/questions/tagged/java"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1695"
+    },
+    "a": null
+  },
+  {
+    "q": {
+      "identity": 5534,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "Getting below error from neo4j while connecting via Java driver. It comes only when I try to create more than 50000 relationships in transaction. It is successful even in 30,000 
+
+```
+Connection to the database terminated. Please ensure that your database is listening on the correct host and port and that you have compatible encryption settings both on Neo4j server and driver. Note that the default encryption setting has changed in Neo4j 4.0.
+```
+
+I couldn&#39;t understand why its failing for 50000 records and its working for 30000 records. If there is some transaction size then the error could mention the same. Pleas help me to get around it
+
+I&#39;m using Neo4j Aura professional and java driver version is 4.1.1",
+        "link": "https://stackoverflow.com/q/65913592",
+        "creation_date": 1611726942,
+        "answer_count": 0,
+        "title": "Connection to the database terminated in Neo4j",
+        "uuid": 65913592,
+        "view_count": 119
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5534"
+    },
+    "r": {
+      "identity": 1866,
+      "start": 5534,
+      "end": 1679,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1866",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5534",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "a": null
+  },
+  {
+    "q": {
+      "identity": 5535,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "Is there any way to show current configuration? Eg, like what we can do on mysql &quot;SHOW VARIABLES;&quot;
+Because I try to use SSL on both BOLT and HTTPS. After I added the certificate, I am not sure am I using SSL on the connection or not. 
+
+Thanks",
+        "link": "https://stackoverflow.com/q/65912339",
+        "creation_date": 1611716677,
+        "answer_count": 0,
+        "title": "Neo4J - show current configuration setting",
+        "uuid": 65912339,
+        "view_count": 17
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5535"
+    },
+    "r": {
+      "identity": 1867,
+      "start": 5535,
+      "end": 1679,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1867",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5535",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "a": null
+  },
+  {
+    "q": {
+      "identity": 5536,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 65924177,
+        "body_markdown": "I am currently trying to install Neo4j on my Raspberry Pi. The [installation][1] for the latest version worked great so far.
+When I tried ```neo4j start``` I received this error message but was able to resolve it by setting ```dbms.memory.heap.initial_size=12m``` and ```dbms.memory.heap.max_size=12m``` and ```dbms.memory.pagecache.size=1g``` (allthough that feels wrong to me since my Pi has 8GB of memory):
+```
+nohup: ignoring input
+2021-01-26 21:54:18.409+0000 ERROR Invalid memory configuration - exceeds physical memory. Check the configured values for dbms.memory.pagecache.size and db&gt;
+2021-01-26 21:54:18.436+0000 INFO  Neo4j Server shutdown initiated by request
+2021-01-26 21:54:18.437+0000 INFO  Stopped.
+```
+
+**Now**, when I try to start neo4j I get this error in my logs:
+```
+nohup: ignoring input
+Exception in thread &quot;main&quot; java.lang.NoClassDefFoundError: Could not initialize class org.neo4j.configuration.GraphDatabaseSettings
+        at org.neo4j.server.NeoBootstrapper.start(NeoBootstrapper.java:105)
+        at org.neo4j.server.NeoBootstrapper.start(NeoBootstrapper.java:90)
+        at org.neo4j.server.CommunityEntryPoint.main(CommunityEntryPoint.java:35)
+2021-01-26 22:20:55.271+0000 INFO  [o.n.s.CommunityBootstrapper] Neo4j Server shutdown initiated by request
+2021-01-26 22:20:55.290+0000 INFO  [o.n.s.CommunityBootstrapper] Stopped.
+```
+
+I have now been trying to google the problem for a couple hours but I feel like I don&#39;t really know what to look for.
+
+My setup:
+
+- Raspberry Pi 4 (8 GB memory)
+- Ubuntu Server (```uname -a``` returns ```Linux ubuntu 5.8.0-1011-raspi #14-Ubuntu SMP PREEMPT Tue Dec 15 08:53:29 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux```)
+- Java 11 (```java -version``` returns ```
+openjdk version &quot;11.0.9.1&quot; 2020-11-04
+OpenJDK Runtime Environment (build 11.0.9.1+1-Ubuntu-0ubuntu1.20.10)
+OpenJDK 64-Bit Server VM (build 11.0.9.1+1-Ubuntu-0ubuntu1.20.10, mixed mode)```)
+- Neo4j version 4.2.3
+
+
+  [1]: https://debian.neo4j.com/",
+        "link": "https://stackoverflow.com/q/65910475",
+        "creation_date": 1611701830,
+        "answer_count": 1,
+        "title": "Neo4j not starting on Raspberry Pi (memory issues and java.lang.NoClassDefFoundError)",
+        "uuid": 65910475,
+        "view_count": 123
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5536"
+    },
+    "r": {
+      "identity": 1871,
+      "start": 5536,
+      "end": 1679,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1871",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5536",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "a": {
+      "identity": 2983,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": true,
+        "body_markdown": "After some more trying it seems like it is a problem with the latest Neo4j version (4.2.3).
+I now installed version 4.0.11 and it works without any problems.",
+        "link": "https://stackoverflow.com/a/65924177",
+        "title": "Neo4j not starting on Raspberry Pi (memory issues and java.lang.NoClassDefFoundError)",
+        "uuid": 65924177
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2983"
+    }
+  },
+  {
+    "q": {
+      "identity": 5536,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 65924177,
+        "body_markdown": "I am currently trying to install Neo4j on my Raspberry Pi. The [installation][1] for the latest version worked great so far.
+When I tried ```neo4j start``` I received this error message but was able to resolve it by setting ```dbms.memory.heap.initial_size=12m``` and ```dbms.memory.heap.max_size=12m``` and ```dbms.memory.pagecache.size=1g``` (allthough that feels wrong to me since my Pi has 8GB of memory):
+```
+nohup: ignoring input
+2021-01-26 21:54:18.409+0000 ERROR Invalid memory configuration - exceeds physical memory. Check the configured values for dbms.memory.pagecache.size and db&gt;
+2021-01-26 21:54:18.436+0000 INFO  Neo4j Server shutdown initiated by request
+2021-01-26 21:54:18.437+0000 INFO  Stopped.
+```
+
+**Now**, when I try to start neo4j I get this error in my logs:
+```
+nohup: ignoring input
+Exception in thread &quot;main&quot; java.lang.NoClassDefFoundError: Could not initialize class org.neo4j.configuration.GraphDatabaseSettings
+        at org.neo4j.server.NeoBootstrapper.start(NeoBootstrapper.java:105)
+        at org.neo4j.server.NeoBootstrapper.start(NeoBootstrapper.java:90)
+        at org.neo4j.server.CommunityEntryPoint.main(CommunityEntryPoint.java:35)
+2021-01-26 22:20:55.271+0000 INFO  [o.n.s.CommunityBootstrapper] Neo4j Server shutdown initiated by request
+2021-01-26 22:20:55.290+0000 INFO  [o.n.s.CommunityBootstrapper] Stopped.
+```
+
+I have now been trying to google the problem for a couple hours but I feel like I don&#39;t really know what to look for.
+
+My setup:
+
+- Raspberry Pi 4 (8 GB memory)
+- Ubuntu Server (```uname -a``` returns ```Linux ubuntu 5.8.0-1011-raspi #14-Ubuntu SMP PREEMPT Tue Dec 15 08:53:29 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux```)
+- Java 11 (```java -version``` returns ```
+openjdk version &quot;11.0.9.1&quot; 2020-11-04
+OpenJDK Runtime Environment (build 11.0.9.1+1-Ubuntu-0ubuntu1.20.10)
+OpenJDK 64-Bit Server VM (build 11.0.9.1+1-Ubuntu-0ubuntu1.20.10, mixed mode)```)
+- Neo4j version 4.2.3
+
+
+  [1]: https://debian.neo4j.com/",
+        "link": "https://stackoverflow.com/q/65910475",
+        "creation_date": 1611701830,
+        "answer_count": 1,
+        "title": "Neo4j not starting on Raspberry Pi (memory issues and java.lang.NoClassDefFoundError)",
+        "uuid": 65910475,
+        "view_count": 123
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5536"
+    },
+    "r": {
+      "identity": 1868,
+      "start": 5536,
+      "end": 1695,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1868",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5536",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1695"
+    },
+    "all_tags": {
+      "identity": 1695,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "java",
+        "link": "https://stackoverflow.com/questions/tagged/java"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1695"
+    },
+    "a": {
+      "identity": 2983,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": true,
+        "body_markdown": "After some more trying it seems like it is a problem with the latest Neo4j version (4.2.3).
+I now installed version 4.0.11 and it works without any problems.",
+        "link": "https://stackoverflow.com/a/65924177",
+        "title": "Neo4j not starting on Raspberry Pi (memory issues and java.lang.NoClassDefFoundError)",
+        "uuid": 65924177
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2983"
+    }
+  },
+  {
+    "q": {
+      "identity": 5536,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 65924177,
+        "body_markdown": "I am currently trying to install Neo4j on my Raspberry Pi. The [installation][1] for the latest version worked great so far.
+When I tried ```neo4j start``` I received this error message but was able to resolve it by setting ```dbms.memory.heap.initial_size=12m``` and ```dbms.memory.heap.max_size=12m``` and ```dbms.memory.pagecache.size=1g``` (allthough that feels wrong to me since my Pi has 8GB of memory):
+```
+nohup: ignoring input
+2021-01-26 21:54:18.409+0000 ERROR Invalid memory configuration - exceeds physical memory. Check the configured values for dbms.memory.pagecache.size and db&gt;
+2021-01-26 21:54:18.436+0000 INFO  Neo4j Server shutdown initiated by request
+2021-01-26 21:54:18.437+0000 INFO  Stopped.
+```
+
+**Now**, when I try to start neo4j I get this error in my logs:
+```
+nohup: ignoring input
+Exception in thread &quot;main&quot; java.lang.NoClassDefFoundError: Could not initialize class org.neo4j.configuration.GraphDatabaseSettings
+        at org.neo4j.server.NeoBootstrapper.start(NeoBootstrapper.java:105)
+        at org.neo4j.server.NeoBootstrapper.start(NeoBootstrapper.java:90)
+        at org.neo4j.server.CommunityEntryPoint.main(CommunityEntryPoint.java:35)
+2021-01-26 22:20:55.271+0000 INFO  [o.n.s.CommunityBootstrapper] Neo4j Server shutdown initiated by request
+2021-01-26 22:20:55.290+0000 INFO  [o.n.s.CommunityBootstrapper] Stopped.
+```
+
+I have now been trying to google the problem for a couple hours but I feel like I don&#39;t really know what to look for.
+
+My setup:
+
+- Raspberry Pi 4 (8 GB memory)
+- Ubuntu Server (```uname -a``` returns ```Linux ubuntu 5.8.0-1011-raspi #14-Ubuntu SMP PREEMPT Tue Dec 15 08:53:29 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux```)
+- Java 11 (```java -version``` returns ```
+openjdk version &quot;11.0.9.1&quot; 2020-11-04
+OpenJDK Runtime Environment (build 11.0.9.1+1-Ubuntu-0ubuntu1.20.10)
+OpenJDK 64-Bit Server VM (build 11.0.9.1+1-Ubuntu-0ubuntu1.20.10, mixed mode)```)
+- Neo4j version 4.2.3
+
+
+  [1]: https://debian.neo4j.com/",
+        "link": "https://stackoverflow.com/q/65910475",
+        "creation_date": 1611701830,
+        "answer_count": 1,
+        "title": "Neo4j not starting on Raspberry Pi (memory issues and java.lang.NoClassDefFoundError)",
+        "uuid": 65910475,
+        "view_count": 123
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5536"
+    },
+    "r": {
+      "identity": 1869,
+      "start": 5536,
+      "end": 1992,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1869",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5536",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1992"
+    },
+    "all_tags": {
+      "identity": 1992,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "linux",
+        "link": "https://stackoverflow.com/questions/tagged/linux"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1992"
+    },
+    "a": {
+      "identity": 2983,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": true,
+        "body_markdown": "After some more trying it seems like it is a problem with the latest Neo4j version (4.2.3).
+I now installed version 4.0.11 and it works without any problems.",
+        "link": "https://stackoverflow.com/a/65924177",
+        "title": "Neo4j not starting on Raspberry Pi (memory issues and java.lang.NoClassDefFoundError)",
+        "uuid": 65924177
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2983"
+    }
+  },
+  {
+    "q": {
+      "identity": 5536,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 65924177,
+        "body_markdown": "I am currently trying to install Neo4j on my Raspberry Pi. The [installation][1] for the latest version worked great so far.
+When I tried ```neo4j start``` I received this error message but was able to resolve it by setting ```dbms.memory.heap.initial_size=12m``` and ```dbms.memory.heap.max_size=12m``` and ```dbms.memory.pagecache.size=1g``` (allthough that feels wrong to me since my Pi has 8GB of memory):
+```
+nohup: ignoring input
+2021-01-26 21:54:18.409+0000 ERROR Invalid memory configuration - exceeds physical memory. Check the configured values for dbms.memory.pagecache.size and db&gt;
+2021-01-26 21:54:18.436+0000 INFO  Neo4j Server shutdown initiated by request
+2021-01-26 21:54:18.437+0000 INFO  Stopped.
+```
+
+**Now**, when I try to start neo4j I get this error in my logs:
+```
+nohup: ignoring input
+Exception in thread &quot;main&quot; java.lang.NoClassDefFoundError: Could not initialize class org.neo4j.configuration.GraphDatabaseSettings
+        at org.neo4j.server.NeoBootstrapper.start(NeoBootstrapper.java:105)
+        at org.neo4j.server.NeoBootstrapper.start(NeoBootstrapper.java:90)
+        at org.neo4j.server.CommunityEntryPoint.main(CommunityEntryPoint.java:35)
+2021-01-26 22:20:55.271+0000 INFO  [o.n.s.CommunityBootstrapper] Neo4j Server shutdown initiated by request
+2021-01-26 22:20:55.290+0000 INFO  [o.n.s.CommunityBootstrapper] Stopped.
+```
+
+I have now been trying to google the problem for a couple hours but I feel like I don&#39;t really know what to look for.
+
+My setup:
+
+- Raspberry Pi 4 (8 GB memory)
+- Ubuntu Server (```uname -a``` returns ```Linux ubuntu 5.8.0-1011-raspi #14-Ubuntu SMP PREEMPT Tue Dec 15 08:53:29 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux```)
+- Java 11 (```java -version``` returns ```
+openjdk version &quot;11.0.9.1&quot; 2020-11-04
+OpenJDK Runtime Environment (build 11.0.9.1+1-Ubuntu-0ubuntu1.20.10)
+OpenJDK 64-Bit Server VM (build 11.0.9.1+1-Ubuntu-0ubuntu1.20.10, mixed mode)```)
+- Neo4j version 4.2.3
+
+
+  [1]: https://debian.neo4j.com/",
+        "link": "https://stackoverflow.com/q/65910475",
+        "creation_date": 1611701830,
+        "answer_count": 1,
+        "title": "Neo4j not starting on Raspberry Pi (memory issues and java.lang.NoClassDefFoundError)",
+        "uuid": 65910475,
+        "view_count": 123
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5536"
+    },
+    "r": {
+      "identity": 1870,
+      "start": 5536,
+      "end": 1700,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1870",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5536",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1700"
+    },
+    "all_tags": {
+      "identity": 1700,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "ubuntu",
+        "link": "https://stackoverflow.com/questions/tagged/ubuntu"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1700"
+    },
+    "a": {
+      "identity": 2983,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": true,
+        "body_markdown": "After some more trying it seems like it is a problem with the latest Neo4j version (4.2.3).
+I now installed version 4.0.11 and it works without any problems.",
+        "link": "https://stackoverflow.com/a/65924177",
+        "title": "Neo4j not starting on Raspberry Pi (memory issues and java.lang.NoClassDefFoundError)",
+        "uuid": 65924177
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2983"
+    }
+  },
+  {
+    "q": {
+      "identity": 5536,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 65924177,
+        "body_markdown": "I am currently trying to install Neo4j on my Raspberry Pi. The [installation][1] for the latest version worked great so far.
+When I tried ```neo4j start``` I received this error message but was able to resolve it by setting ```dbms.memory.heap.initial_size=12m``` and ```dbms.memory.heap.max_size=12m``` and ```dbms.memory.pagecache.size=1g``` (allthough that feels wrong to me since my Pi has 8GB of memory):
+```
+nohup: ignoring input
+2021-01-26 21:54:18.409+0000 ERROR Invalid memory configuration - exceeds physical memory. Check the configured values for dbms.memory.pagecache.size and db&gt;
+2021-01-26 21:54:18.436+0000 INFO  Neo4j Server shutdown initiated by request
+2021-01-26 21:54:18.437+0000 INFO  Stopped.
+```
+
+**Now**, when I try to start neo4j I get this error in my logs:
+```
+nohup: ignoring input
+Exception in thread &quot;main&quot; java.lang.NoClassDefFoundError: Could not initialize class org.neo4j.configuration.GraphDatabaseSettings
+        at org.neo4j.server.NeoBootstrapper.start(NeoBootstrapper.java:105)
+        at org.neo4j.server.NeoBootstrapper.start(NeoBootstrapper.java:90)
+        at org.neo4j.server.CommunityEntryPoint.main(CommunityEntryPoint.java:35)
+2021-01-26 22:20:55.271+0000 INFO  [o.n.s.CommunityBootstrapper] Neo4j Server shutdown initiated by request
+2021-01-26 22:20:55.290+0000 INFO  [o.n.s.CommunityBootstrapper] Stopped.
+```
+
+I have now been trying to google the problem for a couple hours but I feel like I don&#39;t really know what to look for.
+
+My setup:
+
+- Raspberry Pi 4 (8 GB memory)
+- Ubuntu Server (```uname -a``` returns ```Linux ubuntu 5.8.0-1011-raspi #14-Ubuntu SMP PREEMPT Tue Dec 15 08:53:29 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux```)
+- Java 11 (```java -version``` returns ```
+openjdk version &quot;11.0.9.1&quot; 2020-11-04
+OpenJDK Runtime Environment (build 11.0.9.1+1-Ubuntu-0ubuntu1.20.10)
+OpenJDK 64-Bit Server VM (build 11.0.9.1+1-Ubuntu-0ubuntu1.20.10, mixed mode)```)
+- Neo4j version 4.2.3
+
+
+  [1]: https://debian.neo4j.com/",
+        "link": "https://stackoverflow.com/q/65910475",
+        "creation_date": 1611701830,
+        "answer_count": 1,
+        "title": "Neo4j not starting on Raspberry Pi (memory issues and java.lang.NoClassDefFoundError)",
+        "uuid": 65910475,
+        "view_count": 123
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5536"
+    },
+    "r": {
+      "identity": 1872,
+      "start": 5536,
+      "end": 2058,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1872",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5536",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2058"
+    },
+    "all_tags": {
+      "identity": 2058,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "raspberry-pi",
+        "link": "https://stackoverflow.com/questions/tagged/raspberry-pi"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2058"
+    },
+    "a": {
+      "identity": 2983,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": true,
+        "body_markdown": "After some more trying it seems like it is a problem with the latest Neo4j version (4.2.3).
+I now installed version 4.0.11 and it works without any problems.",
+        "link": "https://stackoverflow.com/a/65924177",
+        "title": "Neo4j not starting on Raspberry Pi (memory issues and java.lang.NoClassDefFoundError)",
+        "uuid": 65924177
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2983"
+    }
+  },
+  {
+    "q": {
+      "identity": 5537,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I am running a spark job (local mode) that writes to Neo4J 4.0.0 using neo4j-spark-connector
+
+I use (because in this package release notes mentioned supporting spark 2.4.1+)
+ https://github.com/neo4j-contrib/neo4j-spark-connector/releases/download/4.0.0-pre1/neo4j-spark-connector-2.11-4.0.0-pre1.jar
+
+I tried all the latest releases but in all of them I get this exception after few minutes run when it starts writing the relationships and done with the node
+It is writing relationships but always fails after a while
+The error shows some database discrepancy but the neo4j is in the right version for this connector + it is writing some of the data, so I figured that it is kind of a lock. But, even running with 1 partition didn&#39;t solve.
+
+org.neo4j.driver.exceptions.TransientException: Database &#39;neo4j&#39; not up to the requested version: 1297554. Latest database version is 1292675
+
+**Code:**
+
+
+    dsEdge.write
+      .format(&quot;org.neo4j.spark.DataSource&quot;)
+      .option(&quot;url&quot;, &quot;bolt:///:7687&quot;)
+      .option(&quot;authentication.type&quot;, &quot;basic&quot;)
+      .option(&quot;authentication.basic.username&quot;, &quot;0&quot;)
+      .option(&quot;authentication.basic.password&quot;, &quot;0&quot;)
+       .option(&quot;relationship&quot;, &quot;STATEMENT&quot;)
+        .option(&quot;relationship.save.strategy&quot;, &quot;keys&quot;)
+        .option(&quot;relationship.source.labels&quot;, &quot;:PageData&quot;)
+        .option(&quot;relationship.source.save.mode&quot;, &quot;ErrorIfExists&quot;)
+        .option(&quot;relationship.source.node.keys&quot;, &quot;id_src:id&quot;)
+        .option(&quot;relationship.target.labels&quot;, &quot;:PageData&quot;)
+        .option(&quot;relationship.target.node.keys&quot;, &quot;id_dst:id&quot;)
+        .option(&quot;relationship.target.save.mode&quot;, &quot;ErrorIfExists&quot;)
+
+
+
+**Full Stack Trace:**
+
+    [Stage 5:&gt;                                                          (0 + 1) / 1]21/01/26 02:04:45 ERROR Utils: Aborting task
+    org.neo4j.driver.exceptions.TransientException: Database &#39;neo4j&#39; not up to the requested version: 1297554. Latest database version is 1292675
+    	at org.neo4j.driver.internal.util.Futures.blockingGet(Futures.java:143)
+    	at org.neo4j.driver.internal.InternalSession.beginTransaction(InternalSession.java:98)
+    	at org.neo4j.driver.internal.InternalSession.beginTransaction(InternalSession.java:92)
+    	at org.neo4j.spark.writer.Neo4jDataWriter.writeBatch(Neo4jDataWriter.scala:52)
+    	at org.neo4j.spark.writer.Neo4jDataWriter.write(Neo4jDataWriter.scala:43)
+    	at org.neo4j.spark.writer.Neo4jDataWriter.write(Neo4jDataWriter.scala:20)
+    	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$$anonfun$run$3.apply(WriteToDataSourceV2Exec.scala:118)
+    	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$$anonfun$run$3.apply(WriteToDataSourceV2Exec.scala:116)
+    	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1394)
+    	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$.run(WriteToDataSourceV2Exec.scala:146)
+    	at org.apache.spark.sql.execution.datasources.v2.WriteToDataSourceV2Exec$$anonfun$doExecute$2.apply(WriteToDataSourceV2Exec.scala:67)
+    	at org.apache.spark.sql.execution.datasources.v2.WriteToDataSourceV2Exec$$anonfun$doExecute$2.apply(WriteToDataSourceV2Exec.scala:66)
+    	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+    	at org.apache.spark.scheduler.Task.run(Task.scala:123)
+    	at org.apache.spark.executor.Executor$TaskRunner$$anonfun$10.apply(Executor.scala:408)
+    	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+    	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+    	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    	at java.lang.Thread.run(Thread.java:748)
+    	Suppressed: org.neo4j.driver.internal.util.ErrorUtil$InternalExceptionCause
+    		at org.neo4j.driver.internal.util.ErrorUtil.newNeo4jError(ErrorUtil.java:83)
+    		at org.neo4j.driver.internal.async.inbound.InboundMessageDispatcher.handleFailureMessage(InboundMessageDispatcher.java:105)
+    		at org.neo4j.driver.internal.messaging.v1.MessageReaderV1.unpackFailureMessage(MessageReaderV1.java:83)
+    		at org.neo4j.driver.internal.messaging.v1.MessageReaderV1.read(MessageReaderV1.java:59)
+    		at org.neo4j.driver.internal.async.inbound.InboundMessageHandler.channelRead0(InboundMessageHandler.java:83)
+    		at org.neo4j.driver.internal.async.inbound.InboundMessageHandler.channelRead0(InboundMessageHandler.java:35)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+    		at org.neo4j.driver.internal.shaded.io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+    		at org.neo4j.driver.internal.shaded.io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+    		at org.neo4j.driver.internal.async.inbound.MessageDecoder.channelRead(MessageDecoder.java:47)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+    		at org.neo4j.driver.internal.shaded.io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+    		at org.neo4j.driver.internal.shaded.io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+    		at org.neo4j.driver.internal.shaded.io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+    		at org.neo4j.driver.internal.shaded.io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+    		at org.neo4j.driver.internal.shaded.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+    		... 1 more
+    21/01/26 02:04:45 ERROR DataWritingSparkTask: Aborting commit for partition 0 (task 2179, attempt 0, stage 5.0)
+    21/01/26 02:04:45 ERROR DataWritingSparkTask: Aborted commit for partition 0 (task 2179, attempt 0, stage 5.0)
+    21/01/26 02:04:45 ERROR Executor: Exception in task 0.0 in stage 5.0 (TID 2179)
+
+&lt;!-- end snippet --&gt;
+
+I can&#39;t find a solution and could use some help
+Thanks
+",
+        "link": "https://stackoverflow.com/q/65908235",
+        "creation_date": 1611690473,
+        "answer_count": 0,
+        "title": "Running Spark 2.4.4 with Neo4J connector getting TransientException for db version",
+        "uuid": 65908235,
+        "view_count": 114
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5537"
+    },
+    "r": {
+      "identity": 1874,
+      "start": 5537,
+      "end": 1679,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1874",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5537",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "a": null
+  },
+  {
+    "q": {
+      "identity": 5537,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I am running a spark job (local mode) that writes to Neo4J 4.0.0 using neo4j-spark-connector
+
+I use (because in this package release notes mentioned supporting spark 2.4.1+)
+ https://github.com/neo4j-contrib/neo4j-spark-connector/releases/download/4.0.0-pre1/neo4j-spark-connector-2.11-4.0.0-pre1.jar
+
+I tried all the latest releases but in all of them I get this exception after few minutes run when it starts writing the relationships and done with the node
+It is writing relationships but always fails after a while
+The error shows some database discrepancy but the neo4j is in the right version for this connector + it is writing some of the data, so I figured that it is kind of a lock. But, even running with 1 partition didn&#39;t solve.
+
+org.neo4j.driver.exceptions.TransientException: Database &#39;neo4j&#39; not up to the requested version: 1297554. Latest database version is 1292675
+
+**Code:**
+
+
+    dsEdge.write
+      .format(&quot;org.neo4j.spark.DataSource&quot;)
+      .option(&quot;url&quot;, &quot;bolt:///:7687&quot;)
+      .option(&quot;authentication.type&quot;, &quot;basic&quot;)
+      .option(&quot;authentication.basic.username&quot;, &quot;0&quot;)
+      .option(&quot;authentication.basic.password&quot;, &quot;0&quot;)
+       .option(&quot;relationship&quot;, &quot;STATEMENT&quot;)
+        .option(&quot;relationship.save.strategy&quot;, &quot;keys&quot;)
+        .option(&quot;relationship.source.labels&quot;, &quot;:PageData&quot;)
+        .option(&quot;relationship.source.save.mode&quot;, &quot;ErrorIfExists&quot;)
+        .option(&quot;relationship.source.node.keys&quot;, &quot;id_src:id&quot;)
+        .option(&quot;relationship.target.labels&quot;, &quot;:PageData&quot;)
+        .option(&quot;relationship.target.node.keys&quot;, &quot;id_dst:id&quot;)
+        .option(&quot;relationship.target.save.mode&quot;, &quot;ErrorIfExists&quot;)
+
+
+
+**Full Stack Trace:**
+
+    [Stage 5:&gt;                                                          (0 + 1) / 1]21/01/26 02:04:45 ERROR Utils: Aborting task
+    org.neo4j.driver.exceptions.TransientException: Database &#39;neo4j&#39; not up to the requested version: 1297554. Latest database version is 1292675
+    	at org.neo4j.driver.internal.util.Futures.blockingGet(Futures.java:143)
+    	at org.neo4j.driver.internal.InternalSession.beginTransaction(InternalSession.java:98)
+    	at org.neo4j.driver.internal.InternalSession.beginTransaction(InternalSession.java:92)
+    	at org.neo4j.spark.writer.Neo4jDataWriter.writeBatch(Neo4jDataWriter.scala:52)
+    	at org.neo4j.spark.writer.Neo4jDataWriter.write(Neo4jDataWriter.scala:43)
+    	at org.neo4j.spark.writer.Neo4jDataWriter.write(Neo4jDataWriter.scala:20)
+    	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$$anonfun$run$3.apply(WriteToDataSourceV2Exec.scala:118)
+    	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$$anonfun$run$3.apply(WriteToDataSourceV2Exec.scala:116)
+    	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1394)
+    	at org.apache.spark.sql.execution.datasources.v2.DataWritingSparkTask$.run(WriteToDataSourceV2Exec.scala:146)
+    	at org.apache.spark.sql.execution.datasources.v2.WriteToDataSourceV2Exec$$anonfun$doExecute$2.apply(WriteToDataSourceV2Exec.scala:67)
+    	at org.apache.spark.sql.execution.datasources.v2.WriteToDataSourceV2Exec$$anonfun$doExecute$2.apply(WriteToDataSourceV2Exec.scala:66)
+    	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+    	at org.apache.spark.scheduler.Task.run(Task.scala:123)
+    	at org.apache.spark.executor.Executor$TaskRunner$$anonfun$10.apply(Executor.scala:408)
+    	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1360)
+    	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:414)
+    	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+    	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+    	at java.lang.Thread.run(Thread.java:748)
+    	Suppressed: org.neo4j.driver.internal.util.ErrorUtil$InternalExceptionCause
+    		at org.neo4j.driver.internal.util.ErrorUtil.newNeo4jError(ErrorUtil.java:83)
+    		at org.neo4j.driver.internal.async.inbound.InboundMessageDispatcher.handleFailureMessage(InboundMessageDispatcher.java:105)
+    		at org.neo4j.driver.internal.messaging.v1.MessageReaderV1.unpackFailureMessage(MessageReaderV1.java:83)
+    		at org.neo4j.driver.internal.messaging.v1.MessageReaderV1.read(MessageReaderV1.java:59)
+    		at org.neo4j.driver.internal.async.inbound.InboundMessageHandler.channelRead0(InboundMessageHandler.java:83)
+    		at org.neo4j.driver.internal.async.inbound.InboundMessageHandler.channelRead0(InboundMessageHandler.java:35)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+    		at org.neo4j.driver.internal.shaded.io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+    		at org.neo4j.driver.internal.shaded.io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+    		at org.neo4j.driver.internal.async.inbound.MessageDecoder.channelRead(MessageDecoder.java:47)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+    		at org.neo4j.driver.internal.shaded.io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+    		at org.neo4j.driver.internal.shaded.io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+    		at org.neo4j.driver.internal.shaded.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+    		at org.neo4j.driver.internal.shaded.io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+    		at org.neo4j.driver.internal.shaded.io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+    		at org.neo4j.driver.internal.shaded.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+    		... 1 more
+    21/01/26 02:04:45 ERROR DataWritingSparkTask: Aborting commit for partition 0 (task 2179, attempt 0, stage 5.0)
+    21/01/26 02:04:45 ERROR DataWritingSparkTask: Aborted commit for partition 0 (task 2179, attempt 0, stage 5.0)
+    21/01/26 02:04:45 ERROR Executor: Exception in task 0.0 in stage 5.0 (TID 2179)
+
+&lt;!-- end snippet --&gt;
+
+I can&#39;t find a solution and could use some help
+Thanks
+",
+        "link": "https://stackoverflow.com/q/65908235",
+        "creation_date": 1611690473,
+        "answer_count": 0,
+        "title": "Running Spark 2.4.4 with Neo4J connector getting TransientException for db version",
+        "uuid": 65908235,
+        "view_count": 114
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5537"
+    },
+    "r": {
+      "identity": 1873,
+      "start": 5537,
+      "end": 1705,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1873",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5537",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1705"
+    },
+    "all_tags": {
+      "identity": 1705,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "apache-spark",
+        "link": "https://stackoverflow.com/questions/tagged/apache-spark"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1705"
+    },
+    "a": null
+  },
+  {
+    "q": {
+      "identity": 5538,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 65908227,
+        "body_markdown": "I am trying to find a list of names that unique to one query and exclude the ones that are common between the results of two queries. For example, I want the name of the classes that have been taken by students A, B, and C. And exclude from this list the classes that were taken by students D and E. With the help of the answer to this question (https://stackoverflow.com/questions/59397418/neo4j-cypher-exclude-certain-nodes-from-result/65904934#65904934), I tried this Cypher code and it works, but I get the results as nodes. I want it as a list of names, not nodes. 
+
+    Match (m:class)-[r]-(n:student) where n.name in [&#39;aa&#39;,&#39;bb&#39;,&#39;cc&#39;]    
+    WITH COLLECT(m) AS EXCLUDED
+    MATCH  (m1:class)-[r1]-(n1:student) where n1.name in [&#39;dd&#39;,&#39;ee&#39;] 
+    WITH EXCLUDED, COLLECT(m1) AS included
+    RETURN FILTER(m1 IN included WHERE NOT m1 IN EXCLUDED)
+
+Thank you!",
+        "link": "https://stackoverflow.com/q/65906762",
+        "creation_date": 1611684147,
+        "answer_count": 1,
+        "title": "Neo4j Cypher: Filtering a query results based on another query",
+        "uuid": 65906762,
+        "view_count": 83
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5538"
+    },
+    "r": {
+      "identity": 1876,
+      "start": 5538,
+      "end": 1682,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1876",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5538",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "all_tags": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "a": {
+      "identity": 2984,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": true,
+        "body_markdown": "You can have another ``WITH`` and ``UNWIND``.
+
+
+    Match (m:class)-[r]-(n:student) where n.name in [&#39;aa&#39;,&#39;bb&#39;,&#39;cc&#39;]    
+    WITH COLLECT(m) AS EXCLUDED
+    MATCH  (m1:class)-[r1]-(n1:student) where n1.name in [&#39;dd&#39;,&#39;ee&#39;] 
+    WITH EXCLUDED, COLLECT(m1) AS included
+    WITH FILTER(m1 IN included WHERE NOT m1 IN EXCLUDED) as _results
+    UNWIND _results as results
+    RETURN results.name
+
+**Note:** ``FILTER()`` is deprecated in neo4j 3.5 and removed in 4.0 in favor of [List Comprehension](https://neo4j.com/docs/cypher-manual/current/syntax/lists/#cypher-list-comprehension)
+",
+        "link": "https://stackoverflow.com/a/65908227",
+        "title": "Neo4j Cypher: Filtering a query results based on another query",
+        "uuid": 65908227
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2984"
+    }
+  },
+  {
+    "q": {
+      "identity": 5538,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 65908227,
+        "body_markdown": "I am trying to find a list of names that unique to one query and exclude the ones that are common between the results of two queries. For example, I want the name of the classes that have been taken by students A, B, and C. And exclude from this list the classes that were taken by students D and E. With the help of the answer to this question (https://stackoverflow.com/questions/59397418/neo4j-cypher-exclude-certain-nodes-from-result/65904934#65904934), I tried this Cypher code and it works, but I get the results as nodes. I want it as a list of names, not nodes. 
+
+    Match (m:class)-[r]-(n:student) where n.name in [&#39;aa&#39;,&#39;bb&#39;,&#39;cc&#39;]    
+    WITH COLLECT(m) AS EXCLUDED
+    MATCH  (m1:class)-[r1]-(n1:student) where n1.name in [&#39;dd&#39;,&#39;ee&#39;] 
+    WITH EXCLUDED, COLLECT(m1) AS included
+    RETURN FILTER(m1 IN included WHERE NOT m1 IN EXCLUDED)
+
+Thank you!",
+        "link": "https://stackoverflow.com/q/65906762",
+        "creation_date": 1611684147,
+        "answer_count": 1,
+        "title": "Neo4j Cypher: Filtering a query results based on another query",
+        "uuid": 65906762,
+        "view_count": 83
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5538"
+    },
+    "r": {
+      "identity": 1875,
+      "start": 5538,
+      "end": 1679,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1875",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5538",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "a": {
+      "identity": 2984,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": true,
+        "body_markdown": "You can have another ``WITH`` and ``UNWIND``.
+
+
+    Match (m:class)-[r]-(n:student) where n.name in [&#39;aa&#39;,&#39;bb&#39;,&#39;cc&#39;]    
+    WITH COLLECT(m) AS EXCLUDED
+    MATCH  (m1:class)-[r1]-(n1:student) where n1.name in [&#39;dd&#39;,&#39;ee&#39;] 
+    WITH EXCLUDED, COLLECT(m1) AS included
+    WITH FILTER(m1 IN included WHERE NOT m1 IN EXCLUDED) as _results
+    UNWIND _results as results
+    RETURN results.name
+
+**Note:** ``FILTER()`` is deprecated in neo4j 3.5 and removed in 4.0 in favor of [List Comprehension](https://neo4j.com/docs/cypher-manual/current/syntax/lists/#cypher-list-comprehension)
+",
+        "link": "https://stackoverflow.com/a/65908227",
+        "title": "Neo4j Cypher: Filtering a query results based on another query",
+        "uuid": 65908227
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2984"
+    }
+  },
+  {
+    "q": {
+      "identity": 5538,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 65908227,
+        "body_markdown": "I am trying to find a list of names that unique to one query and exclude the ones that are common between the results of two queries. For example, I want the name of the classes that have been taken by students A, B, and C. And exclude from this list the classes that were taken by students D and E. With the help of the answer to this question (https://stackoverflow.com/questions/59397418/neo4j-cypher-exclude-certain-nodes-from-result/65904934#65904934), I tried this Cypher code and it works, but I get the results as nodes. I want it as a list of names, not nodes. 
+
+    Match (m:class)-[r]-(n:student) where n.name in [&#39;aa&#39;,&#39;bb&#39;,&#39;cc&#39;]    
+    WITH COLLECT(m) AS EXCLUDED
+    MATCH  (m1:class)-[r1]-(n1:student) where n1.name in [&#39;dd&#39;,&#39;ee&#39;] 
+    WITH EXCLUDED, COLLECT(m1) AS included
+    RETURN FILTER(m1 IN included WHERE NOT m1 IN EXCLUDED)
+
+Thank you!",
+        "link": "https://stackoverflow.com/q/65906762",
+        "creation_date": 1611684147,
+        "answer_count": 1,
+        "title": "Neo4j Cypher: Filtering a query results based on another query",
+        "uuid": 65906762,
+        "view_count": 83
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5538"
+    },
+    "r": {
+      "identity": 1876,
+      "start": 5538,
+      "end": 1682,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1876",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5538",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "all_tags": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "a": {
+      "identity": 2984,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": true,
+        "body_markdown": "You can have another ``WITH`` and ``UNWIND``.
+
+
+    Match (m:class)-[r]-(n:student) where n.name in [&#39;aa&#39;,&#39;bb&#39;,&#39;cc&#39;]    
+    WITH COLLECT(m) AS EXCLUDED
+    MATCH  (m1:class)-[r1]-(n1:student) where n1.name in [&#39;dd&#39;,&#39;ee&#39;] 
+    WITH EXCLUDED, COLLECT(m1) AS included
+    WITH FILTER(m1 IN included WHERE NOT m1 IN EXCLUDED) as _results
+    UNWIND _results as results
+    RETURN results.name
+
+**Note:** ``FILTER()`` is deprecated in neo4j 3.5 and removed in 4.0 in favor of [List Comprehension](https://neo4j.com/docs/cypher-manual/current/syntax/lists/#cypher-list-comprehension)
+",
+        "link": "https://stackoverflow.com/a/65908227",
+        "title": "Neo4j Cypher: Filtering a query results based on another query",
+        "uuid": 65908227
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2984"
+    }
+  },
+  {
+    "q": {
+      "identity": 5538,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 65908227,
+        "body_markdown": "I am trying to find a list of names that unique to one query and exclude the ones that are common between the results of two queries. For example, I want the name of the classes that have been taken by students A, B, and C. And exclude from this list the classes that were taken by students D and E. With the help of the answer to this question (https://stackoverflow.com/questions/59397418/neo4j-cypher-exclude-certain-nodes-from-result/65904934#65904934), I tried this Cypher code and it works, but I get the results as nodes. I want it as a list of names, not nodes. 
+
+    Match (m:class)-[r]-(n:student) where n.name in [&#39;aa&#39;,&#39;bb&#39;,&#39;cc&#39;]    
+    WITH COLLECT(m) AS EXCLUDED
+    MATCH  (m1:class)-[r1]-(n1:student) where n1.name in [&#39;dd&#39;,&#39;ee&#39;] 
+    WITH EXCLUDED, COLLECT(m1) AS included
+    RETURN FILTER(m1 IN included WHERE NOT m1 IN EXCLUDED)
+
+Thank you!",
+        "link": "https://stackoverflow.com/q/65906762",
+        "creation_date": 1611684147,
+        "answer_count": 1,
+        "title": "Neo4j Cypher: Filtering a query results based on another query",
+        "uuid": 65906762,
+        "view_count": 83
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5538"
+    },
+    "r": {
+      "identity": 1875,
+      "start": 5538,
+      "end": 1679,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1875",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5538",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "a": {
+      "identity": 2984,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": true,
+        "body_markdown": "You can have another ``WITH`` and ``UNWIND``.
+
+
+    Match (m:class)-[r]-(n:student) where n.name in [&#39;aa&#39;,&#39;bb&#39;,&#39;cc&#39;]    
+    WITH COLLECT(m) AS EXCLUDED
+    MATCH  (m1:class)-[r1]-(n1:student) where n1.name in [&#39;dd&#39;,&#39;ee&#39;] 
+    WITH EXCLUDED, COLLECT(m1) AS included
+    WITH FILTER(m1 IN included WHERE NOT m1 IN EXCLUDED) as _results
+    UNWIND _results as results
+    RETURN results.name
+
+**Note:** ``FILTER()`` is deprecated in neo4j 3.5 and removed in 4.0 in favor of [List Comprehension](https://neo4j.com/docs/cypher-manual/current/syntax/lists/#cypher-list-comprehension)
+",
+        "link": "https://stackoverflow.com/a/65908227",
+        "title": "Neo4j Cypher: Filtering a query results based on another query",
+        "uuid": 65908227
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2984"
+    }
+  },
+  {
+    "q": {
+      "identity": 5539,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "From the MERGE documentation
+    
+    MATCH (person:Person)
+    MERGE (city:City { name: person.bornIn })
+    MERGE (person)-[r:BORN_IN]-&gt;(city)
+    RETURN person.name, person.bornIn, city
+
+The problem is, I want to create a Relationship and a Node, if the RELATIONSHIP does not exist, but in my graph all the nodes are identical so the second step would not create a new Node.
+
+Since my graph is a tree I know that if the relationship i&#39;m looking for does not exist, the node also does not exist.
+
+Giving the nodes  unique identifiers is not helpful as it would just be the path from the root node to the one i want to create. If I replace MERGE with CREATE it will create redundant nodes that are not connected to the tree. Since you cant use MERGE with WHERE, is there a way to do the equivalent of:
+
+    MERGE (nextpos:Position) WHERE NOT (nextpos)--()
+
+Which would create a node if there are no nodes without connections, allowing me in the next step to create the needed relationship. Or should I just remove all the redundant nodes afterwards? That would seem very hacky and I am hoping for an elegant solution.",
+        "link": "https://stackoverflow.com/q/65906624",
+        "creation_date": 1611683662,
+        "answer_count": 1,
+        "title": "Neo4j Create node if no relationship exists",
+        "uuid": 65906624,
+        "view_count": 141
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5539"
+    },
+    "r": {
+      "identity": 1878,
+      "start": 5539,
+      "end": 2059,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1878",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5539",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2059"
+    },
+    "all_tags": {
+      "identity": 2059,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "tree",
+        "link": "https://stackoverflow.com/questions/tagged/tree"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2059"
+    },
+    "a": {
+      "identity": 2985,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": false,
+        "body_markdown": "I strongly recommend changing your DB schema. If all the nodes are having identical properties, I don&#39;t know how are you planning to perform ``MATCH`` later on. All nodes might be identical to user but neo4j has a ``&lt;id&gt;`` field, which is unique to each entity (node and relationship). 
+
+Anyways coming to the problem, As far as I understand you need to check if a particular node is already connected to another particular node. Since you didn&#39;t give the entities properties I assume some properties here.
+
+**DB elements**
+
+    (:Position {position: prev_move})-[:Move {move: next_move}]-&gt;(:Position {position: next_move})
+
+**Cypher Query**
+
+    MATCH (n: Position {position: prev_move})
+    OPTIONAL MATCH (n)-[rel:Move {move: next_move}]-&gt;(:Position {position: next_move))
+    CALL apoc.do.when(rel is NULL, 
+      &quot;CREATE (next: Position {position : next_move}) CREATE (n)-[:Move {move: next_move}]-&gt;(next) RETURN next&quot;, 
+      &quot;&quot;, {n:n})
+    YEILD value
+    RETURN n
+
+**EDIT** 
+
+You might need a different ``MATCH``ing condition to get the exact node you are looking for. ``MATCH (n: Position {position: prev_move})`` will yield in multiple nodes. Please fell free to update the matching condition, rest remains same. 
+
+
+",
+        "link": "https://stackoverflow.com/a/65923310",
+        "title": "Neo4j Create node if no relationship exists",
+        "uuid": 65923310
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2985"
+    }
+  },
+  {
+    "q": {
+      "identity": 5539,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "From the MERGE documentation
+    
+    MATCH (person:Person)
+    MERGE (city:City { name: person.bornIn })
+    MERGE (person)-[r:BORN_IN]-&gt;(city)
+    RETURN person.name, person.bornIn, city
+
+The problem is, I want to create a Relationship and a Node, if the RELATIONSHIP does not exist, but in my graph all the nodes are identical so the second step would not create a new Node.
+
+Since my graph is a tree I know that if the relationship i&#39;m looking for does not exist, the node also does not exist.
+
+Giving the nodes  unique identifiers is not helpful as it would just be the path from the root node to the one i want to create. If I replace MERGE with CREATE it will create redundant nodes that are not connected to the tree. Since you cant use MERGE with WHERE, is there a way to do the equivalent of:
+
+    MERGE (nextpos:Position) WHERE NOT (nextpos)--()
+
+Which would create a node if there are no nodes without connections, allowing me in the next step to create the needed relationship. Or should I just remove all the redundant nodes afterwards? That would seem very hacky and I am hoping for an elegant solution.",
+        "link": "https://stackoverflow.com/q/65906624",
+        "creation_date": 1611683662,
+        "answer_count": 1,
+        "title": "Neo4j Create node if no relationship exists",
+        "uuid": 65906624,
+        "view_count": 141
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5539"
+    },
+    "r": {
+      "identity": 1879,
+      "start": 5539,
+      "end": 1683,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1879",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5539",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1683"
+    },
+    "all_tags": {
+      "identity": 1683,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "graph-databases",
+        "link": "https://stackoverflow.com/questions/tagged/graph-databases"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1683"
+    },
+    "a": {
+      "identity": 2985,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": false,
+        "body_markdown": "I strongly recommend changing your DB schema. If all the nodes are having identical properties, I don&#39;t know how are you planning to perform ``MATCH`` later on. All nodes might be identical to user but neo4j has a ``&lt;id&gt;`` field, which is unique to each entity (node and relationship). 
+
+Anyways coming to the problem, As far as I understand you need to check if a particular node is already connected to another particular node. Since you didn&#39;t give the entities properties I assume some properties here.
+
+**DB elements**
+
+    (:Position {position: prev_move})-[:Move {move: next_move}]-&gt;(:Position {position: next_move})
+
+**Cypher Query**
+
+    MATCH (n: Position {position: prev_move})
+    OPTIONAL MATCH (n)-[rel:Move {move: next_move}]-&gt;(:Position {position: next_move))
+    CALL apoc.do.when(rel is NULL, 
+      &quot;CREATE (next: Position {position : next_move}) CREATE (n)-[:Move {move: next_move}]-&gt;(next) RETURN next&quot;, 
+      &quot;&quot;, {n:n})
+    YEILD value
+    RETURN n
+
+**EDIT** 
+
+You might need a different ``MATCH``ing condition to get the exact node you are looking for. ``MATCH (n: Position {position: prev_move})`` will yield in multiple nodes. Please fell free to update the matching condition, rest remains same. 
+
+
+",
+        "link": "https://stackoverflow.com/a/65923310",
+        "title": "Neo4j Create node if no relationship exists",
+        "uuid": 65923310
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2985"
+    }
+  },
+  {
+    "q": {
+      "identity": 5539,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "From the MERGE documentation
+    
+    MATCH (person:Person)
+    MERGE (city:City { name: person.bornIn })
+    MERGE (person)-[r:BORN_IN]-&gt;(city)
+    RETURN person.name, person.bornIn, city
+
+The problem is, I want to create a Relationship and a Node, if the RELATIONSHIP does not exist, but in my graph all the nodes are identical so the second step would not create a new Node.
+
+Since my graph is a tree I know that if the relationship i&#39;m looking for does not exist, the node also does not exist.
+
+Giving the nodes  unique identifiers is not helpful as it would just be the path from the root node to the one i want to create. If I replace MERGE with CREATE it will create redundant nodes that are not connected to the tree. Since you cant use MERGE with WHERE, is there a way to do the equivalent of:
+
+    MERGE (nextpos:Position) WHERE NOT (nextpos)--()
+
+Which would create a node if there are no nodes without connections, allowing me in the next step to create the needed relationship. Or should I just remove all the redundant nodes afterwards? That would seem very hacky and I am hoping for an elegant solution.",
+        "link": "https://stackoverflow.com/q/65906624",
+        "creation_date": 1611683662,
+        "answer_count": 1,
+        "title": "Neo4j Create node if no relationship exists",
+        "uuid": 65906624,
+        "view_count": 141
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5539"
+    },
+    "r": {
+      "identity": 1877,
+      "start": 5539,
+      "end": 1679,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1877",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5539",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "a": {
+      "identity": 2985,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": false,
+        "body_markdown": "I strongly recommend changing your DB schema. If all the nodes are having identical properties, I don&#39;t know how are you planning to perform ``MATCH`` later on. All nodes might be identical to user but neo4j has a ``&lt;id&gt;`` field, which is unique to each entity (node and relationship). 
+
+Anyways coming to the problem, As far as I understand you need to check if a particular node is already connected to another particular node. Since you didn&#39;t give the entities properties I assume some properties here.
+
+**DB elements**
+
+    (:Position {position: prev_move})-[:Move {move: next_move}]-&gt;(:Position {position: next_move})
+
+**Cypher Query**
+
+    MATCH (n: Position {position: prev_move})
+    OPTIONAL MATCH (n)-[rel:Move {move: next_move}]-&gt;(:Position {position: next_move))
+    CALL apoc.do.when(rel is NULL, 
+      &quot;CREATE (next: Position {position : next_move}) CREATE (n)-[:Move {move: next_move}]-&gt;(next) RETURN next&quot;, 
+      &quot;&quot;, {n:n})
+    YEILD value
+    RETURN n
+
+**EDIT** 
+
+You might need a different ``MATCH``ing condition to get the exact node you are looking for. ``MATCH (n: Position {position: prev_move})`` will yield in multiple nodes. Please fell free to update the matching condition, rest remains same. 
+
+
+",
+        "link": "https://stackoverflow.com/a/65923310",
+        "title": "Neo4j Create node if no relationship exists",
+        "uuid": 65923310
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2985"
+    }
+  },
+  {
+    "q": {
+      "identity": 5540,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "my query below returns &quot;Success&quot; string if node n successfully matched.
+In case it was not matched, the output is &quot;(no changes, no records)&quot; while I expect the query to return &quot;Failure&quot; string.
+I guess this is to do with node n not existing and therefore 
+&#39;with value.rslt&#39; is also not existing which returns nothing.
+How can I get &quot;Failure&quot; return in case node n not matched?
+Thank you
+
+    match(n:device) where n.nid = &#39;non-existing&#39;
+    CALL apoc.do.case(
+    [
+     n is not null, &quot;return &#39;Success&#39; as rslt&quot;
+    ], 
+    &quot;return &#39;Failure&#39; as rslt&quot;,
+    {n:n}
+    ) yield value
+    with  value.rslt  as rslt 
+    return rslt",
+        "link": "https://stackoverflow.com/q/65904123",
+        "creation_date": 1611674618,
+        "answer_count": 1,
+        "title": "How to return a specific string instead of (no changes, no records) in Cypher query",
+        "uuid": 65904123,
+        "view_count": 66
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5540"
+    },
+    "r": {
+      "identity": 1880,
+      "start": 5540,
+      "end": 1679,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1880",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5540",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "a": {
+      "identity": 2986,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": false,
+        "body_markdown": "You can do ``OPTIONAL MATCH``, it returns ``NULL`` when there are no nodes matching the condition. 
+
+    OPTIONAL MATCH (n:device) 
+    WHERE n.nid = &#39;non-existing&#39;
+    RETURN DISTINCT CASE n WHEN NULL THEN &#39;Failure&#39; ELSE &#39;Success&#39; END",
+        "link": "https://stackoverflow.com/a/65905864",
+        "title": "How to return a specific string instead of (no changes, no records) in Cypher query",
+        "uuid": 65905864
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2986"
+    }
+  },
+  {
+    "q": {
+      "identity": 5540,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "my query below returns &quot;Success&quot; string if node n successfully matched.
+In case it was not matched, the output is &quot;(no changes, no records)&quot; while I expect the query to return &quot;Failure&quot; string.
+I guess this is to do with node n not existing and therefore 
+&#39;with value.rslt&#39; is also not existing which returns nothing.
+How can I get &quot;Failure&quot; return in case node n not matched?
+Thank you
+
+    match(n:device) where n.nid = &#39;non-existing&#39;
+    CALL apoc.do.case(
+    [
+     n is not null, &quot;return &#39;Success&#39; as rslt&quot;
+    ], 
+    &quot;return &#39;Failure&#39; as rslt&quot;,
+    {n:n}
+    ) yield value
+    with  value.rslt  as rslt 
+    return rslt",
+        "link": "https://stackoverflow.com/q/65904123",
+        "creation_date": 1611674618,
+        "answer_count": 1,
+        "title": "How to return a specific string instead of (no changes, no records) in Cypher query",
+        "uuid": 65904123,
+        "view_count": 66
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5540"
+    },
+    "r": {
+      "identity": 1881,
+      "start": 5540,
+      "end": 1682,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1881",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5540",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "all_tags": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "a": {
+      "identity": 2986,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": false,
+        "body_markdown": "You can do ``OPTIONAL MATCH``, it returns ``NULL`` when there are no nodes matching the condition. 
+
+    OPTIONAL MATCH (n:device) 
+    WHERE n.nid = &#39;non-existing&#39;
+    RETURN DISTINCT CASE n WHEN NULL THEN &#39;Failure&#39; ELSE &#39;Success&#39; END",
+        "link": "https://stackoverflow.com/a/65905864",
+        "title": "How to return a specific string instead of (no changes, no records) in Cypher query",
+        "uuid": 65905864
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2986"
+    }
+  },
+  {
+    "q": {
+      "identity": 5540,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "my query below returns &quot;Success&quot; string if node n successfully matched.
+In case it was not matched, the output is &quot;(no changes, no records)&quot; while I expect the query to return &quot;Failure&quot; string.
+I guess this is to do with node n not existing and therefore 
+&#39;with value.rslt&#39; is also not existing which returns nothing.
+How can I get &quot;Failure&quot; return in case node n not matched?
+Thank you
+
+    match(n:device) where n.nid = &#39;non-existing&#39;
+    CALL apoc.do.case(
+    [
+     n is not null, &quot;return &#39;Success&#39; as rslt&quot;
+    ], 
+    &quot;return &#39;Failure&#39; as rslt&quot;,
+    {n:n}
+    ) yield value
+    with  value.rslt  as rslt 
+    return rslt",
+        "link": "https://stackoverflow.com/q/65904123",
+        "creation_date": 1611674618,
+        "answer_count": 1,
+        "title": "How to return a specific string instead of (no changes, no records) in Cypher query",
+        "uuid": 65904123,
+        "view_count": 66
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5540"
+    },
+    "r": {
+      "identity": 1880,
+      "start": 5540,
+      "end": 1679,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1880",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5540",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "a": {
+      "identity": 2986,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": false,
+        "body_markdown": "You can do ``OPTIONAL MATCH``, it returns ``NULL`` when there are no nodes matching the condition. 
+
+    OPTIONAL MATCH (n:device) 
+    WHERE n.nid = &#39;non-existing&#39;
+    RETURN DISTINCT CASE n WHEN NULL THEN &#39;Failure&#39; ELSE &#39;Success&#39; END",
+        "link": "https://stackoverflow.com/a/65905864",
+        "title": "How to return a specific string instead of (no changes, no records) in Cypher query",
+        "uuid": 65905864
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2986"
+    }
+  },
+  {
+    "q": {
+      "identity": 5540,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "my query below returns &quot;Success&quot; string if node n successfully matched.
+In case it was not matched, the output is &quot;(no changes, no records)&quot; while I expect the query to return &quot;Failure&quot; string.
+I guess this is to do with node n not existing and therefore 
+&#39;with value.rslt&#39; is also not existing which returns nothing.
+How can I get &quot;Failure&quot; return in case node n not matched?
+Thank you
+
+    match(n:device) where n.nid = &#39;non-existing&#39;
+    CALL apoc.do.case(
+    [
+     n is not null, &quot;return &#39;Success&#39; as rslt&quot;
+    ], 
+    &quot;return &#39;Failure&#39; as rslt&quot;,
+    {n:n}
+    ) yield value
+    with  value.rslt  as rslt 
+    return rslt",
+        "link": "https://stackoverflow.com/q/65904123",
+        "creation_date": 1611674618,
+        "answer_count": 1,
+        "title": "How to return a specific string instead of (no changes, no records) in Cypher query",
+        "uuid": 65904123,
+        "view_count": 66
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5540"
+    },
+    "r": {
+      "identity": 1881,
+      "start": 5540,
+      "end": 1682,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1881",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5540",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "all_tags": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "a": {
+      "identity": 2986,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": false,
+        "body_markdown": "You can do ``OPTIONAL MATCH``, it returns ``NULL`` when there are no nodes matching the condition. 
+
+    OPTIONAL MATCH (n:device) 
+    WHERE n.nid = &#39;non-existing&#39;
+    RETURN DISTINCT CASE n WHEN NULL THEN &#39;Failure&#39; ELSE &#39;Success&#39; END",
+        "link": "https://stackoverflow.com/a/65905864",
+        "title": "How to return a specific string instead of (no changes, no records) in Cypher query",
+        "uuid": 65905864
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2986"
+    }
+  },
+  {
+    "q": {
+      "identity": 5541,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "we are evaluating in our company the possibilities with neo4j, we are using Java (&gt;1.8), Spring Boot (2.4.2) and SpringData-neo4j (2.4.2) to make simple queries and some performance tests, neo4j is running locally in a docker container using the official docker image. 
+
+This is our setup:
+
+
+the json structure
+
+```
+{
+    &quot;id&quot;: null,
+    &quot;addresses&quot;: [
+      {
+        &quot;id&quot;: null,
+        &quot;city&quot;: &quot;South Thresa&quot;,
+        &quot;country&quot;: &quot;Burundi&quot;,
+        &quot;houseNumber&quot;: &quot;861&quot;,
+        &quot;street&quot;: &quot;Auer Lake&quot;,
+        &quot;zipCode&quot;: &quot;03412&quot;
+      }
+    ],
+    &quot;bankAccounts&quot;: [
+      {
+        &quot;id&quot;: null,
+        &quot;bankAccountNumber&quot;: null,
+        &quot;bankName&quot;: null,
+        &quot;bic&quot;: &quot;QVWPKO5H&quot;,
+        &quot;blz&quot;: null,
+        &quot;countryCode&quot;: null,
+        &quot;divergentAccountHolder&quot;: null,
+        &quot;iban&quot;: &quot;GB87DPZP84667918216002&quot;,
+        &quot;sepaMandates&quot;: [
+          {
+            &quot;id&quot;: null,
+            &quot;bankAccount&quot;: null,
+            &quot;signatureCity&quot;: &quot;Lednerbury&quot;,
+            &quot;signatureDate&quot;: &quot;06.10.1984&quot;
+          }
+        ]
+      }
+    ],
+    &quot;contacts&quot;: [
+      {
+        &quot;id&quot;: null,
+        &quot;email&quot;: &quot;tonisha.mitchell@gmail.com&quot;,
+        &quot;faxNumber&quot;: &quot;087-835-0885 x859&quot;,
+        &quot;mobilePhoneNumber&quot;: &quot;1-615-772-6922&quot;,
+        &quot;phoneNumber&quot;: &quot;(082) 785-8108 x6736&quot;
+      }
+    ],
+    &quot;birthDate&quot;: &quot;07.01.1966&quot;,
+    &quot;firstName&quot;: &quot;Daniel&quot;,
+    &quot;lastName&quot;: &quot;Hartmann&quot;,
+    &quot;salutation&quot;: &quot;Mrs.&quot;,
+    &quot;title&quot;: &quot;Lead Branding Orchestrator&quot;
+  }
+```
+
+Entities:
+
+```
+@Node
+public class Partner {
+    @Id
+    @GeneratedValue
+    public Long id;
+    @Relationship(type = &quot;ADDRESS&quot;, direction = Relationship.Direction.INCOMING)
+    public List&lt;Address&gt; addresses;
+    @Relationship(type = &quot;BANKACCOUNT&quot;, direction = Relationship.Direction.INCOMING)
+    public List&lt;BankAccount&gt; bankAccounts;
+    @Relationship(type = &quot;CONTACTS&quot;, direction = Relationship.Direction.INCOMING)
+    public List&lt;Contact&gt; contacts;
+    @Property
+    public String birthDate;
+    @Property
+    public String firstName;
+    @Property
+    public String lastName;
+    @Property
+    public String salutation;
+    @Property
+    public String title;
+}
+
+@Node
+public class Contact{
+    @Id
+    @GeneratedValue
+    public Long id;
+    @Property
+    public String email;
+    @Property
+    public String faxNumber;
+    @Property
+    public String mobilePhoneNumber;
+    @Property
+    public String phoneNumber;
+
+@Node
+public class BankAccount{
+    @Id
+    @GeneratedValue
+    public Long id;
+    @Property
+    public String bankAccountNumber;
+    @Property
+    public String bankName;
+    @Property
+    public String bic;
+    @Property
+    public String blz;
+    @Property
+    public String countryCode;
+    @Property
+    public String divergentAccountHolder;
+    @Property
+    public String iban;
+    @Relationship(type = &quot;SEPA_MANDAT&quot;)
+    public List&lt;SepaMandate&gt; sepaMandates;
+
+@Node
+public class Address{
+    @Id
+    @GeneratedValue
+    public Long id;
+    @Property
+    public String city;
+    @Property
+    public String country;
+    @Property
+    public String houseNumber;
+    @Property
+    public String street;
+    @Property
+    public String zipCode;
+
+@Node
+public class SepaMandate{
+    @Id
+    @GeneratedValue
+    public Long id;
+    @Property
+    public BankAccount bankAccount;
+    @Property
+    public String signatureCity;
+    @Property
+    public String signatureDate;
+```
+
+Repository:
+
+```
+public interface PartnerRepository extends Neo4jRepository&lt;Partner, Long&gt; {
+  List&lt;Partner&gt; findByLastName(String name);
+}
+```
+
+
+The controller has a endpoint to trigger a massinsert and stops the time
+```
+    @PutMapping(&quot;/partner/initialInsert&quot;)
+    public void createPartner() {
+        List&lt;Partner&gt; partners = mockData();
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        partnerRepository.saveAll(partners);
+        stopWatch.stop();
+        System.err.println(&quot;Created: 100000 partnerEntries  ----&gt;&gt;&gt; Duration ------------&gt; &quot; + stopWatch.toString());
+    }
+```
+
+And some simple query/update and insert endpoints 
+
+```
+    @GetMapping(&quot;/partner&quot;)
+    public List&lt;Partner&gt; getPartnerByLastName(@RequestParam(value = &quot;lastname&quot;) String lastname) {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        List&lt;Partner&gt; partners = partnerRepository.findByLastName(lastname);
+        stopWatch.stop();
+        System.err.println(&quot;Selecting partners by lastname: &quot; +lastname + &quot; took: &quot; + stopWatch.toString() + &quot; and returns: &quot; + partners.size() + &quot; partners&quot;);
+        return partners;
+    }
+
+    @PutMapping(&quot;/partner&quot;)
+    public void createPartner(@RequestBody Partner partner) {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        partnerRepository.save(partner);
+        stopWatch.stop();
+        System.err.println(&quot;Updating/Inserting partner took: &quot; + stopWatch.toString());
+    }
+
+    @PostMapping(&quot;/partner/bulk&quot;)
+    public void bulkUpdatePartner(@RequestBody List&lt;Partner&gt; partners) {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        partnerRepository.saveAll(partners);
+        stopWatch.stop();
+        System.err.println(&quot;Updating/Inserting partner took: &quot; + stopWatch.toString());
+    }
+```
+
+
+***Here are our test results:***
+
+**Inserting random data using which inserts via bulk saveAll().**
+
+- Created: 1000   partnerEntries ----&gt;&gt;&gt; Duration ------&gt; 00:00:29.775
+- Created: 10000  partnerEntries ----&gt;&gt;&gt; Duration ------&gt; 00:04:40.259
+- Created: 100000 partnerEntries ----&gt;&gt;&gt; Duration ------&gt; 00:53:48.862
+
+
+**Selecting data via lastname severals times**
+- Selecting partners by lastname: Borer took: 00:00:00.404 and returns: 257 partners
+- Selecting partners by lastname: Borer took: 00:00:00.219 and returns: 257 partners
+- Selecting partners by lastname: Borer took: 00:00:00.173 and returns: 257 partners
+- Selecting partners by lastname: Borer took: 00:00:00.239 and returns: 257 partners
+- Selecting partners by lastname: Borer took: 00:00:00.194 and returns: 257 partners
+- Selecting partners by lastname: Borer took: 00:00:00.266 and returns: 257 partners
+
+**Updating/Inserting a single entry:**
+
+- Updating partner took: 00:00:00.297
+- Inserting partner took: 00:00:00.124
+
+**Update bulk 256 partners using jpa:**
+
+- Updating partner took: 00:00:08.931
+
+**Update bulk 256 partner using Session-Object without jpa:**
+
+- Updating partner took: 00:00:00.090
+
+
+We are really curious about that the mass-insert with the jpa function saveAll() is taking &gt; 50min for inserting 100.000 objects and difference between updating 256 entries via jpa and the session-Object.
+Now the question, are we doing something wrong, we tried to use a simple setup without any specialcases, is there a problem with the spring-data integration or do you guys have simular problems? I&#39;m looking forward to here your experiences with neo4j :-)
+
+Greets Dan :)
+
+
+P.S: this is how we update with the session object
+
+```
+try (Session session = driver.session()) {
+            session.run(&quot;MATCH (a:Partner {lastName: &#39;Borer&#39;}) SET a.firstName = &#39;&quot; + firstname + &quot;&#39;&quot;);
+}
+```",
+        "link": "https://stackoverflow.com/q/65903344",
+        "creation_date": 1611671773,
+        "title": "Spring Boot neo4j performance",
+        "answer_count": 0,
+        "uuid": 65903344,
+        "view_count": 34
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5541"
+    },
+    "r": {
+      "identity": 1883,
+      "start": 5541,
+      "end": 1679,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1883",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5541",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "a": null
+  },
+  {
+    "q": {
+      "identity": 5541,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "we are evaluating in our company the possibilities with neo4j, we are using Java (&gt;1.8), Spring Boot (2.4.2) and SpringData-neo4j (2.4.2) to make simple queries and some performance tests, neo4j is running locally in a docker container using the official docker image. 
+
+This is our setup:
+
+
+the json structure
+
+```
+{
+    &quot;id&quot;: null,
+    &quot;addresses&quot;: [
+      {
+        &quot;id&quot;: null,
+        &quot;city&quot;: &quot;South Thresa&quot;,
+        &quot;country&quot;: &quot;Burundi&quot;,
+        &quot;houseNumber&quot;: &quot;861&quot;,
+        &quot;street&quot;: &quot;Auer Lake&quot;,
+        &quot;zipCode&quot;: &quot;03412&quot;
+      }
+    ],
+    &quot;bankAccounts&quot;: [
+      {
+        &quot;id&quot;: null,
+        &quot;bankAccountNumber&quot;: null,
+        &quot;bankName&quot;: null,
+        &quot;bic&quot;: &quot;QVWPKO5H&quot;,
+        &quot;blz&quot;: null,
+        &quot;countryCode&quot;: null,
+        &quot;divergentAccountHolder&quot;: null,
+        &quot;iban&quot;: &quot;GB87DPZP84667918216002&quot;,
+        &quot;sepaMandates&quot;: [
+          {
+            &quot;id&quot;: null,
+            &quot;bankAccount&quot;: null,
+            &quot;signatureCity&quot;: &quot;Lednerbury&quot;,
+            &quot;signatureDate&quot;: &quot;06.10.1984&quot;
+          }
+        ]
+      }
+    ],
+    &quot;contacts&quot;: [
+      {
+        &quot;id&quot;: null,
+        &quot;email&quot;: &quot;tonisha.mitchell@gmail.com&quot;,
+        &quot;faxNumber&quot;: &quot;087-835-0885 x859&quot;,
+        &quot;mobilePhoneNumber&quot;: &quot;1-615-772-6922&quot;,
+        &quot;phoneNumber&quot;: &quot;(082) 785-8108 x6736&quot;
+      }
+    ],
+    &quot;birthDate&quot;: &quot;07.01.1966&quot;,
+    &quot;firstName&quot;: &quot;Daniel&quot;,
+    &quot;lastName&quot;: &quot;Hartmann&quot;,
+    &quot;salutation&quot;: &quot;Mrs.&quot;,
+    &quot;title&quot;: &quot;Lead Branding Orchestrator&quot;
+  }
+```
+
+Entities:
+
+```
+@Node
+public class Partner {
+    @Id
+    @GeneratedValue
+    public Long id;
+    @Relationship(type = &quot;ADDRESS&quot;, direction = Relationship.Direction.INCOMING)
+    public List&lt;Address&gt; addresses;
+    @Relationship(type = &quot;BANKACCOUNT&quot;, direction = Relationship.Direction.INCOMING)
+    public List&lt;BankAccount&gt; bankAccounts;
+    @Relationship(type = &quot;CONTACTS&quot;, direction = Relationship.Direction.INCOMING)
+    public List&lt;Contact&gt; contacts;
+    @Property
+    public String birthDate;
+    @Property
+    public String firstName;
+    @Property
+    public String lastName;
+    @Property
+    public String salutation;
+    @Property
+    public String title;
+}
+
+@Node
+public class Contact{
+    @Id
+    @GeneratedValue
+    public Long id;
+    @Property
+    public String email;
+    @Property
+    public String faxNumber;
+    @Property
+    public String mobilePhoneNumber;
+    @Property
+    public String phoneNumber;
+
+@Node
+public class BankAccount{
+    @Id
+    @GeneratedValue
+    public Long id;
+    @Property
+    public String bankAccountNumber;
+    @Property
+    public String bankName;
+    @Property
+    public String bic;
+    @Property
+    public String blz;
+    @Property
+    public String countryCode;
+    @Property
+    public String divergentAccountHolder;
+    @Property
+    public String iban;
+    @Relationship(type = &quot;SEPA_MANDAT&quot;)
+    public List&lt;SepaMandate&gt; sepaMandates;
+
+@Node
+public class Address{
+    @Id
+    @GeneratedValue
+    public Long id;
+    @Property
+    public String city;
+    @Property
+    public String country;
+    @Property
+    public String houseNumber;
+    @Property
+    public String street;
+    @Property
+    public String zipCode;
+
+@Node
+public class SepaMandate{
+    @Id
+    @GeneratedValue
+    public Long id;
+    @Property
+    public BankAccount bankAccount;
+    @Property
+    public String signatureCity;
+    @Property
+    public String signatureDate;
+```
+
+Repository:
+
+```
+public interface PartnerRepository extends Neo4jRepository&lt;Partner, Long&gt; {
+  List&lt;Partner&gt; findByLastName(String name);
+}
+```
+
+
+The controller has a endpoint to trigger a massinsert and stops the time
+```
+    @PutMapping(&quot;/partner/initialInsert&quot;)
+    public void createPartner() {
+        List&lt;Partner&gt; partners = mockData();
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        partnerRepository.saveAll(partners);
+        stopWatch.stop();
+        System.err.println(&quot;Created: 100000 partnerEntries  ----&gt;&gt;&gt; Duration ------------&gt; &quot; + stopWatch.toString());
+    }
+```
+
+And some simple query/update and insert endpoints 
+
+```
+    @GetMapping(&quot;/partner&quot;)
+    public List&lt;Partner&gt; getPartnerByLastName(@RequestParam(value = &quot;lastname&quot;) String lastname) {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        List&lt;Partner&gt; partners = partnerRepository.findByLastName(lastname);
+        stopWatch.stop();
+        System.err.println(&quot;Selecting partners by lastname: &quot; +lastname + &quot; took: &quot; + stopWatch.toString() + &quot; and returns: &quot; + partners.size() + &quot; partners&quot;);
+        return partners;
+    }
+
+    @PutMapping(&quot;/partner&quot;)
+    public void createPartner(@RequestBody Partner partner) {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        partnerRepository.save(partner);
+        stopWatch.stop();
+        System.err.println(&quot;Updating/Inserting partner took: &quot; + stopWatch.toString());
+    }
+
+    @PostMapping(&quot;/partner/bulk&quot;)
+    public void bulkUpdatePartner(@RequestBody List&lt;Partner&gt; partners) {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        partnerRepository.saveAll(partners);
+        stopWatch.stop();
+        System.err.println(&quot;Updating/Inserting partner took: &quot; + stopWatch.toString());
+    }
+```
+
+
+***Here are our test results:***
+
+**Inserting random data using which inserts via bulk saveAll().**
+
+- Created: 1000   partnerEntries ----&gt;&gt;&gt; Duration ------&gt; 00:00:29.775
+- Created: 10000  partnerEntries ----&gt;&gt;&gt; Duration ------&gt; 00:04:40.259
+- Created: 100000 partnerEntries ----&gt;&gt;&gt; Duration ------&gt; 00:53:48.862
+
+
+**Selecting data via lastname severals times**
+- Selecting partners by lastname: Borer took: 00:00:00.404 and returns: 257 partners
+- Selecting partners by lastname: Borer took: 00:00:00.219 and returns: 257 partners
+- Selecting partners by lastname: Borer took: 00:00:00.173 and returns: 257 partners
+- Selecting partners by lastname: Borer took: 00:00:00.239 and returns: 257 partners
+- Selecting partners by lastname: Borer took: 00:00:00.194 and returns: 257 partners
+- Selecting partners by lastname: Borer took: 00:00:00.266 and returns: 257 partners
+
+**Updating/Inserting a single entry:**
+
+- Updating partner took: 00:00:00.297
+- Inserting partner took: 00:00:00.124
+
+**Update bulk 256 partners using jpa:**
+
+- Updating partner took: 00:00:08.931
+
+**Update bulk 256 partner using Session-Object without jpa:**
+
+- Updating partner took: 00:00:00.090
+
+
+We are really curious about that the mass-insert with the jpa function saveAll() is taking &gt; 50min for inserting 100.000 objects and difference between updating 256 entries via jpa and the session-Object.
+Now the question, are we doing something wrong, we tried to use a simple setup without any specialcases, is there a problem with the spring-data integration or do you guys have simular problems? I&#39;m looking forward to here your experiences with neo4j :-)
+
+Greets Dan :)
+
+
+P.S: this is how we update with the session object
+
+```
+try (Session session = driver.session()) {
+            session.run(&quot;MATCH (a:Partner {lastName: &#39;Borer&#39;}) SET a.firstName = &#39;&quot; + firstname + &quot;&#39;&quot;);
+}
+```",
+        "link": "https://stackoverflow.com/q/65903344",
+        "creation_date": 1611671773,
+        "title": "Spring Boot neo4j performance",
+        "answer_count": 0,
+        "uuid": 65903344,
+        "view_count": 34
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5541"
+    },
+    "r": {
+      "identity": 1882,
+      "start": 5541,
+      "end": 1686,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1882",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5541",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1686"
+    },
+    "all_tags": {
+      "identity": 1686,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "spring-boot",
+        "link": "https://stackoverflow.com/questions/tagged/spring-boot"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1686"
+    },
+    "a": null
+  },
+  {
+    "q": {
+      "identity": 5541,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "we are evaluating in our company the possibilities with neo4j, we are using Java (&gt;1.8), Spring Boot (2.4.2) and SpringData-neo4j (2.4.2) to make simple queries and some performance tests, neo4j is running locally in a docker container using the official docker image. 
+
+This is our setup:
+
+
+the json structure
+
+```
+{
+    &quot;id&quot;: null,
+    &quot;addresses&quot;: [
+      {
+        &quot;id&quot;: null,
+        &quot;city&quot;: &quot;South Thresa&quot;,
+        &quot;country&quot;: &quot;Burundi&quot;,
+        &quot;houseNumber&quot;: &quot;861&quot;,
+        &quot;street&quot;: &quot;Auer Lake&quot;,
+        &quot;zipCode&quot;: &quot;03412&quot;
+      }
+    ],
+    &quot;bankAccounts&quot;: [
+      {
+        &quot;id&quot;: null,
+        &quot;bankAccountNumber&quot;: null,
+        &quot;bankName&quot;: null,
+        &quot;bic&quot;: &quot;QVWPKO5H&quot;,
+        &quot;blz&quot;: null,
+        &quot;countryCode&quot;: null,
+        &quot;divergentAccountHolder&quot;: null,
+        &quot;iban&quot;: &quot;GB87DPZP84667918216002&quot;,
+        &quot;sepaMandates&quot;: [
+          {
+            &quot;id&quot;: null,
+            &quot;bankAccount&quot;: null,
+            &quot;signatureCity&quot;: &quot;Lednerbury&quot;,
+            &quot;signatureDate&quot;: &quot;06.10.1984&quot;
+          }
+        ]
+      }
+    ],
+    &quot;contacts&quot;: [
+      {
+        &quot;id&quot;: null,
+        &quot;email&quot;: &quot;tonisha.mitchell@gmail.com&quot;,
+        &quot;faxNumber&quot;: &quot;087-835-0885 x859&quot;,
+        &quot;mobilePhoneNumber&quot;: &quot;1-615-772-6922&quot;,
+        &quot;phoneNumber&quot;: &quot;(082) 785-8108 x6736&quot;
+      }
+    ],
+    &quot;birthDate&quot;: &quot;07.01.1966&quot;,
+    &quot;firstName&quot;: &quot;Daniel&quot;,
+    &quot;lastName&quot;: &quot;Hartmann&quot;,
+    &quot;salutation&quot;: &quot;Mrs.&quot;,
+    &quot;title&quot;: &quot;Lead Branding Orchestrator&quot;
+  }
+```
+
+Entities:
+
+```
+@Node
+public class Partner {
+    @Id
+    @GeneratedValue
+    public Long id;
+    @Relationship(type = &quot;ADDRESS&quot;, direction = Relationship.Direction.INCOMING)
+    public List&lt;Address&gt; addresses;
+    @Relationship(type = &quot;BANKACCOUNT&quot;, direction = Relationship.Direction.INCOMING)
+    public List&lt;BankAccount&gt; bankAccounts;
+    @Relationship(type = &quot;CONTACTS&quot;, direction = Relationship.Direction.INCOMING)
+    public List&lt;Contact&gt; contacts;
+    @Property
+    public String birthDate;
+    @Property
+    public String firstName;
+    @Property
+    public String lastName;
+    @Property
+    public String salutation;
+    @Property
+    public String title;
+}
+
+@Node
+public class Contact{
+    @Id
+    @GeneratedValue
+    public Long id;
+    @Property
+    public String email;
+    @Property
+    public String faxNumber;
+    @Property
+    public String mobilePhoneNumber;
+    @Property
+    public String phoneNumber;
+
+@Node
+public class BankAccount{
+    @Id
+    @GeneratedValue
+    public Long id;
+    @Property
+    public String bankAccountNumber;
+    @Property
+    public String bankName;
+    @Property
+    public String bic;
+    @Property
+    public String blz;
+    @Property
+    public String countryCode;
+    @Property
+    public String divergentAccountHolder;
+    @Property
+    public String iban;
+    @Relationship(type = &quot;SEPA_MANDAT&quot;)
+    public List&lt;SepaMandate&gt; sepaMandates;
+
+@Node
+public class Address{
+    @Id
+    @GeneratedValue
+    public Long id;
+    @Property
+    public String city;
+    @Property
+    public String country;
+    @Property
+    public String houseNumber;
+    @Property
+    public String street;
+    @Property
+    public String zipCode;
+
+@Node
+public class SepaMandate{
+    @Id
+    @GeneratedValue
+    public Long id;
+    @Property
+    public BankAccount bankAccount;
+    @Property
+    public String signatureCity;
+    @Property
+    public String signatureDate;
+```
+
+Repository:
+
+```
+public interface PartnerRepository extends Neo4jRepository&lt;Partner, Long&gt; {
+  List&lt;Partner&gt; findByLastName(String name);
+}
+```
+
+
+The controller has a endpoint to trigger a massinsert and stops the time
+```
+    @PutMapping(&quot;/partner/initialInsert&quot;)
+    public void createPartner() {
+        List&lt;Partner&gt; partners = mockData();
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        partnerRepository.saveAll(partners);
+        stopWatch.stop();
+        System.err.println(&quot;Created: 100000 partnerEntries  ----&gt;&gt;&gt; Duration ------------&gt; &quot; + stopWatch.toString());
+    }
+```
+
+And some simple query/update and insert endpoints 
+
+```
+    @GetMapping(&quot;/partner&quot;)
+    public List&lt;Partner&gt; getPartnerByLastName(@RequestParam(value = &quot;lastname&quot;) String lastname) {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        List&lt;Partner&gt; partners = partnerRepository.findByLastName(lastname);
+        stopWatch.stop();
+        System.err.println(&quot;Selecting partners by lastname: &quot; +lastname + &quot; took: &quot; + stopWatch.toString() + &quot; and returns: &quot; + partners.size() + &quot; partners&quot;);
+        return partners;
+    }
+
+    @PutMapping(&quot;/partner&quot;)
+    public void createPartner(@RequestBody Partner partner) {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        partnerRepository.save(partner);
+        stopWatch.stop();
+        System.err.println(&quot;Updating/Inserting partner took: &quot; + stopWatch.toString());
+    }
+
+    @PostMapping(&quot;/partner/bulk&quot;)
+    public void bulkUpdatePartner(@RequestBody List&lt;Partner&gt; partners) {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        partnerRepository.saveAll(partners);
+        stopWatch.stop();
+        System.err.println(&quot;Updating/Inserting partner took: &quot; + stopWatch.toString());
+    }
+```
+
+
+***Here are our test results:***
+
+**Inserting random data using which inserts via bulk saveAll().**
+
+- Created: 1000   partnerEntries ----&gt;&gt;&gt; Duration ------&gt; 00:00:29.775
+- Created: 10000  partnerEntries ----&gt;&gt;&gt; Duration ------&gt; 00:04:40.259
+- Created: 100000 partnerEntries ----&gt;&gt;&gt; Duration ------&gt; 00:53:48.862
+
+
+**Selecting data via lastname severals times**
+- Selecting partners by lastname: Borer took: 00:00:00.404 and returns: 257 partners
+- Selecting partners by lastname: Borer took: 00:00:00.219 and returns: 257 partners
+- Selecting partners by lastname: Borer took: 00:00:00.173 and returns: 257 partners
+- Selecting partners by lastname: Borer took: 00:00:00.239 and returns: 257 partners
+- Selecting partners by lastname: Borer took: 00:00:00.194 and returns: 257 partners
+- Selecting partners by lastname: Borer took: 00:00:00.266 and returns: 257 partners
+
+**Updating/Inserting a single entry:**
+
+- Updating partner took: 00:00:00.297
+- Inserting partner took: 00:00:00.124
+
+**Update bulk 256 partners using jpa:**
+
+- Updating partner took: 00:00:08.931
+
+**Update bulk 256 partner using Session-Object without jpa:**
+
+- Updating partner took: 00:00:00.090
+
+
+We are really curious about that the mass-insert with the jpa function saveAll() is taking &gt; 50min for inserting 100.000 objects and difference between updating 256 entries via jpa and the session-Object.
+Now the question, are we doing something wrong, we tried to use a simple setup without any specialcases, is there a problem with the spring-data integration or do you guys have simular problems? I&#39;m looking forward to here your experiences with neo4j :-)
+
+Greets Dan :)
+
+
+P.S: this is how we update with the session object
+
+```
+try (Session session = driver.session()) {
+            session.run(&quot;MATCH (a:Partner {lastName: &#39;Borer&#39;}) SET a.firstName = &#39;&quot; + firstname + &quot;&#39;&quot;);
+}
+```",
+        "link": "https://stackoverflow.com/q/65903344",
+        "creation_date": 1611671773,
+        "title": "Spring Boot neo4j performance",
+        "answer_count": 0,
+        "uuid": 65903344,
+        "view_count": 34
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5541"
+    },
+    "r": {
+      "identity": 1884,
+      "start": 5541,
+      "end": 1718,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1884",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5541",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1718"
+    },
+    "all_tags": {
+      "identity": 1718,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "spring-data-neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/spring-data-neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1718"
+    },
+    "a": null
+  },
+  {
+    "q": {
+      "identity": 5542,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 65903393,
+        "body_markdown": "I am using Apache Tinkerpop&#39;s Gremlin language to interact with a Neo4J database. I am able to use the `Neo4jGraph.open(&quot;/path/to/folder&quot;)` method (from `org.apache.tinkerpop.gremlin.neo4j.structure.Neo4jGraph`) to create a new local database. 
+
+The Neo4J files populate the folder, so I know a database is being created. When I call `.open` again with the same path from within a unit test, it seems like the database files are being overwritten by a new database instance. Any vertices added previously are no longer in the database. Is it possible to reopen a previously created database with this method, or will a new instance always be generated?",
+        "link": "https://stackoverflow.com/q/65903194",
+        "creation_date": 1611671241,
+        "answer_count": 1,
+        "title": "Can Apache Tinkerpop&#39;s Neo4jGraph.open() open a database from the file system?",
+        "uuid": 65903194,
+        "view_count": 42
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5542"
+    },
+    "r": {
+      "identity": 1885,
+      "start": 5542,
+      "end": 1695,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1885",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5542",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1695"
+    },
+    "all_tags": {
+      "identity": 1695,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "java",
+        "link": "https://stackoverflow.com/questions/tagged/java"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1695"
+    },
+    "a": {
+      "identity": 2987,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": true,
+        "body_markdown": "I would expect `Neo4jGraph.open(path)` to open an existing graph if present at that path or create a new one if it does not find one. I would not expect it to overwrite. I assume that you are not committing your transaction in your unit test prior to closing your graph:
+
+    gremlin&gt; graph = Neo4jGraph.open(&#39;/tmp/neo4j&#39;)
+    ==&gt;neo4jgraph[community single [/tmp/neo4j]]
+    gremlin&gt; g = graph.traversal()
+    ==&gt;graphtraversalsource[neo4jgraph[community single [/tmp/neo4j]], standard]
+    gremlin&gt; g.addV(&#39;person&#39;).property(&#39;name&#39;,&#39;marko&#39;)
+    ==&gt;v[0]
+    gremlin&gt; graph.close()
+    ==&gt;null
+    gremlin&gt; graph = Neo4jGraph.open(&#39;/tmp/neo4j&#39;)
+    ==&gt;neo4jgraph[community single [/tmp/neo4j]]
+    gremlin&gt; g = graph.traversal()
+    ==&gt;graphtraversalsource[neo4jgraph[community single [/tmp/neo4j]], standard]
+    gremlin&gt; g.V()
+    gremlin&gt; g.addV(&#39;person&#39;).property(&#39;name&#39;,&#39;marko&#39;)
+    ==&gt;v[0]
+    gremlin&gt; g.tx().commit()
+    ==&gt;null
+    gremlin&gt; graph.close()
+    ==&gt;null
+    gremlin&gt; graph = Neo4jGraph.open(&#39;/tmp/neo4j&#39;)
+    ==&gt;neo4jgraph[community single [/tmp/neo4j]]
+    gremlin&gt; g = graph.traversal()
+    ==&gt;graphtraversalsource[neo4jgraph[community single [/tmp/neo4j]], standard]
+    gremlin&gt; g.V()
+    ==&gt;v[0]
+
+As you can see, if I `close()` without `g.tx().commit()` and then re-open the graph the vertex I added is not present. However, with a call to `commit()` I can re-open and get my vertex. ",
+        "link": "https://stackoverflow.com/a/65903393",
+        "title": "Can Apache Tinkerpop&#39;s Neo4jGraph.open() open a database from the file system?",
+        "uuid": 65903393
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2987"
+    }
+  },
+  {
+    "q": {
+      "identity": 5542,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 65903393,
+        "body_markdown": "I am using Apache Tinkerpop&#39;s Gremlin language to interact with a Neo4J database. I am able to use the `Neo4jGraph.open(&quot;/path/to/folder&quot;)` method (from `org.apache.tinkerpop.gremlin.neo4j.structure.Neo4jGraph`) to create a new local database. 
+
+The Neo4J files populate the folder, so I know a database is being created. When I call `.open` again with the same path from within a unit test, it seems like the database files are being overwritten by a new database instance. Any vertices added previously are no longer in the database. Is it possible to reopen a previously created database with this method, or will a new instance always be generated?",
+        "link": "https://stackoverflow.com/q/65903194",
+        "creation_date": 1611671241,
+        "answer_count": 1,
+        "title": "Can Apache Tinkerpop&#39;s Neo4jGraph.open() open a database from the file system?",
+        "uuid": 65903194,
+        "view_count": 42
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5542"
+    },
+    "r": {
+      "identity": 1886,
+      "start": 5542,
+      "end": 1679,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1886",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5542",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "a": {
+      "identity": 2987,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": true,
+        "body_markdown": "I would expect `Neo4jGraph.open(path)` to open an existing graph if present at that path or create a new one if it does not find one. I would not expect it to overwrite. I assume that you are not committing your transaction in your unit test prior to closing your graph:
+
+    gremlin&gt; graph = Neo4jGraph.open(&#39;/tmp/neo4j&#39;)
+    ==&gt;neo4jgraph[community single [/tmp/neo4j]]
+    gremlin&gt; g = graph.traversal()
+    ==&gt;graphtraversalsource[neo4jgraph[community single [/tmp/neo4j]], standard]
+    gremlin&gt; g.addV(&#39;person&#39;).property(&#39;name&#39;,&#39;marko&#39;)
+    ==&gt;v[0]
+    gremlin&gt; graph.close()
+    ==&gt;null
+    gremlin&gt; graph = Neo4jGraph.open(&#39;/tmp/neo4j&#39;)
+    ==&gt;neo4jgraph[community single [/tmp/neo4j]]
+    gremlin&gt; g = graph.traversal()
+    ==&gt;graphtraversalsource[neo4jgraph[community single [/tmp/neo4j]], standard]
+    gremlin&gt; g.V()
+    gremlin&gt; g.addV(&#39;person&#39;).property(&#39;name&#39;,&#39;marko&#39;)
+    ==&gt;v[0]
+    gremlin&gt; g.tx().commit()
+    ==&gt;null
+    gremlin&gt; graph.close()
+    ==&gt;null
+    gremlin&gt; graph = Neo4jGraph.open(&#39;/tmp/neo4j&#39;)
+    ==&gt;neo4jgraph[community single [/tmp/neo4j]]
+    gremlin&gt; g = graph.traversal()
+    ==&gt;graphtraversalsource[neo4jgraph[community single [/tmp/neo4j]], standard]
+    gremlin&gt; g.V()
+    ==&gt;v[0]
+
+As you can see, if I `close()` without `g.tx().commit()` and then re-open the graph the vertex I added is not present. However, with a call to `commit()` I can re-open and get my vertex. ",
+        "link": "https://stackoverflow.com/a/65903393",
+        "title": "Can Apache Tinkerpop&#39;s Neo4jGraph.open() open a database from the file system?",
+        "uuid": 65903393
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2987"
+    }
+  },
+  {
+    "q": {
+      "identity": 5542,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 65903393,
+        "body_markdown": "I am using Apache Tinkerpop&#39;s Gremlin language to interact with a Neo4J database. I am able to use the `Neo4jGraph.open(&quot;/path/to/folder&quot;)` method (from `org.apache.tinkerpop.gremlin.neo4j.structure.Neo4jGraph`) to create a new local database. 
+
+The Neo4J files populate the folder, so I know a database is being created. When I call `.open` again with the same path from within a unit test, it seems like the database files are being overwritten by a new database instance. Any vertices added previously are no longer in the database. Is it possible to reopen a previously created database with this method, or will a new instance always be generated?",
+        "link": "https://stackoverflow.com/q/65903194",
+        "creation_date": 1611671241,
+        "answer_count": 1,
+        "title": "Can Apache Tinkerpop&#39;s Neo4jGraph.open() open a database from the file system?",
+        "uuid": 65903194,
+        "view_count": 42
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5542"
+    },
+    "r": {
+      "identity": 1887,
+      "start": 5542,
+      "end": 1737,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1887",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5542",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1737"
+    },
+    "all_tags": {
+      "identity": 1737,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "gremlin",
+        "link": "https://stackoverflow.com/questions/tagged/gremlin"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1737"
+    },
+    "a": {
+      "identity": 2987,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": true,
+        "body_markdown": "I would expect `Neo4jGraph.open(path)` to open an existing graph if present at that path or create a new one if it does not find one. I would not expect it to overwrite. I assume that you are not committing your transaction in your unit test prior to closing your graph:
+
+    gremlin&gt; graph = Neo4jGraph.open(&#39;/tmp/neo4j&#39;)
+    ==&gt;neo4jgraph[community single [/tmp/neo4j]]
+    gremlin&gt; g = graph.traversal()
+    ==&gt;graphtraversalsource[neo4jgraph[community single [/tmp/neo4j]], standard]
+    gremlin&gt; g.addV(&#39;person&#39;).property(&#39;name&#39;,&#39;marko&#39;)
+    ==&gt;v[0]
+    gremlin&gt; graph.close()
+    ==&gt;null
+    gremlin&gt; graph = Neo4jGraph.open(&#39;/tmp/neo4j&#39;)
+    ==&gt;neo4jgraph[community single [/tmp/neo4j]]
+    gremlin&gt; g = graph.traversal()
+    ==&gt;graphtraversalsource[neo4jgraph[community single [/tmp/neo4j]], standard]
+    gremlin&gt; g.V()
+    gremlin&gt; g.addV(&#39;person&#39;).property(&#39;name&#39;,&#39;marko&#39;)
+    ==&gt;v[0]
+    gremlin&gt; g.tx().commit()
+    ==&gt;null
+    gremlin&gt; graph.close()
+    ==&gt;null
+    gremlin&gt; graph = Neo4jGraph.open(&#39;/tmp/neo4j&#39;)
+    ==&gt;neo4jgraph[community single [/tmp/neo4j]]
+    gremlin&gt; g = graph.traversal()
+    ==&gt;graphtraversalsource[neo4jgraph[community single [/tmp/neo4j]], standard]
+    gremlin&gt; g.V()
+    ==&gt;v[0]
+
+As you can see, if I `close()` without `g.tx().commit()` and then re-open the graph the vertex I added is not present. However, with a call to `commit()` I can re-open and get my vertex. ",
+        "link": "https://stackoverflow.com/a/65903393",
+        "title": "Can Apache Tinkerpop&#39;s Neo4jGraph.open() open a database from the file system?",
+        "uuid": 65903393
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2987"
+    }
+  },
+  {
+    "q": {
+      "identity": 5542,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 65903393,
+        "body_markdown": "I am using Apache Tinkerpop&#39;s Gremlin language to interact with a Neo4J database. I am able to use the `Neo4jGraph.open(&quot;/path/to/folder&quot;)` method (from `org.apache.tinkerpop.gremlin.neo4j.structure.Neo4jGraph`) to create a new local database. 
+
+The Neo4J files populate the folder, so I know a database is being created. When I call `.open` again with the same path from within a unit test, it seems like the database files are being overwritten by a new database instance. Any vertices added previously are no longer in the database. Is it possible to reopen a previously created database with this method, or will a new instance always be generated?",
+        "link": "https://stackoverflow.com/q/65903194",
+        "creation_date": 1611671241,
+        "answer_count": 1,
+        "title": "Can Apache Tinkerpop&#39;s Neo4jGraph.open() open a database from the file system?",
+        "uuid": 65903194,
+        "view_count": 42
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5542"
+    },
+    "r": {
+      "identity": 1888,
+      "start": 5542,
+      "end": 2060,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1888",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5542",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2060"
+    },
+    "all_tags": {
+      "identity": 2060,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "tinkerpop",
+        "link": "https://stackoverflow.com/questions/tagged/tinkerpop"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2060"
+    },
+    "a": {
+      "identity": 2987,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": true,
+        "body_markdown": "I would expect `Neo4jGraph.open(path)` to open an existing graph if present at that path or create a new one if it does not find one. I would not expect it to overwrite. I assume that you are not committing your transaction in your unit test prior to closing your graph:
+
+    gremlin&gt; graph = Neo4jGraph.open(&#39;/tmp/neo4j&#39;)
+    ==&gt;neo4jgraph[community single [/tmp/neo4j]]
+    gremlin&gt; g = graph.traversal()
+    ==&gt;graphtraversalsource[neo4jgraph[community single [/tmp/neo4j]], standard]
+    gremlin&gt; g.addV(&#39;person&#39;).property(&#39;name&#39;,&#39;marko&#39;)
+    ==&gt;v[0]
+    gremlin&gt; graph.close()
+    ==&gt;null
+    gremlin&gt; graph = Neo4jGraph.open(&#39;/tmp/neo4j&#39;)
+    ==&gt;neo4jgraph[community single [/tmp/neo4j]]
+    gremlin&gt; g = graph.traversal()
+    ==&gt;graphtraversalsource[neo4jgraph[community single [/tmp/neo4j]], standard]
+    gremlin&gt; g.V()
+    gremlin&gt; g.addV(&#39;person&#39;).property(&#39;name&#39;,&#39;marko&#39;)
+    ==&gt;v[0]
+    gremlin&gt; g.tx().commit()
+    ==&gt;null
+    gremlin&gt; graph.close()
+    ==&gt;null
+    gremlin&gt; graph = Neo4jGraph.open(&#39;/tmp/neo4j&#39;)
+    ==&gt;neo4jgraph[community single [/tmp/neo4j]]
+    gremlin&gt; g = graph.traversal()
+    ==&gt;graphtraversalsource[neo4jgraph[community single [/tmp/neo4j]], standard]
+    gremlin&gt; g.V()
+    ==&gt;v[0]
+
+As you can see, if I `close()` without `g.tx().commit()` and then re-open the graph the vertex I added is not present. However, with a call to `commit()` I can re-open and get my vertex. ",
+        "link": "https://stackoverflow.com/a/65903393",
+        "title": "Can Apache Tinkerpop&#39;s Neo4jGraph.open() open a database from the file system?",
+        "uuid": 65903393
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2987"
+    }
+  },
+  {
+    "q": {
+      "identity": 5543,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I am currently doing some manual analysis of the data in neo4j data base gathered with the [BloodHound][1] tool. 
+
+When doing manual queries I can see a &#39;Base&#39; type node that is not introduced in the BloodHound documentation.
+
+`MATCH (n) RETURN distinct labels(n)` returns:
+```
+[&quot;Base&quot;, &quot;User&quot;]
+[&quot;Base&quot;, &quot;Group&quot;]
+[&quot;Base&quot;]
+[&quot;Base&quot;, &quot;Computer&quot;]
+[&quot;Base&quot;, &quot;Domain&quot;]
+[&quot;Base&quot;, &quot;GPO&quot;]
+[&quot;Base&quot;, &quot;OU&quot;]
+```
+
+When checking properties of the Base nodes they seem to take properties of other node types.
+
+
+My question is what exactly are those &#39;Base&#39; nodes?
+I tried to find this info in BloodHound and Neo4j documentation but with no success.
+
+  [1]: https://github.com/BloodHoundAD/BloodHound",
+        "link": "https://stackoverflow.com/q/65900170",
+        "creation_date": 1611659229,
+        "title": "What are Base nodes?",
+        "answer_count": 2,
+        "uuid": 65900170,
+        "view_count": 57
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5543"
+    },
+    "r": {
+      "identity": 1890,
+      "start": 5543,
+      "end": 1959,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1890",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5543",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1959"
+    },
+    "all_tags": {
+      "identity": 1959,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "bloodhound",
+        "link": "https://stackoverflow.com/questions/tagged/bloodhound"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1959"
+    },
+    "a": {
+      "identity": 2989,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": false,
+        "body_markdown": "The Base label, as previously suggested, has nothing to do with Neo internals.
+
+While the documentation for the tool does not address the base label, the source code provides some hints. I recommend looking at these:
+- https://github.com/BloodHoundAD/BloodHound/blob/08a3469c523b4066e8e5248bdbcfb985acab5117/src/js/newingestion.js
+- https://github.com/BloodHoundAD/BloodHound/blob/08a3469c523b4066e8e5248bdbcfb985acab5117/src/js/newingestion.js
+- https://github.com/BloodHoundAD/BloodHound/blob/67cf1dee4f6c8d77a71b3eceb49b4040a5eb9550/src/components/Graph.jsx
+
+Base appears to be a convenience grouping. It is common to have multiple labels for any node. For example, you can have UserAccount nodes (~Base) that have also other labels that define the role of any specific UserAccount.
+",
+        "link": "https://stackoverflow.com/a/65912038",
+        "title": "What are Base nodes?",
+        "uuid": 65912038
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2989"
+    }
+  },
+  {
+    "q": {
+      "identity": 5543,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I am currently doing some manual analysis of the data in neo4j data base gathered with the [BloodHound][1] tool. 
+
+When doing manual queries I can see a &#39;Base&#39; type node that is not introduced in the BloodHound documentation.
+
+`MATCH (n) RETURN distinct labels(n)` returns:
+```
+[&quot;Base&quot;, &quot;User&quot;]
+[&quot;Base&quot;, &quot;Group&quot;]
+[&quot;Base&quot;]
+[&quot;Base&quot;, &quot;Computer&quot;]
+[&quot;Base&quot;, &quot;Domain&quot;]
+[&quot;Base&quot;, &quot;GPO&quot;]
+[&quot;Base&quot;, &quot;OU&quot;]
+```
+
+When checking properties of the Base nodes they seem to take properties of other node types.
+
+
+My question is what exactly are those &#39;Base&#39; nodes?
+I tried to find this info in BloodHound and Neo4j documentation but with no success.
+
+  [1]: https://github.com/BloodHoundAD/BloodHound",
+        "link": "https://stackoverflow.com/q/65900170",
+        "creation_date": 1611659229,
+        "title": "What are Base nodes?",
+        "answer_count": 2,
+        "uuid": 65900170,
+        "view_count": 57
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5543"
+    },
+    "r": {
+      "identity": 1890,
+      "start": 5543,
+      "end": 1959,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1890",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5543",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1959"
+    },
+    "all_tags": {
+      "identity": 1959,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "bloodhound",
+        "link": "https://stackoverflow.com/questions/tagged/bloodhound"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1959"
+    },
+    "a": {
+      "identity": 2988,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": false,
+        "body_markdown": "You can create nodes with multiple labels in the graph database. I am not familiar with the bloodhound but it might be adding an extra label to nodes called ``&quot;Base&quot;`` to distinguish its data from the existing ones **or** There might be a good chance that there are several higher categories under which lower categories fall e.g., ``&quot;User&quot;``, ``&quot;Group&quot;``, ``&quot;Computer&quot;``... fall under ``&quot;Base&quot;``. By doing ``MATCH (n:Base)....`` you are matching all the nodes under ``&quot;Base&quot;`` category.",
+        "link": "https://stackoverflow.com/a/65903405",
+        "title": "What are Base nodes?",
+        "uuid": 65903405
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2988"
+    }
+  },
+  {
+    "q": {
+      "identity": 5543,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I am currently doing some manual analysis of the data in neo4j data base gathered with the [BloodHound][1] tool. 
+
+When doing manual queries I can see a &#39;Base&#39; type node that is not introduced in the BloodHound documentation.
+
+`MATCH (n) RETURN distinct labels(n)` returns:
+```
+[&quot;Base&quot;, &quot;User&quot;]
+[&quot;Base&quot;, &quot;Group&quot;]
+[&quot;Base&quot;]
+[&quot;Base&quot;, &quot;Computer&quot;]
+[&quot;Base&quot;, &quot;Domain&quot;]
+[&quot;Base&quot;, &quot;GPO&quot;]
+[&quot;Base&quot;, &quot;OU&quot;]
+```
+
+When checking properties of the Base nodes they seem to take properties of other node types.
+
+
+My question is what exactly are those &#39;Base&#39; nodes?
+I tried to find this info in BloodHound and Neo4j documentation but with no success.
+
+  [1]: https://github.com/BloodHoundAD/BloodHound",
+        "link": "https://stackoverflow.com/q/65900170",
+        "creation_date": 1611659229,
+        "title": "What are Base nodes?",
+        "answer_count": 2,
+        "uuid": 65900170,
+        "view_count": 57
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5543"
+    },
+    "r": {
+      "identity": 1891,
+      "start": 5543,
+      "end": 2061,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1891",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5543",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2061"
+    },
+    "all_tags": {
+      "identity": 2061,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "linkurious",
+        "link": "https://stackoverflow.com/questions/tagged/linkurious"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2061"
+    },
+    "a": {
+      "identity": 2989,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": false,
+        "body_markdown": "The Base label, as previously suggested, has nothing to do with Neo internals.
+
+While the documentation for the tool does not address the base label, the source code provides some hints. I recommend looking at these:
+- https://github.com/BloodHoundAD/BloodHound/blob/08a3469c523b4066e8e5248bdbcfb985acab5117/src/js/newingestion.js
+- https://github.com/BloodHoundAD/BloodHound/blob/08a3469c523b4066e8e5248bdbcfb985acab5117/src/js/newingestion.js
+- https://github.com/BloodHoundAD/BloodHound/blob/67cf1dee4f6c8d77a71b3eceb49b4040a5eb9550/src/components/Graph.jsx
+
+Base appears to be a convenience grouping. It is common to have multiple labels for any node. For example, you can have UserAccount nodes (~Base) that have also other labels that define the role of any specific UserAccount.
+",
+        "link": "https://stackoverflow.com/a/65912038",
+        "title": "What are Base nodes?",
+        "uuid": 65912038
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2989"
+    }
+  },
+  {
+    "q": {
+      "identity": 5543,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I am currently doing some manual analysis of the data in neo4j data base gathered with the [BloodHound][1] tool. 
+
+When doing manual queries I can see a &#39;Base&#39; type node that is not introduced in the BloodHound documentation.
+
+`MATCH (n) RETURN distinct labels(n)` returns:
+```
+[&quot;Base&quot;, &quot;User&quot;]
+[&quot;Base&quot;, &quot;Group&quot;]
+[&quot;Base&quot;]
+[&quot;Base&quot;, &quot;Computer&quot;]
+[&quot;Base&quot;, &quot;Domain&quot;]
+[&quot;Base&quot;, &quot;GPO&quot;]
+[&quot;Base&quot;, &quot;OU&quot;]
+```
+
+When checking properties of the Base nodes they seem to take properties of other node types.
+
+
+My question is what exactly are those &#39;Base&#39; nodes?
+I tried to find this info in BloodHound and Neo4j documentation but with no success.
+
+  [1]: https://github.com/BloodHoundAD/BloodHound",
+        "link": "https://stackoverflow.com/q/65900170",
+        "creation_date": 1611659229,
+        "title": "What are Base nodes?",
+        "answer_count": 2,
+        "uuid": 65900170,
+        "view_count": 57
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5543"
+    },
+    "r": {
+      "identity": 1891,
+      "start": 5543,
+      "end": 2061,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1891",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5543",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2061"
+    },
+    "all_tags": {
+      "identity": 2061,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "linkurious",
+        "link": "https://stackoverflow.com/questions/tagged/linkurious"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2061"
+    },
+    "a": {
+      "identity": 2988,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": false,
+        "body_markdown": "You can create nodes with multiple labels in the graph database. I am not familiar with the bloodhound but it might be adding an extra label to nodes called ``&quot;Base&quot;`` to distinguish its data from the existing ones **or** There might be a good chance that there are several higher categories under which lower categories fall e.g., ``&quot;User&quot;``, ``&quot;Group&quot;``, ``&quot;Computer&quot;``... fall under ``&quot;Base&quot;``. By doing ``MATCH (n:Base)....`` you are matching all the nodes under ``&quot;Base&quot;`` category.",
+        "link": "https://stackoverflow.com/a/65903405",
+        "title": "What are Base nodes?",
+        "uuid": 65903405
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2988"
+    }
+  },
+  {
+    "q": {
+      "identity": 5543,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I am currently doing some manual analysis of the data in neo4j data base gathered with the [BloodHound][1] tool. 
+
+When doing manual queries I can see a &#39;Base&#39; type node that is not introduced in the BloodHound documentation.
+
+`MATCH (n) RETURN distinct labels(n)` returns:
+```
+[&quot;Base&quot;, &quot;User&quot;]
+[&quot;Base&quot;, &quot;Group&quot;]
+[&quot;Base&quot;]
+[&quot;Base&quot;, &quot;Computer&quot;]
+[&quot;Base&quot;, &quot;Domain&quot;]
+[&quot;Base&quot;, &quot;GPO&quot;]
+[&quot;Base&quot;, &quot;OU&quot;]
+```
+
+When checking properties of the Base nodes they seem to take properties of other node types.
+
+
+My question is what exactly are those &#39;Base&#39; nodes?
+I tried to find this info in BloodHound and Neo4j documentation but with no success.
+
+  [1]: https://github.com/BloodHoundAD/BloodHound",
+        "link": "https://stackoverflow.com/q/65900170",
+        "creation_date": 1611659229,
+        "title": "What are Base nodes?",
+        "answer_count": 2,
+        "uuid": 65900170,
+        "view_count": 57
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5543"
+    },
+    "r": {
+      "identity": 1889,
+      "start": 5543,
+      "end": 1679,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1889",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5543",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "a": {
+      "identity": 2989,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": false,
+        "body_markdown": "The Base label, as previously suggested, has nothing to do with Neo internals.
+
+While the documentation for the tool does not address the base label, the source code provides some hints. I recommend looking at these:
+- https://github.com/BloodHoundAD/BloodHound/blob/08a3469c523b4066e8e5248bdbcfb985acab5117/src/js/newingestion.js
+- https://github.com/BloodHoundAD/BloodHound/blob/08a3469c523b4066e8e5248bdbcfb985acab5117/src/js/newingestion.js
+- https://github.com/BloodHoundAD/BloodHound/blob/67cf1dee4f6c8d77a71b3eceb49b4040a5eb9550/src/components/Graph.jsx
+
+Base appears to be a convenience grouping. It is common to have multiple labels for any node. For example, you can have UserAccount nodes (~Base) that have also other labels that define the role of any specific UserAccount.
+",
+        "link": "https://stackoverflow.com/a/65912038",
+        "title": "What are Base nodes?",
+        "uuid": 65912038
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2989"
+    }
+  },
+  {
+    "q": {
+      "identity": 5543,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I am currently doing some manual analysis of the data in neo4j data base gathered with the [BloodHound][1] tool. 
+
+When doing manual queries I can see a &#39;Base&#39; type node that is not introduced in the BloodHound documentation.
+
+`MATCH (n) RETURN distinct labels(n)` returns:
+```
+[&quot;Base&quot;, &quot;User&quot;]
+[&quot;Base&quot;, &quot;Group&quot;]
+[&quot;Base&quot;]
+[&quot;Base&quot;, &quot;Computer&quot;]
+[&quot;Base&quot;, &quot;Domain&quot;]
+[&quot;Base&quot;, &quot;GPO&quot;]
+[&quot;Base&quot;, &quot;OU&quot;]
+```
+
+When checking properties of the Base nodes they seem to take properties of other node types.
+
+
+My question is what exactly are those &#39;Base&#39; nodes?
+I tried to find this info in BloodHound and Neo4j documentation but with no success.
+
+  [1]: https://github.com/BloodHoundAD/BloodHound",
+        "link": "https://stackoverflow.com/q/65900170",
+        "creation_date": 1611659229,
+        "title": "What are Base nodes?",
+        "answer_count": 2,
+        "uuid": 65900170,
+        "view_count": 57
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5543"
+    },
+    "r": {
+      "identity": 1889,
+      "start": 5543,
+      "end": 1679,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1889",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5543",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "a": {
+      "identity": 2988,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 0,
+        "is_accepted": false,
+        "body_markdown": "You can create nodes with multiple labels in the graph database. I am not familiar with the bloodhound but it might be adding an extra label to nodes called ``&quot;Base&quot;`` to distinguish its data from the existing ones **or** There might be a good chance that there are several higher categories under which lower categories fall e.g., ``&quot;User&quot;``, ``&quot;Group&quot;``, ``&quot;Computer&quot;``... fall under ``&quot;Base&quot;``. By doing ``MATCH (n:Base)....`` you are matching all the nodes under ``&quot;Base&quot;`` category.",
+        "link": "https://stackoverflow.com/a/65903405",
+        "title": "What are Base nodes?",
+        "uuid": 65903405
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2988"
+    }
+  },
+  {
+    "q": {
+      "identity": 5544,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "Is there a way to update an existing attribute in a node to a new value after a specific time period passes ?
+
+For example:
+Node &#39;Offer&#39; has the below attributes
+
+1. Offer Name (String)
+2. Offer ID (Numeric)
+3. CREATED_ON (Timestamp)
+4. IS_VALID (&#39;Yes&#39;/&#39;No&#39;)
+
+Process:
+
+1. When an initial &quot;Offer&quot; is created IS_VALID value is &quot;Yes&quot;
+2. After 7 days of creation IS_VALID value should be set to &quot;No&quot; automatically for each of the offers
+
+I know that there is TTL , but I don&#39;t want my node to be deleted after 7 days, rather the attribute to be updated to &quot;No&quot; from &quot;Yes&quot;
+
+Is there any way I can achieve this in Neo4j?",
+        "link": "https://stackoverflow.com/q/65895260",
+        "creation_date": 1611629352,
+        "answer_count": 1,
+        "title": "How to auto update node attributes in ne04j after a specific time period",
+        "uuid": 65895260,
+        "view_count": 83
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5544"
+    },
+    "r": {
+      "identity": 1892,
+      "start": 5544,
+      "end": 1679,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1892",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5544",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "a": {
+      "identity": 2990,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 1,
+        "is_accepted": false,
+        "body_markdown": "You can use ``apoc`` procedure calls for scheduling background jobs. ``apoc.periodic.schedule()`` makes sense in your case.
+
+    CALL apoc.periodic.schedule(&#39;offerValidater&#39;, 
+    &quot;MATCH (n: Offer) WHERE apoc.date.currentTimestamp() - n.CREATED_ON &gt; 604800000 SET n.IS_VALID = &#39;No&#39;&quot;, 
+    86400)
+
+Here I assumed that ``offer.CREATED_ON`` is in epoch milliseconds. If you are using other format timestamps you need to do a comparison accordingly. ``offerValidater`` routine is scheduled to run with a delay of 86400 seconds (1 day). ",
+        "link": "https://stackoverflow.com/a/65904961",
+        "title": "How to auto update node attributes in ne04j after a specific time period",
+        "uuid": 65904961
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2990"
+    }
+  },
+  {
+    "q": {
+      "identity": 5544,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "Is there a way to update an existing attribute in a node to a new value after a specific time period passes ?
+
+For example:
+Node &#39;Offer&#39; has the below attributes
+
+1. Offer Name (String)
+2. Offer ID (Numeric)
+3. CREATED_ON (Timestamp)
+4. IS_VALID (&#39;Yes&#39;/&#39;No&#39;)
+
+Process:
+
+1. When an initial &quot;Offer&quot; is created IS_VALID value is &quot;Yes&quot;
+2. After 7 days of creation IS_VALID value should be set to &quot;No&quot; automatically for each of the offers
+
+I know that there is TTL , but I don&#39;t want my node to be deleted after 7 days, rather the attribute to be updated to &quot;No&quot; from &quot;Yes&quot;
+
+Is there any way I can achieve this in Neo4j?",
+        "link": "https://stackoverflow.com/q/65895260",
+        "creation_date": 1611629352,
+        "answer_count": 1,
+        "title": "How to auto update node attributes in ne04j after a specific time period",
+        "uuid": 65895260,
+        "view_count": 83
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5544"
+    },
+    "r": {
+      "identity": 1893,
+      "start": 5544,
+      "end": 1682,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1893",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5544",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "all_tags": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "a": {
+      "identity": 2990,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 1,
+        "is_accepted": false,
+        "body_markdown": "You can use ``apoc`` procedure calls for scheduling background jobs. ``apoc.periodic.schedule()`` makes sense in your case.
+
+    CALL apoc.periodic.schedule(&#39;offerValidater&#39;, 
+    &quot;MATCH (n: Offer) WHERE apoc.date.currentTimestamp() - n.CREATED_ON &gt; 604800000 SET n.IS_VALID = &#39;No&#39;&quot;, 
+    86400)
+
+Here I assumed that ``offer.CREATED_ON`` is in epoch milliseconds. If you are using other format timestamps you need to do a comparison accordingly. ``offerValidater`` routine is scheduled to run with a delay of 86400 seconds (1 day). ",
+        "link": "https://stackoverflow.com/a/65904961",
+        "title": "How to auto update node attributes in ne04j after a specific time period",
+        "uuid": 65904961
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2990"
+    }
+  },
+  {
+    "q": {
+      "identity": 5544,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "Is there a way to update an existing attribute in a node to a new value after a specific time period passes ?
+
+For example:
+Node &#39;Offer&#39; has the below attributes
+
+1. Offer Name (String)
+2. Offer ID (Numeric)
+3. CREATED_ON (Timestamp)
+4. IS_VALID (&#39;Yes&#39;/&#39;No&#39;)
+
+Process:
+
+1. When an initial &quot;Offer&quot; is created IS_VALID value is &quot;Yes&quot;
+2. After 7 days of creation IS_VALID value should be set to &quot;No&quot; automatically for each of the offers
+
+I know that there is TTL , but I don&#39;t want my node to be deleted after 7 days, rather the attribute to be updated to &quot;No&quot; from &quot;Yes&quot;
+
+Is there any way I can achieve this in Neo4j?",
+        "link": "https://stackoverflow.com/q/65895260",
+        "creation_date": 1611629352,
+        "answer_count": 1,
+        "title": "How to auto update node attributes in ne04j after a specific time period",
+        "uuid": 65895260,
+        "view_count": 83
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5544"
+    },
+    "r": {
+      "identity": 1892,
+      "start": 5544,
+      "end": 1679,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1892",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5544",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "a": {
+      "identity": 2990,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 1,
+        "is_accepted": false,
+        "body_markdown": "You can use ``apoc`` procedure calls for scheduling background jobs. ``apoc.periodic.schedule()`` makes sense in your case.
+
+    CALL apoc.periodic.schedule(&#39;offerValidater&#39;, 
+    &quot;MATCH (n: Offer) WHERE apoc.date.currentTimestamp() - n.CREATED_ON &gt; 604800000 SET n.IS_VALID = &#39;No&#39;&quot;, 
+    86400)
+
+Here I assumed that ``offer.CREATED_ON`` is in epoch milliseconds. If you are using other format timestamps you need to do a comparison accordingly. ``offerValidater`` routine is scheduled to run with a delay of 86400 seconds (1 day). ",
+        "link": "https://stackoverflow.com/a/65904961",
+        "title": "How to auto update node attributes in ne04j after a specific time period",
+        "uuid": 65904961
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2990"
+    }
+  },
+  {
+    "q": {
+      "identity": 5544,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "Is there a way to update an existing attribute in a node to a new value after a specific time period passes ?
+
+For example:
+Node &#39;Offer&#39; has the below attributes
+
+1. Offer Name (String)
+2. Offer ID (Numeric)
+3. CREATED_ON (Timestamp)
+4. IS_VALID (&#39;Yes&#39;/&#39;No&#39;)
+
+Process:
+
+1. When an initial &quot;Offer&quot; is created IS_VALID value is &quot;Yes&quot;
+2. After 7 days of creation IS_VALID value should be set to &quot;No&quot; automatically for each of the offers
+
+I know that there is TTL , but I don&#39;t want my node to be deleted after 7 days, rather the attribute to be updated to &quot;No&quot; from &quot;Yes&quot;
+
+Is there any way I can achieve this in Neo4j?",
+        "link": "https://stackoverflow.com/q/65895260",
+        "creation_date": 1611629352,
+        "answer_count": 1,
+        "title": "How to auto update node attributes in ne04j after a specific time period",
+        "uuid": 65895260,
+        "view_count": 83
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5544"
+    },
+    "r": {
+      "identity": 1893,
+      "start": 5544,
+      "end": 1682,
+      "type": "TAGGED",
+      "properties": {
+
+      },
+      "elementId": "5:3afd030f-3dd3-47e4-9159-6695ff123cff:1893",
+      "startNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5544",
+      "endNodeElementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "all_tags": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "a": {
+      "identity": 2990,
+      "labels": [
+        "Answer"
+      ],
+      "properties": {
+        "score": 1,
+        "is_accepted": false,
+        "body_markdown": "You can use ``apoc`` procedure calls for scheduling background jobs. ``apoc.periodic.schedule()`` makes sense in your case.
+
+    CALL apoc.periodic.schedule(&#39;offerValidater&#39;, 
+    &quot;MATCH (n: Offer) WHERE apoc.date.currentTimestamp() - n.CREATED_ON &gt; 604800000 SET n.IS_VALID = &#39;No&#39;&quot;, 
+    86400)
+
+Here I assumed that ``offer.CREATED_ON`` is in epoch milliseconds. If you are using other format timestamps you need to do a comparison accordingly. ``offerValidater`` routine is scheduled to run with a delay of 86400 seconds (1 day). ",
+        "link": "https://stackoverflow.com/a/65904961",
+        "title": "How to auto update node attributes in ne04j after a specific time period",
+        "uuid": 65904961
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2990"
+    }
+  }
+]

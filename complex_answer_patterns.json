@@ -1,0 +1,2504 @@
+﻿[
+  {
+    "q": {
+      "identity": 61,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 66230888,
+        "body_markdown": "I have this cypher query
+
+    int[] pIds = new int[] {101, 012}; 
+    var query = _graphClient.Cypher.Read
+                .OptionalMatch($&quot;(p: {Labels.PERSON})&quot;)
+                .Where($&quot;p.Id IN [{pIds}]&quot;) 
+                .Return&lt;Person&gt;(p);
+
+On debugging it looks like this: 
+
+    OPTIONAL MATCH (p: Person)
+    WHERE p.Id IN [System.Int32[]] 
+    RETURN distinct p
+
+****
+
+
+The values that I should pass in this where clause [101, 012], but its not. Because pIds[0] = 101, pIds[1] = 012 - and its never read in the cypher query. 
+
+Where am I going wrong and its failing to pass the values? How should I pass the int[] in the Where IN... 
+",
+        "link": "https://stackoverflow.com/q/65598673",
+        "creation_date": 1609947272,
+        "answer_count": 2,
+        "title": "How to use the int[] in where IN clause in Cypher Query (using C#)",
+        "uuid": 65598673,
+        "view_count": 36
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:61"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "answers": [
+      {
+        "identity": 3105,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": false,
+          "body_markdown": "Best is probably to use parameters : 
+
+```
+int[] pIds = new int[] {101, 012}; 
+var query = _graphClient.Cypher.Read
+            .OptionalMatch($&quot;(p: {Labels.PERSON})&quot;)
+            .Where($&quot;p.Id IN $pIds&quot;) 
+            .Return&lt;Person&gt;(p)
+            .WithParam(&quot;pIds&quot;, pIds);
+```",
+          "link": "https://stackoverflow.com/a/65603481",
+          "title": "How to use the int[] in where IN clause in Cypher Query (using C#)",
+          "uuid": 65603481
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:3105"
+      },
+      {
+        "identity": 3106,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": true,
+          "body_markdown": "I resolved it by getting the int[] into one string seperated by ,
+
+    var param = string.Join(&quot;,&quot;, myIntList); 
+    
+    var query = _graphClient.Cypher.Read
+                .OptionalMatch($&quot;(p: {Labels.PERSON})&quot;)
+                .Where($&quot;p.Id IN $param&quot;) 
+                .Return&lt;Person&gt;(p)
+                .WithParam(&quot;param&quot;, param)",
+          "link": "https://stackoverflow.com/a/66230888",
+          "title": "How to use the int[] in where IN clause in Cypher Query (using C#)",
+          "uuid": 66230888
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:3106"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 61,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 66230888,
+        "body_markdown": "I have this cypher query
+
+    int[] pIds = new int[] {101, 012}; 
+    var query = _graphClient.Cypher.Read
+                .OptionalMatch($&quot;(p: {Labels.PERSON})&quot;)
+                .Where($&quot;p.Id IN [{pIds}]&quot;) 
+                .Return&lt;Person&gt;(p);
+
+On debugging it looks like this: 
+
+    OPTIONAL MATCH (p: Person)
+    WHERE p.Id IN [System.Int32[]] 
+    RETURN distinct p
+
+****
+
+
+The values that I should pass in this where clause [101, 012], but its not. Because pIds[0] = 101, pIds[1] = 012 - and its never read in the cypher query. 
+
+Where am I going wrong and its failing to pass the values? How should I pass the int[] in the Where IN... 
+",
+        "link": "https://stackoverflow.com/q/65598673",
+        "creation_date": 1609947272,
+        "answer_count": 2,
+        "title": "How to use the int[] in where IN clause in Cypher Query (using C#)",
+        "uuid": 65598673,
+        "view_count": 36
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:61"
+    },
+    "all_tags": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "answers": [
+      {
+        "identity": 3105,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": false,
+          "body_markdown": "Best is probably to use parameters : 
+
+```
+int[] pIds = new int[] {101, 012}; 
+var query = _graphClient.Cypher.Read
+            .OptionalMatch($&quot;(p: {Labels.PERSON})&quot;)
+            .Where($&quot;p.Id IN $pIds&quot;) 
+            .Return&lt;Person&gt;(p)
+            .WithParam(&quot;pIds&quot;, pIds);
+```",
+          "link": "https://stackoverflow.com/a/65603481",
+          "title": "How to use the int[] in where IN clause in Cypher Query (using C#)",
+          "uuid": 65603481
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:3105"
+      },
+      {
+        "identity": 3106,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": true,
+          "body_markdown": "I resolved it by getting the int[] into one string seperated by ,
+
+    var param = string.Join(&quot;,&quot;, myIntList); 
+    
+    var query = _graphClient.Cypher.Read
+                .OptionalMatch($&quot;(p: {Labels.PERSON})&quot;)
+                .Where($&quot;p.Id IN $param&quot;) 
+                .Return&lt;Person&gt;(p)
+                .WithParam(&quot;param&quot;, param)",
+          "link": "https://stackoverflow.com/a/66230888",
+          "title": "How to use the int[] in where IN clause in Cypher Query (using C#)",
+          "uuid": 66230888
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:3106"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 61,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 66230888,
+        "body_markdown": "I have this cypher query
+
+    int[] pIds = new int[] {101, 012}; 
+    var query = _graphClient.Cypher.Read
+                .OptionalMatch($&quot;(p: {Labels.PERSON})&quot;)
+                .Where($&quot;p.Id IN [{pIds}]&quot;) 
+                .Return&lt;Person&gt;(p);
+
+On debugging it looks like this: 
+
+    OPTIONAL MATCH (p: Person)
+    WHERE p.Id IN [System.Int32[]] 
+    RETURN distinct p
+
+****
+
+
+The values that I should pass in this where clause [101, 012], but its not. Because pIds[0] = 101, pIds[1] = 012 - and its never read in the cypher query. 
+
+Where am I going wrong and its failing to pass the values? How should I pass the int[] in the Where IN... 
+",
+        "link": "https://stackoverflow.com/q/65598673",
+        "creation_date": 1609947272,
+        "answer_count": 2,
+        "title": "How to use the int[] in where IN clause in Cypher Query (using C#)",
+        "uuid": 65598673,
+        "view_count": 36
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:61"
+    },
+    "all_tags": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "answers": [
+      {
+        "identity": 3105,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": false,
+          "body_markdown": "Best is probably to use parameters : 
+
+```
+int[] pIds = new int[] {101, 012}; 
+var query = _graphClient.Cypher.Read
+            .OptionalMatch($&quot;(p: {Labels.PERSON})&quot;)
+            .Where($&quot;p.Id IN $pIds&quot;) 
+            .Return&lt;Person&gt;(p)
+            .WithParam(&quot;pIds&quot;, pIds);
+```",
+          "link": "https://stackoverflow.com/a/65603481",
+          "title": "How to use the int[] in where IN clause in Cypher Query (using C#)",
+          "uuid": 65603481
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:3105"
+      },
+      {
+        "identity": 3106,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": true,
+          "body_markdown": "I resolved it by getting the int[] into one string seperated by ,
+
+    var param = string.Join(&quot;,&quot;, myIntList); 
+    
+    var query = _graphClient.Cypher.Read
+                .OptionalMatch($&quot;(p: {Labels.PERSON})&quot;)
+                .Where($&quot;p.Id IN $param&quot;) 
+                .Return&lt;Person&gt;(p)
+                .WithParam(&quot;param&quot;, param)",
+          "link": "https://stackoverflow.com/a/66230888",
+          "title": "How to use the int[] in where IN clause in Cypher Query (using C#)",
+          "uuid": 66230888
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:3106"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 342,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I&#39;m trying to create a relationship that connects a person to a city -&gt; state -&gt; country without recreating the city/state/country nodes and relationships if they do already exist - so I&#39;d end-up with only one USA node in my graph for example
+
+I start with a person
+```
+CREATE (p:Person {name:&#39;Omar&#39;, Id: &#39;a&#39;})
+RETURN p
+```
+then I&#39;d like to turn this into an `apoc.do.case` statement with apoc
+or turn it into one merge statement using unique the constraint that creates a new node if no node is found or otherwise matches an existing node
+```
+// first case where the city/state/country all exist
+MATCH (locality:Locality{name:&quot;San Diego&quot;})-[:SITUATED_IN]-&gt;(adminArea:AdministrativeArea { name: &#39;California&#39; })-[:SITUATED_IN]-&gt;(country:Country { name: &#39;USA&#39; })
+MERGE (p)-[:SITUATED_IN]-&gt;(locality)-[:SITUATED_IN]-&gt;(adminArea)-[:SITUATED_IN]-&gt;(country)
+return p
+
+// second case where only state/country exist
+MATCH (adminArea:AdministrativeArea { name: &#39;California&#39; })-[:SITUATED_IN]-&gt;(country:Country { name: &#39;USA&#39; })
+MERGE (p)-[:SITUATED_IN]-&gt;(locality:Locality{name:&quot;San Diego&quot;})-[:SITUATED_IN]-&gt;(adminArea)-[:SITUATED_IN]-&gt;(country)
+return p
+
+// third case where only country exists
+MATCH (country:Country { name: &#39;USA&#39; })
+MERGE (p)-[:SITUATED_IN]-&gt;(locality:Locality{name:&quot;San Diego&quot;})-[:SITUATED_IN]-&gt;(adminArea:AdministrativeArea { name: &#39;California&#39; })-[:SITUATED_IN]-&gt;(country)
+return p
+
+// last case where none of city/state/country exist, so I have to create all nodes + relations
+MERGE (p)-[:SITUATED_IN]-&gt;(locality:Locality{name:&quot;San Diego&quot;})-[:SITUATED_IN]-&gt;(adminArea:AdministrativeArea { name: &#39;California&#39; })-[:SITUATED_IN]-&gt;(country:Country { name: &#39;USA&#39; })
+return p
+```
+
+The key here is I only want to end-up with one (California)-&gt;(USA). I don&#39;t want those nodes &amp; relationships to get duplicated",
+        "link": "https://stackoverflow.com/q/63306262",
+        "creation_date": 1596819692,
+        "answer_count": 2,
+        "title": "Conditional partial merge of pattern into graph",
+        "uuid": 63306262,
+        "view_count": 72
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:342"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "answers": [
+      {
+        "identity": 5617,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": false,
+          "body_markdown": "Finally, the solution I used is much simpler, it&#39;s a series of merges.
+
+    match (person:Person {Id: &#39;Omar&#39;}) // that should be present in the graph
+    merge (country:Country {name: &#39;USA&#39;})
+    merge (state:State {name: &#39;California&#39;})-[:SITUATED_IN]-&gt;(country)
+    merge (city:City {name: &#39;Los Angeles&#39;})-[:SITUATED_IN]-&gt;(state)
+    merge (person)-[:SITUATED_IN]-&gt;(city)
+    return person;",
+          "link": "https://stackoverflow.com/a/63420649",
+          "title": "Conditional partial merge of pattern into graph",
+          "uuid": 63420649
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5617"
+      },
+      {
+        "identity": 5616,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 1,
+          "is_accepted": false,
+          "body_markdown": " 1. Your queries that use `MATCH` never specify which `Person` you want. Variable names like `p` only exist for the life of a query (and sometimes not even that long). So `p` is unbound in your `MATCH` queries, and can result in your `MERGE` clauses creating empty nodes. You need to add `MATCH (p:Person {Id: &#39;a&#39;})` to the start of those queries (assuming all people have unique Id values).
+ 2. It should NOT be the responsibility of every single query to ensure that all needed localities exist and are connected correctly -- that is *way too much* complexity and overhead for every query. Instead, you should create the appropriate localities and inter-locality relationships separately -- before you need them. If fact, it should be the responsibility of each query that *creates a locality* to create all the relationships associated with it.
+ 3. A `MERGE` will only not create the specified pattern if *every single thing in the pattern already exists*, so to avoid duplicates a MERGE pattern should have at most 1 thing that might not already exist. So, a `MERGE` pattern should have at most 1 relationship, and if it has a relationship then the 2 end nodes should already be bound (by `MATCH` clauses, for example).
+
+Once the `Locality` nodes and the inter-locality relationships exist, you can add a person like this:
+
+
+    MATCH (locality:Locality {name: &quot;San Diego&quot;})
+    MERGE (p:Person {Id: &#39;a&#39;}) // create person if needed, specifying a unique identifier
+    ON CREATE SET p.name = &#39;Omar&#39;; // set other properties as needed
+    MERGE (p)-[:SITUATED_IN]-&gt;(locality) // create relationship if necessary
+
+The above considerations should help you design the code for creating the `Locality` nodes and the inter-locality relationships.
+",
+          "link": "https://stackoverflow.com/a/63307814",
+          "title": "Conditional partial merge of pattern into graph",
+          "uuid": 63307814
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5616"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 342,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I&#39;m trying to create a relationship that connects a person to a city -&gt; state -&gt; country without recreating the city/state/country nodes and relationships if they do already exist - so I&#39;d end-up with only one USA node in my graph for example
+
+I start with a person
+```
+CREATE (p:Person {name:&#39;Omar&#39;, Id: &#39;a&#39;})
+RETURN p
+```
+then I&#39;d like to turn this into an `apoc.do.case` statement with apoc
+or turn it into one merge statement using unique the constraint that creates a new node if no node is found or otherwise matches an existing node
+```
+// first case where the city/state/country all exist
+MATCH (locality:Locality{name:&quot;San Diego&quot;})-[:SITUATED_IN]-&gt;(adminArea:AdministrativeArea { name: &#39;California&#39; })-[:SITUATED_IN]-&gt;(country:Country { name: &#39;USA&#39; })
+MERGE (p)-[:SITUATED_IN]-&gt;(locality)-[:SITUATED_IN]-&gt;(adminArea)-[:SITUATED_IN]-&gt;(country)
+return p
+
+// second case where only state/country exist
+MATCH (adminArea:AdministrativeArea { name: &#39;California&#39; })-[:SITUATED_IN]-&gt;(country:Country { name: &#39;USA&#39; })
+MERGE (p)-[:SITUATED_IN]-&gt;(locality:Locality{name:&quot;San Diego&quot;})-[:SITUATED_IN]-&gt;(adminArea)-[:SITUATED_IN]-&gt;(country)
+return p
+
+// third case where only country exists
+MATCH (country:Country { name: &#39;USA&#39; })
+MERGE (p)-[:SITUATED_IN]-&gt;(locality:Locality{name:&quot;San Diego&quot;})-[:SITUATED_IN]-&gt;(adminArea:AdministrativeArea { name: &#39;California&#39; })-[:SITUATED_IN]-&gt;(country)
+return p
+
+// last case where none of city/state/country exist, so I have to create all nodes + relations
+MERGE (p)-[:SITUATED_IN]-&gt;(locality:Locality{name:&quot;San Diego&quot;})-[:SITUATED_IN]-&gt;(adminArea:AdministrativeArea { name: &#39;California&#39; })-[:SITUATED_IN]-&gt;(country:Country { name: &#39;USA&#39; })
+return p
+```
+
+The key here is I only want to end-up with one (California)-&gt;(USA). I don&#39;t want those nodes &amp; relationships to get duplicated",
+        "link": "https://stackoverflow.com/q/63306262",
+        "creation_date": 1596819692,
+        "answer_count": 2,
+        "title": "Conditional partial merge of pattern into graph",
+        "uuid": 63306262,
+        "view_count": 72
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:342"
+    },
+    "all_tags": {
+      "identity": 1684,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j-apoc",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j-apoc"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1684"
+    },
+    "answers": [
+      {
+        "identity": 5617,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": false,
+          "body_markdown": "Finally, the solution I used is much simpler, it&#39;s a series of merges.
+
+    match (person:Person {Id: &#39;Omar&#39;}) // that should be present in the graph
+    merge (country:Country {name: &#39;USA&#39;})
+    merge (state:State {name: &#39;California&#39;})-[:SITUATED_IN]-&gt;(country)
+    merge (city:City {name: &#39;Los Angeles&#39;})-[:SITUATED_IN]-&gt;(state)
+    merge (person)-[:SITUATED_IN]-&gt;(city)
+    return person;",
+          "link": "https://stackoverflow.com/a/63420649",
+          "title": "Conditional partial merge of pattern into graph",
+          "uuid": 63420649
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5617"
+      },
+      {
+        "identity": 5616,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 1,
+          "is_accepted": false,
+          "body_markdown": " 1. Your queries that use `MATCH` never specify which `Person` you want. Variable names like `p` only exist for the life of a query (and sometimes not even that long). So `p` is unbound in your `MATCH` queries, and can result in your `MERGE` clauses creating empty nodes. You need to add `MATCH (p:Person {Id: &#39;a&#39;})` to the start of those queries (assuming all people have unique Id values).
+ 2. It should NOT be the responsibility of every single query to ensure that all needed localities exist and are connected correctly -- that is *way too much* complexity and overhead for every query. Instead, you should create the appropriate localities and inter-locality relationships separately -- before you need them. If fact, it should be the responsibility of each query that *creates a locality* to create all the relationships associated with it.
+ 3. A `MERGE` will only not create the specified pattern if *every single thing in the pattern already exists*, so to avoid duplicates a MERGE pattern should have at most 1 thing that might not already exist. So, a `MERGE` pattern should have at most 1 relationship, and if it has a relationship then the 2 end nodes should already be bound (by `MATCH` clauses, for example).
+
+Once the `Locality` nodes and the inter-locality relationships exist, you can add a person like this:
+
+
+    MATCH (locality:Locality {name: &quot;San Diego&quot;})
+    MERGE (p:Person {Id: &#39;a&#39;}) // create person if needed, specifying a unique identifier
+    ON CREATE SET p.name = &#39;Omar&#39;; // set other properties as needed
+    MERGE (p)-[:SITUATED_IN]-&gt;(locality) // create relationship if necessary
+
+The above considerations should help you design the code for creating the `Locality` nodes and the inter-locality relationships.
+",
+          "link": "https://stackoverflow.com/a/63307814",
+          "title": "Conditional partial merge of pattern into graph",
+          "uuid": 63307814
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5616"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 342,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I&#39;m trying to create a relationship that connects a person to a city -&gt; state -&gt; country without recreating the city/state/country nodes and relationships if they do already exist - so I&#39;d end-up with only one USA node in my graph for example
+
+I start with a person
+```
+CREATE (p:Person {name:&#39;Omar&#39;, Id: &#39;a&#39;})
+RETURN p
+```
+then I&#39;d like to turn this into an `apoc.do.case` statement with apoc
+or turn it into one merge statement using unique the constraint that creates a new node if no node is found or otherwise matches an existing node
+```
+// first case where the city/state/country all exist
+MATCH (locality:Locality{name:&quot;San Diego&quot;})-[:SITUATED_IN]-&gt;(adminArea:AdministrativeArea { name: &#39;California&#39; })-[:SITUATED_IN]-&gt;(country:Country { name: &#39;USA&#39; })
+MERGE (p)-[:SITUATED_IN]-&gt;(locality)-[:SITUATED_IN]-&gt;(adminArea)-[:SITUATED_IN]-&gt;(country)
+return p
+
+// second case where only state/country exist
+MATCH (adminArea:AdministrativeArea { name: &#39;California&#39; })-[:SITUATED_IN]-&gt;(country:Country { name: &#39;USA&#39; })
+MERGE (p)-[:SITUATED_IN]-&gt;(locality:Locality{name:&quot;San Diego&quot;})-[:SITUATED_IN]-&gt;(adminArea)-[:SITUATED_IN]-&gt;(country)
+return p
+
+// third case where only country exists
+MATCH (country:Country { name: &#39;USA&#39; })
+MERGE (p)-[:SITUATED_IN]-&gt;(locality:Locality{name:&quot;San Diego&quot;})-[:SITUATED_IN]-&gt;(adminArea:AdministrativeArea { name: &#39;California&#39; })-[:SITUATED_IN]-&gt;(country)
+return p
+
+// last case where none of city/state/country exist, so I have to create all nodes + relations
+MERGE (p)-[:SITUATED_IN]-&gt;(locality:Locality{name:&quot;San Diego&quot;})-[:SITUATED_IN]-&gt;(adminArea:AdministrativeArea { name: &#39;California&#39; })-[:SITUATED_IN]-&gt;(country:Country { name: &#39;USA&#39; })
+return p
+```
+
+The key here is I only want to end-up with one (California)-&gt;(USA). I don&#39;t want those nodes &amp; relationships to get duplicated",
+        "link": "https://stackoverflow.com/q/63306262",
+        "creation_date": 1596819692,
+        "answer_count": 2,
+        "title": "Conditional partial merge of pattern into graph",
+        "uuid": 63306262,
+        "view_count": 72
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:342"
+    },
+    "all_tags": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "answers": [
+      {
+        "identity": 5617,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": false,
+          "body_markdown": "Finally, the solution I used is much simpler, it&#39;s a series of merges.
+
+    match (person:Person {Id: &#39;Omar&#39;}) // that should be present in the graph
+    merge (country:Country {name: &#39;USA&#39;})
+    merge (state:State {name: &#39;California&#39;})-[:SITUATED_IN]-&gt;(country)
+    merge (city:City {name: &#39;Los Angeles&#39;})-[:SITUATED_IN]-&gt;(state)
+    merge (person)-[:SITUATED_IN]-&gt;(city)
+    return person;",
+          "link": "https://stackoverflow.com/a/63420649",
+          "title": "Conditional partial merge of pattern into graph",
+          "uuid": 63420649
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5617"
+      },
+      {
+        "identity": 5616,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 1,
+          "is_accepted": false,
+          "body_markdown": " 1. Your queries that use `MATCH` never specify which `Person` you want. Variable names like `p` only exist for the life of a query (and sometimes not even that long). So `p` is unbound in your `MATCH` queries, and can result in your `MERGE` clauses creating empty nodes. You need to add `MATCH (p:Person {Id: &#39;a&#39;})` to the start of those queries (assuming all people have unique Id values).
+ 2. It should NOT be the responsibility of every single query to ensure that all needed localities exist and are connected correctly -- that is *way too much* complexity and overhead for every query. Instead, you should create the appropriate localities and inter-locality relationships separately -- before you need them. If fact, it should be the responsibility of each query that *creates a locality* to create all the relationships associated with it.
+ 3. A `MERGE` will only not create the specified pattern if *every single thing in the pattern already exists*, so to avoid duplicates a MERGE pattern should have at most 1 thing that might not already exist. So, a `MERGE` pattern should have at most 1 relationship, and if it has a relationship then the 2 end nodes should already be bound (by `MATCH` clauses, for example).
+
+Once the `Locality` nodes and the inter-locality relationships exist, you can add a person like this:
+
+
+    MATCH (locality:Locality {name: &quot;San Diego&quot;})
+    MERGE (p:Person {Id: &#39;a&#39;}) // create person if needed, specifying a unique identifier
+    ON CREATE SET p.name = &#39;Omar&#39;; // set other properties as needed
+    MERGE (p)-[:SITUATED_IN]-&gt;(locality) // create relationship if necessary
+
+The above considerations should help you design the code for creating the `Locality` nodes and the inter-locality relationships.
+",
+          "link": "https://stackoverflow.com/a/63307814",
+          "title": "Conditional partial merge of pattern into graph",
+          "uuid": 63307814
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5616"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 4854,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 68438202,
+        "body_markdown": "We have millions of users of can make millions of transactions between them.
+
+Lets say there is a user_A who pays money to user_B on the daily basis. We have a relationship SEND_MONEY_TO between A and B nodes.
+
+A ---SENDS_MONEY_TO---&gt; B
+
+What will be the better design to accommodate this data in Neo4j.
+
+**Option A**: We will create a new relationship edge every time a transaction happens.
+
+**Option B**: We will keep a list of transactions as property of a same relationship edge and append the transaction details to existing list whenever a new transaction happens.
+
+Our queries will look like:
+
+a.) Find number of transaction between user_A and user_B in month of April 2021 where HDFC credit card is used.
+
+b.) Find the total amount of transactions which involves user_A
+
+We are open to any new approach as well.",
+        "link": "https://stackoverflow.com/q/68436553",
+        "creation_date": 1626679197,
+        "answer_count": 2,
+        "title": "Is it OK to have millions of directed relationships between two nodes in Neo4j? Will it add to latency in fetching the data?",
+        "uuid": 68436553,
+        "view_count": 55
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:4854"
+    },
+    "all_tags": {
+      "identity": 1683,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "graph-databases",
+        "link": "https://stackoverflow.com/questions/tagged/graph-databases"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1683"
+    },
+    "answers": [
+      {
+        "identity": 2344,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": false,
+          "body_markdown": "Here is how I&#39;ve modeled this in the past. You might need to make a few adjustments to model it in Neo4j, but the general gist is there. Sample projects attached. 
+_______
+
+&gt; Because a customer might have multiple accounts
+
+**Customer -(CUSTOMER_ACCOUNT)- Account**
+
+&gt; Capture the directionality of the transactions
+
+**Account - (SEND_TRANSACTION)-&gt; Transaction**
+
+**Account &lt;-(RECEIVE_TRANSACTION)-Transaction**
+
+&gt; Here I capture a running total of min_Send, min_receive, max_send, max
+&gt; receive, transaction_send_count, transaction_recive_count, etc
+
+Account -(SEND_TO)-&gt; Account 
+______________
+
+I&#39;ve open-sourced the project here:
+
+- https://github.com/TigerGraph-DevLabs/AMLSim_Python_Lab
+
+Sample Google Colab:
+
+- https://colab.research.google.com/drive/1QnYXgypDYKMxuGfMLEtWcIVkp61njkrw?usp=sharing
+_____________",
+          "link": "https://stackoverflow.com/a/68441039",
+          "title": "Is it OK to have millions of directed relationships between two nodes in Neo4j? Will it add to latency in fetching the data?",
+          "uuid": 68441039
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2344"
+      },
+      {
+        "identity": 2343,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": true,
+          "body_markdown": "I assume in the future, you may want to add other data to transactions, like the :Card :Device or :Platform on which it was triggered/Executed. As you probably know, you cannot create an edge between an edge and a vertex.
+
+I would therefore recommend to use `(:Transaction)` vertices, with edges to the `(:Account`) vertices. You could use `[:SENDER]`  and `[:RECEIVER]` types for the edges.
+
+
+ ",
+          "link": "https://stackoverflow.com/a/68438202",
+          "title": "Is it OK to have millions of directed relationships between two nodes in Neo4j? Will it add to latency in fetching the data?",
+          "uuid": 68438202
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2343"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 4854,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 68438202,
+        "body_markdown": "We have millions of users of can make millions of transactions between them.
+
+Lets say there is a user_A who pays money to user_B on the daily basis. We have a relationship SEND_MONEY_TO between A and B nodes.
+
+A ---SENDS_MONEY_TO---&gt; B
+
+What will be the better design to accommodate this data in Neo4j.
+
+**Option A**: We will create a new relationship edge every time a transaction happens.
+
+**Option B**: We will keep a list of transactions as property of a same relationship edge and append the transaction details to existing list whenever a new transaction happens.
+
+Our queries will look like:
+
+a.) Find number of transaction between user_A and user_B in month of April 2021 where HDFC credit card is used.
+
+b.) Find the total amount of transactions which involves user_A
+
+We are open to any new approach as well.",
+        "link": "https://stackoverflow.com/q/68436553",
+        "creation_date": 1626679197,
+        "answer_count": 2,
+        "title": "Is it OK to have millions of directed relationships between two nodes in Neo4j? Will it add to latency in fetching the data?",
+        "uuid": 68436553,
+        "view_count": 55
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:4854"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "answers": [
+      {
+        "identity": 2344,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": false,
+          "body_markdown": "Here is how I&#39;ve modeled this in the past. You might need to make a few adjustments to model it in Neo4j, but the general gist is there. Sample projects attached. 
+_______
+
+&gt; Because a customer might have multiple accounts
+
+**Customer -(CUSTOMER_ACCOUNT)- Account**
+
+&gt; Capture the directionality of the transactions
+
+**Account - (SEND_TRANSACTION)-&gt; Transaction**
+
+**Account &lt;-(RECEIVE_TRANSACTION)-Transaction**
+
+&gt; Here I capture a running total of min_Send, min_receive, max_send, max
+&gt; receive, transaction_send_count, transaction_recive_count, etc
+
+Account -(SEND_TO)-&gt; Account 
+______________
+
+I&#39;ve open-sourced the project here:
+
+- https://github.com/TigerGraph-DevLabs/AMLSim_Python_Lab
+
+Sample Google Colab:
+
+- https://colab.research.google.com/drive/1QnYXgypDYKMxuGfMLEtWcIVkp61njkrw?usp=sharing
+_____________",
+          "link": "https://stackoverflow.com/a/68441039",
+          "title": "Is it OK to have millions of directed relationships between two nodes in Neo4j? Will it add to latency in fetching the data?",
+          "uuid": 68441039
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2344"
+      },
+      {
+        "identity": 2343,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": true,
+          "body_markdown": "I assume in the future, you may want to add other data to transactions, like the :Card :Device or :Platform on which it was triggered/Executed. As you probably know, you cannot create an edge between an edge and a vertex.
+
+I would therefore recommend to use `(:Transaction)` vertices, with edges to the `(:Account`) vertices. You could use `[:SENDER]`  and `[:RECEIVER]` types for the edges.
+
+
+ ",
+          "link": "https://stackoverflow.com/a/68438202",
+          "title": "Is it OK to have millions of directed relationships between two nodes in Neo4j? Will it add to latency in fetching the data?",
+          "uuid": 68438202
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2343"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 5337,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 66599894,
+        "body_markdown": "I have been experimenting with neo4j and cypher lately but I don&#39;t quite manage to get the following query correctly. I would like to return all employees that share at least one project with a given employee and the projects they worked on. It is perhaps simpler if described with an example:
+
+[![employees and projects graph][1]][1]
+
+The desired outcome for the graph above for the input being employee 1 is:
+
+|      Employee     |     Project      |
+|-------------------|------------------|
+|          0        |         A        |
+|          1        |         A        |
+|          1        |         B        |
+|          4        |         A        |
+
+I tried the following query but it returns duplicated relationships:
+
+    MATCH (a0:Employee {name:1})-[:WORKS]-&gt;(b0:Project) 
+    MATCH (b0)&lt;-[:WORKS]-(a:Employee) 
+    MATCH (a)-[:WORKS]-&gt;(b:Project) 
+    RETURN a.name AS employee, b.name AS project 
+    ORDER BY employee, project
+
+
+|      Employee     |     Project      |
+|-------------------|------------------|
+|          0        |         A        |
+|          1        |         A        |
+|          1        |         A        |
+|          1        |         B        |
+|          1        |         B        |
+|          4        |         A        |
+
+Thank you in advance for your help.
+
+Note: These queries can be used to create the graph above 
+
+    CREATE (:Employee {name: 0}), 
+           (:Employee {name: 1}), 
+           (:Employee {name: 2}),  
+           (:Employee {name: 3}), 
+           (:Employee {name: 4}), 
+           (:Project {name: &#39;A&#39;}), 
+           (:Project {name: &#39;B&#39;}), 
+           (:Project {name: &#39;C&#39;})
+    MATCH (e:Employee), (p:Project) WHERE e.name=0 AND p.name=&#39;A&#39; CREATE (e)-[:WORKS]-&gt;(p)
+    MATCH (e:Employee), (p:Project) WHERE e.name=1 AND p.name=&#39;A&#39; CREATE (e)-[:WORKS]-&gt;(p)
+    MATCH (e:Employee), (p:Project) WHERE e.name=1 AND p.name=&#39;B&#39; CREATE (e)-[:WORKS]-&gt;(p)
+    MATCH (e:Employee), (p:Project) WHERE e.name=4 AND p.name=&#39;A&#39; CREATE (e)-[:WORKS]-&gt;(p)
+    MATCH (e:Employee), (p:Project) WHERE e.name=3 AND p.name=&#39;C&#39; CREATE (e)-[:WORKS]-&gt;(p)
+
+
+  [1]: https://i.stack.imgur.com/v7W9W.png",
+        "link": "https://stackoverflow.com/q/66597603",
+        "creation_date": 1615542490,
+        "answer_count": 2,
+        "title": "Neo4j how to get (DISTINCT) all nodes and relationships with at least one node in common?",
+        "uuid": 66597603,
+        "view_count": 25
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5337"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "answers": [
+      {
+        "identity": 2775,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": true,
+          "body_markdown": "After struggling with it for a couple hours, I found a solution. I am not sure it is efficient though. In a way, the answer was already in the question - DISTINCT. This query does the job:
+
+    MATCH (a0:Employee {name:0})-[:WORKS]-&gt;(b0:Project) 
+    MATCH (b0)&lt;-[:WORKS]-(a:Employee)
+    WITH DISTINCT(a)
+    MATCH (a)-[:WORKS]-&gt;(b:Project) 
+    RETURN a.name AS employee, b.name AS project 
+    ORDER BY employee, project",
+          "link": "https://stackoverflow.com/a/66599894",
+          "title": "Neo4j how to get (DISTINCT) all nodes and relationships with at least one node in common?",
+          "uuid": 66599894
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2775"
+      },
+      {
+        "identity": 2776,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": false,
+          "body_markdown": "You seem to want the answer to the question: given the projects a certain employee works at, find all employees working on those projects.
+
+You can answer this with a simple query:
+
+    MATCH (:Employee {name:1})-[:WORKS]-&gt;(b:Project) 
+    MATCH (a:Employee)-[:WORKS]-&gt;(b)
+    RETURN a.name AS employee, b.name AS project 
+    ORDER BY employee, project
+
+",
+          "link": "https://stackoverflow.com/a/66672212",
+          "title": "Neo4j how to get (DISTINCT) all nodes and relationships with at least one node in common?",
+          "uuid": 66672212
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2776"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 5337,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 66599894,
+        "body_markdown": "I have been experimenting with neo4j and cypher lately but I don&#39;t quite manage to get the following query correctly. I would like to return all employees that share at least one project with a given employee and the projects they worked on. It is perhaps simpler if described with an example:
+
+[![employees and projects graph][1]][1]
+
+The desired outcome for the graph above for the input being employee 1 is:
+
+|      Employee     |     Project      |
+|-------------------|------------------|
+|          0        |         A        |
+|          1        |         A        |
+|          1        |         B        |
+|          4        |         A        |
+
+I tried the following query but it returns duplicated relationships:
+
+    MATCH (a0:Employee {name:1})-[:WORKS]-&gt;(b0:Project) 
+    MATCH (b0)&lt;-[:WORKS]-(a:Employee) 
+    MATCH (a)-[:WORKS]-&gt;(b:Project) 
+    RETURN a.name AS employee, b.name AS project 
+    ORDER BY employee, project
+
+
+|      Employee     |     Project      |
+|-------------------|------------------|
+|          0        |         A        |
+|          1        |         A        |
+|          1        |         A        |
+|          1        |         B        |
+|          1        |         B        |
+|          4        |         A        |
+
+Thank you in advance for your help.
+
+Note: These queries can be used to create the graph above 
+
+    CREATE (:Employee {name: 0}), 
+           (:Employee {name: 1}), 
+           (:Employee {name: 2}),  
+           (:Employee {name: 3}), 
+           (:Employee {name: 4}), 
+           (:Project {name: &#39;A&#39;}), 
+           (:Project {name: &#39;B&#39;}), 
+           (:Project {name: &#39;C&#39;})
+    MATCH (e:Employee), (p:Project) WHERE e.name=0 AND p.name=&#39;A&#39; CREATE (e)-[:WORKS]-&gt;(p)
+    MATCH (e:Employee), (p:Project) WHERE e.name=1 AND p.name=&#39;A&#39; CREATE (e)-[:WORKS]-&gt;(p)
+    MATCH (e:Employee), (p:Project) WHERE e.name=1 AND p.name=&#39;B&#39; CREATE (e)-[:WORKS]-&gt;(p)
+    MATCH (e:Employee), (p:Project) WHERE e.name=4 AND p.name=&#39;A&#39; CREATE (e)-[:WORKS]-&gt;(p)
+    MATCH (e:Employee), (p:Project) WHERE e.name=3 AND p.name=&#39;C&#39; CREATE (e)-[:WORKS]-&gt;(p)
+
+
+  [1]: https://i.stack.imgur.com/v7W9W.png",
+        "link": "https://stackoverflow.com/q/66597603",
+        "creation_date": 1615542490,
+        "answer_count": 2,
+        "title": "Neo4j how to get (DISTINCT) all nodes and relationships with at least one node in common?",
+        "uuid": 66597603,
+        "view_count": 25
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5337"
+    },
+    "all_tags": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "answers": [
+      {
+        "identity": 2775,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": true,
+          "body_markdown": "After struggling with it for a couple hours, I found a solution. I am not sure it is efficient though. In a way, the answer was already in the question - DISTINCT. This query does the job:
+
+    MATCH (a0:Employee {name:0})-[:WORKS]-&gt;(b0:Project) 
+    MATCH (b0)&lt;-[:WORKS]-(a:Employee)
+    WITH DISTINCT(a)
+    MATCH (a)-[:WORKS]-&gt;(b:Project) 
+    RETURN a.name AS employee, b.name AS project 
+    ORDER BY employee, project",
+          "link": "https://stackoverflow.com/a/66599894",
+          "title": "Neo4j how to get (DISTINCT) all nodes and relationships with at least one node in common?",
+          "uuid": 66599894
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2775"
+      },
+      {
+        "identity": 2776,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": false,
+          "body_markdown": "You seem to want the answer to the question: given the projects a certain employee works at, find all employees working on those projects.
+
+You can answer this with a simple query:
+
+    MATCH (:Employee {name:1})-[:WORKS]-&gt;(b:Project) 
+    MATCH (a:Employee)-[:WORKS]-&gt;(b)
+    RETURN a.name AS employee, b.name AS project 
+    ORDER BY employee, project
+
+",
+          "link": "https://stackoverflow.com/a/66672212",
+          "title": "Neo4j how to get (DISTINCT) all nodes and relationships with at least one node in common?",
+          "uuid": 66672212
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2776"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 5295,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 66730316,
+        "body_markdown": "I have simple graph and i want to find category and delete it. If category has children, than delete category and all children. I&#39;ve made deletion category with children with this command:
+```cypher
+MATCH path = (c:Category)-[*]-&gt;(cc:Category)
+WHERE c.id = &quot;95bec604-5da2-4297-b792-5a866e292df4&quot;
+DETACH DELETE path
+```
+
+But this comamnd does not work for single node, without children. How i can achieve it?
+[![enter image description here][1]][1]
+
+
+  [1]: https://i.stack.imgur.com/14p4r.png",
+        "link": "https://stackoverflow.com/q/66730289",
+        "creation_date": 1616315890,
+        "answer_count": 2,
+        "title": "neo4j delete nodey with children and without",
+        "uuid": 66730289,
+        "view_count": 24
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5295"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "answers": [
+      {
+        "identity": 2744,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": false,
+          "body_markdown": "In general, this approach would work if you want to delete the entire path:
+
+    MATCH path = ( some path )
+    FOREACH (node IN nodes(path)  | 
+         DETACH DELETE node
+    )",
+          "link": "https://stackoverflow.com/a/66730648",
+          "title": "neo4j delete nodey with children and without",
+          "uuid": 66730648
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2744"
+      },
+      {
+        "identity": 2743,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 1,
+          "is_accepted": true,
+          "body_markdown": "Add a 0 as the lower bound for the variable-length pattern. By default it&#39;s 1, but when it&#39;s 0 (provided the label used for the end node is also on the start node) this will allow it to match even when there are no relationships from the start node.
+
+
+    MATCH path = (c:Category)-[*0..]-&gt;(cc:Category)
+    WHERE c.id = &quot;95bec604-5da2-4297-b792-5a866e292df4&quot;
+    DETACH DELETE path",
+          "link": "https://stackoverflow.com/a/66730316",
+          "title": "neo4j delete nodey with children and without",
+          "uuid": 66730316
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2743"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 5295,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 66730316,
+        "body_markdown": "I have simple graph and i want to find category and delete it. If category has children, than delete category and all children. I&#39;ve made deletion category with children with this command:
+```cypher
+MATCH path = (c:Category)-[*]-&gt;(cc:Category)
+WHERE c.id = &quot;95bec604-5da2-4297-b792-5a866e292df4&quot;
+DETACH DELETE path
+```
+
+But this comamnd does not work for single node, without children. How i can achieve it?
+[![enter image description here][1]][1]
+
+
+  [1]: https://i.stack.imgur.com/14p4r.png",
+        "link": "https://stackoverflow.com/q/66730289",
+        "creation_date": 1616315890,
+        "answer_count": 2,
+        "title": "neo4j delete nodey with children and without",
+        "uuid": 66730289,
+        "view_count": 24
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5295"
+    },
+    "all_tags": {
+      "identity": 1681,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "graph",
+        "link": "https://stackoverflow.com/questions/tagged/graph"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1681"
+    },
+    "answers": [
+      {
+        "identity": 2744,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": false,
+          "body_markdown": "In general, this approach would work if you want to delete the entire path:
+
+    MATCH path = ( some path )
+    FOREACH (node IN nodes(path)  | 
+         DETACH DELETE node
+    )",
+          "link": "https://stackoverflow.com/a/66730648",
+          "title": "neo4j delete nodey with children and without",
+          "uuid": 66730648
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2744"
+      },
+      {
+        "identity": 2743,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 1,
+          "is_accepted": true,
+          "body_markdown": "Add a 0 as the lower bound for the variable-length pattern. By default it&#39;s 1, but when it&#39;s 0 (provided the label used for the end node is also on the start node) this will allow it to match even when there are no relationships from the start node.
+
+
+    MATCH path = (c:Category)-[*0..]-&gt;(cc:Category)
+    WHERE c.id = &quot;95bec604-5da2-4297-b792-5a866e292df4&quot;
+    DETACH DELETE path",
+          "link": "https://stackoverflow.com/a/66730316",
+          "title": "neo4j delete nodey with children and without",
+          "uuid": 66730316
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2743"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 5419,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I have a sellers node and buyers node with the same business name.
+
+When I try to match using the code:
+
+    MATCH (p:Sellers)-[rel:sells]-&gt;(o:Buyers)
+  
+    RETURN p, rel, o; 
+
+It returns the graph :
+[![01AAAC is present twice(As a seller and a buyer) in this graph][1]][1]
+
+and the data :
+
+    p,rel,o
+    
+    {&quot;Seller&quot;:01AAAC}&quot;,&quot;{&quot;&quot;invoices&quot;:5}&quot;,&quot;{&quot;Buyer&quot;:03AAAG}
+    
+    {&quot;Seller&quot;:01AAXP}&quot;,&quot;{&quot;invoices&quot;:8}&quot;,&quot;{&quot;Buyer&quot;:01AAAC}
+    
+    {&quot;Seller&quot;:27AAFF}&quot;,&quot;{&quot;invoices&quot;:2}&quot;,&quot;{&quot;Buyer&quot;:01AAAC}
+
+But I&#39;m trying to create rather a graph like this :
+
+[![01AAAC is present only once in this graph][2]][2]
+
+Can you kindly help me with an appropriate cypher query to create the above visualisation.
+Thanks a lot in advance.
+
+  [1]: https://i.stack.imgur.com/Ai9st.png
+  [2]: https://i.stack.imgur.com/618U3.png",
+        "link": "https://stackoverflow.com/q/66349401",
+        "creation_date": 1614164014,
+        "answer_count": 2,
+        "title": "Combining multiple nodes into one and map all the relations to that node neo4j",
+        "uuid": 66349401,
+        "view_count": 93
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5419"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "answers": [
+      {
+        "identity": 2892,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": false,
+          "body_markdown": "if you remove the label constraint from your nodes, you should get all nodes and relationships between any two nodes that are have a sells relationship 
+```
+MATCH (a)-[:sells]-(b)
+return *
+```
+
+",
+          "link": "https://stackoverflow.com/a/66356343",
+          "title": "Combining multiple nodes into one and map all the relations to that node neo4j",
+          "uuid": 66356343
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2892"
+      },
+      {
+        "identity": 2893,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 1,
+          "is_accepted": false,
+          "body_markdown": "I&#39;ve given this a bit more thought and ideally, your model wouldn&#39;t differentiate between :Buyer and :Seller nodes, you&#39;d just have one node label, say :Entity which sells to another node of the same label.
+
+[![Single node type Entity][1]][1]
+
+However, we live in the real world and you may need to label nodes as :Buyer and :Seller, in which case, your only option would be to add a :Seller label to any :Buyers that sell and a :Buyer label to any :Sellers that buy. This would mean you end up with some nodes having two labels, one for each status they can be in, but it would  enable you to visualise what you want to:
+[![Node with two labels][2]][2] 
+
+As you can see, the highlighted node has two labels.
+
+Unfortunately, you will not be able to generate this representation from the model you have as your :Buyer node 01AAAC is a completely different node to :Seller 01AAAC and they have no shared relationship between them.
+
+
+
+  [1]: https://i.stack.imgur.com/0KRzZ.png
+  [2]: https://i.stack.imgur.com/iDwl7.png",
+          "link": "https://stackoverflow.com/a/66369375",
+          "title": "Combining multiple nodes into one and map all the relations to that node neo4j",
+          "uuid": 66369375
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2893"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 5419,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I have a sellers node and buyers node with the same business name.
+
+When I try to match using the code:
+
+    MATCH (p:Sellers)-[rel:sells]-&gt;(o:Buyers)
+  
+    RETURN p, rel, o; 
+
+It returns the graph :
+[![01AAAC is present twice(As a seller and a buyer) in this graph][1]][1]
+
+and the data :
+
+    p,rel,o
+    
+    {&quot;Seller&quot;:01AAAC}&quot;,&quot;{&quot;&quot;invoices&quot;:5}&quot;,&quot;{&quot;Buyer&quot;:03AAAG}
+    
+    {&quot;Seller&quot;:01AAXP}&quot;,&quot;{&quot;invoices&quot;:8}&quot;,&quot;{&quot;Buyer&quot;:01AAAC}
+    
+    {&quot;Seller&quot;:27AAFF}&quot;,&quot;{&quot;invoices&quot;:2}&quot;,&quot;{&quot;Buyer&quot;:01AAAC}
+
+But I&#39;m trying to create rather a graph like this :
+
+[![01AAAC is present only once in this graph][2]][2]
+
+Can you kindly help me with an appropriate cypher query to create the above visualisation.
+Thanks a lot in advance.
+
+  [1]: https://i.stack.imgur.com/Ai9st.png
+  [2]: https://i.stack.imgur.com/618U3.png",
+        "link": "https://stackoverflow.com/q/66349401",
+        "creation_date": 1614164014,
+        "answer_count": 2,
+        "title": "Combining multiple nodes into one and map all the relations to that node neo4j",
+        "uuid": 66349401,
+        "view_count": 93
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5419"
+    },
+    "all_tags": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "answers": [
+      {
+        "identity": 2892,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": false,
+          "body_markdown": "if you remove the label constraint from your nodes, you should get all nodes and relationships between any two nodes that are have a sells relationship 
+```
+MATCH (a)-[:sells]-(b)
+return *
+```
+
+",
+          "link": "https://stackoverflow.com/a/66356343",
+          "title": "Combining multiple nodes into one and map all the relations to that node neo4j",
+          "uuid": 66356343
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2892"
+      },
+      {
+        "identity": 2893,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 1,
+          "is_accepted": false,
+          "body_markdown": "I&#39;ve given this a bit more thought and ideally, your model wouldn&#39;t differentiate between :Buyer and :Seller nodes, you&#39;d just have one node label, say :Entity which sells to another node of the same label.
+
+[![Single node type Entity][1]][1]
+
+However, we live in the real world and you may need to label nodes as :Buyer and :Seller, in which case, your only option would be to add a :Seller label to any :Buyers that sell and a :Buyer label to any :Sellers that buy. This would mean you end up with some nodes having two labels, one for each status they can be in, but it would  enable you to visualise what you want to:
+[![Node with two labels][2]][2] 
+
+As you can see, the highlighted node has two labels.
+
+Unfortunately, you will not be able to generate this representation from the model you have as your :Buyer node 01AAAC is a completely different node to :Seller 01AAAC and they have no shared relationship between them.
+
+
+
+  [1]: https://i.stack.imgur.com/0KRzZ.png
+  [2]: https://i.stack.imgur.com/iDwl7.png",
+          "link": "https://stackoverflow.com/a/66369375",
+          "title": "Combining multiple nodes into one and map all the relations to that node neo4j",
+          "uuid": 66369375
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2893"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 524,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 61961776,
+        "body_markdown": "I have the following model, each `User` is linked to several `Comment` node with the `AUTHORED` relationship, each comment has a `flair` property which can be different on each comment. I also has a `Flair` node, and wish to create a new relationship between `User` nodes and `Flair` nodes.
+
+```
++--------+                          +---------+
+|        |                          |         |
+|  User  +------+ REL:AUTHORED+-----+ Comment |
+|        |                          |         |
++--------+                          +---------+
+```
+
+So I wrote the following query to try and do that, but it resulted in a relationship from the `User` node for each `Comment` node with the correct flair. I only want a single relationship between those nodes. How do I achieve that?
+```
+MATCH (a:User)-[:AUTHORED]-(c:Comment),(b:Flair)
+WHERE c.flair = &#39;foo&#39; and b.name = &#39;foo&#39;
+CREATE (a)-[r:VOTES_FOR]-&gt;(b)
+RETURN type(a,b,r)
+```",
+        "link": "https://stackoverflow.com/q/61961413",
+        "creation_date": 1590171376,
+        "answer_count": 2,
+        "title": "Avoid creating multiple relationships for each match",
+        "uuid": 61961413,
+        "view_count": 32
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:524"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "answers": [
+      {
+        "identity": 5827,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 1,
+          "is_accepted": false,
+          "body_markdown": "To avoid creating duplicate relationships, you should use [MERGE](https://neo4j.com/docs/cypher-manual/current/clauses/merge/) instead of `CREATE`:
+
+    MATCH (a:User)-[:AUTHORED]-&gt;(c:Comment), (b:Flair)
+    WHERE c.flair = &#39;foo&#39; AND b.name = &#39;foo&#39;
+    MERGE (a)-[r:VOTES_FOR]-&gt;(b)
+    RETURN a, b, r
+
+*This query also removed the use of the `TYPE` function, since your query was using it illegally.*
+
+But I should also note you are introducing redundant data into your DB by adding the `VOTES_FOR` relationship. Instead, I would suggest removing the `flair` property from the `Comment` node and replacing it with a relationship between `Comment` and `Flair` nodes. The following query should achieve that (and would also avoid redundantly storing the same info in multiple places). In addition, it processes all flair values (not just &quot;foo&quot;):
+
+    MATCH (u:User)-[:AUTHORED]-&gt;(c:Comment), (f:Flair)
+    WHERE c.flair = f.name
+    REMOVE c.flair
+    MERGE (c)-[:FOR_FLAIR]-&gt;(f)
+    RETURN u, c, f
+
+Or, more efficiently, if you don&#39;t really need the `User` to be returned:
+
+    MATCH (c:Comment), (f:Flair)
+    WHERE c.flair = f.name
+    REMOVE c.flair
+    MERGE (c)-[:FOR_FLAIR]-&gt;(f)
+    RETURN c, f
+
+With this new data model, you can find all the distinct Flairs that were authored by a user this way:
+
+    MATCH (user:User)-[:AUTHORED]-&gt;()-[:FOR_FLAIR]-&gt;(flair)
+    WHERE user.id = 123
+    RETURN user, COLLECT(DISTINCT flair) AS flairs",
+          "link": "https://stackoverflow.com/a/61961973",
+          "title": "Avoid creating multiple relationships for each match",
+          "uuid": 61961973
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5827"
+      },
+      {
+        "identity": 5826,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": true,
+          "body_markdown": "You want to use `MERGE` instead of `CREATE` to have only a single relationship between those nodes.
+
+    MATCH (a:User)-[:AUTHORED]-(c:Comment),(b:Flair)
+    WHERE c.flair = &#39;foo&#39; and b.name = &#39;foo&#39;
+    MERGE (a)-[r:VOTES_FOR]-&gt;(b)
+    RETURN type(a,b,r)",
+          "link": "https://stackoverflow.com/a/61961776",
+          "title": "Avoid creating multiple relationships for each match",
+          "uuid": 61961776
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5826"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 524,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 61961776,
+        "body_markdown": "I have the following model, each `User` is linked to several `Comment` node with the `AUTHORED` relationship, each comment has a `flair` property which can be different on each comment. I also has a `Flair` node, and wish to create a new relationship between `User` nodes and `Flair` nodes.
+
+```
++--------+                          +---------+
+|        |                          |         |
+|  User  +------+ REL:AUTHORED+-----+ Comment |
+|        |                          |         |
++--------+                          +---------+
+```
+
+So I wrote the following query to try and do that, but it resulted in a relationship from the `User` node for each `Comment` node with the correct flair. I only want a single relationship between those nodes. How do I achieve that?
+```
+MATCH (a:User)-[:AUTHORED]-(c:Comment),(b:Flair)
+WHERE c.flair = &#39;foo&#39; and b.name = &#39;foo&#39;
+CREATE (a)-[r:VOTES_FOR]-&gt;(b)
+RETURN type(a,b,r)
+```",
+        "link": "https://stackoverflow.com/q/61961413",
+        "creation_date": 1590171376,
+        "answer_count": 2,
+        "title": "Avoid creating multiple relationships for each match",
+        "uuid": 61961413,
+        "view_count": 32
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:524"
+    },
+    "all_tags": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "answers": [
+      {
+        "identity": 5827,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 1,
+          "is_accepted": false,
+          "body_markdown": "To avoid creating duplicate relationships, you should use [MERGE](https://neo4j.com/docs/cypher-manual/current/clauses/merge/) instead of `CREATE`:
+
+    MATCH (a:User)-[:AUTHORED]-&gt;(c:Comment), (b:Flair)
+    WHERE c.flair = &#39;foo&#39; AND b.name = &#39;foo&#39;
+    MERGE (a)-[r:VOTES_FOR]-&gt;(b)
+    RETURN a, b, r
+
+*This query also removed the use of the `TYPE` function, since your query was using it illegally.*
+
+But I should also note you are introducing redundant data into your DB by adding the `VOTES_FOR` relationship. Instead, I would suggest removing the `flair` property from the `Comment` node and replacing it with a relationship between `Comment` and `Flair` nodes. The following query should achieve that (and would also avoid redundantly storing the same info in multiple places). In addition, it processes all flair values (not just &quot;foo&quot;):
+
+    MATCH (u:User)-[:AUTHORED]-&gt;(c:Comment), (f:Flair)
+    WHERE c.flair = f.name
+    REMOVE c.flair
+    MERGE (c)-[:FOR_FLAIR]-&gt;(f)
+    RETURN u, c, f
+
+Or, more efficiently, if you don&#39;t really need the `User` to be returned:
+
+    MATCH (c:Comment), (f:Flair)
+    WHERE c.flair = f.name
+    REMOVE c.flair
+    MERGE (c)-[:FOR_FLAIR]-&gt;(f)
+    RETURN c, f
+
+With this new data model, you can find all the distinct Flairs that were authored by a user this way:
+
+    MATCH (user:User)-[:AUTHORED]-&gt;()-[:FOR_FLAIR]-&gt;(flair)
+    WHERE user.id = 123
+    RETURN user, COLLECT(DISTINCT flair) AS flairs",
+          "link": "https://stackoverflow.com/a/61961973",
+          "title": "Avoid creating multiple relationships for each match",
+          "uuid": 61961973
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5827"
+      },
+      {
+        "identity": 5826,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": true,
+          "body_markdown": "You want to use `MERGE` instead of `CREATE` to have only a single relationship between those nodes.
+
+    MATCH (a:User)-[:AUTHORED]-(c:Comment),(b:Flair)
+    WHERE c.flair = &#39;foo&#39; and b.name = &#39;foo&#39;
+    MERGE (a)-[r:VOTES_FOR]-&gt;(b)
+    RETURN type(a,b,r)",
+          "link": "https://stackoverflow.com/a/61961776",
+          "title": "Avoid creating multiple relationships for each match",
+          "uuid": 61961776
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5826"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 568,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 61645257,
+        "body_markdown": "I want to print the books of two authors in order of year published.
+
+**Desired output:**
+```
+[
+  {
+     name: &#39;Player Piano&#39;,
+     published: 1952,
+     author: &#39;Kurt Vonnegut&#39;
+  },
+  {
+     name: &#39;Lolita&#39;,
+     published: 1955,
+     author: &#39;Vladimir Nobokov&#39;
+  },
+  {
+     name: &#39;Cat&#39;s Cradle&#39;,
+     published: 1963,
+     author: &#39;Kurt Vonnegut&#39;
+  }
+]
+```
+
+My query looks like this:
+
+```
+MATCH(kbook:Book)&lt;-[:WROTE]-(author:Author { name: &#39;Kurt Vonnegut&#39; })
+
+MATCH(nbook:Book)&lt;-[:WROTE]-(author:Author { name: &#39;Vladimir Nobokov&#39; })
+WITH kbook, nbook
+
+ORDER BY kbook.published, nbook.published
+RETURN collect(kbook) + collect(nbook)
+```
+
+**My problem**: if amount of Nobokov&#39;s books is less than that of Kurt&#39;s books, Nobokov&#39;s books will repeat until their amounts are equal (and vice versa)",
+        "link": "https://stackoverflow.com/q/61642780",
+        "creation_date": 1588790279,
+        "answer_count": 2,
+        "title": "How to merge and then sort two lists in Cypher?",
+        "uuid": 61642780,
+        "view_count": 82
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:568"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "answers": [
+      {
+        "identity": 5872,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 2,
+          "is_accepted": true,
+          "body_markdown": "[UPDATED]
+
+Here is a simple and efficient query (which only needs a single `MATCH`). For example, if the list of author names is passed in an `authNames` [parameter](https://neo4j.com/docs/cypher-manual/current/syntax/parameters/):
+
+    MATCH (b)&lt;-[:WROTE]-(a:Author)
+    WHERE a.name IN $authNames
+    WITH {name: b.title, published: b.published, authors: COLLECT(a.name)} AS item
+    ORDER BY b.published
+    RETURN COLLECT(item) AS books
+
+`COLLECT(a.name)` is used to make the `authors` value a list, since a book can generally have multiple authors.
+
+You may also want to create an [index](https://neo4j.com/docs/cypher-manual/current/administration/indexes-for-search-performance/) on `Author(name)` to optimize the query.
+
+### Addendum
+
+If you want to get a date-sorted list of book data (with possibly different properties, from various parts of the DB), you may want to use the new [post-union processing](https://neo4j.com/docs/cypher-manual/current/clauses/call-subquery/#subquery-post-union) support. For example, if you want to get a sorted list of books either authored by an author in `$authNames` or reviewed by a reviewer in `$revNames`:
+
+    CALL {
+      MATCH (b)&lt;-[:WROTE]-(a:Author)
+      WHERE a.name IN $authNames
+      RETURN {name: b.title, published: b.published, authors: COLLECT(a.name)} AS item
+      UNION ALL
+      MATCH (b)&lt;-[:REVIEWED]-(r:Reviewer)
+      WHERE r.name IN $revNames
+      RETURN {name: b.title, published: b.published, reviewers: COLLECT(r.name)} AS item
+    }
+    WITH item.name AS name, apoc.map.mergeList(COLLECT(item)) AS merged
+    ORDER BY merged.published
+    RETURN COLLECT(merged) AS books
+
+[UNION ALL](https://neo4j.com/docs/cypher-manual/current/clauses/union/#query-union) is used (instead of `UNION`) to avoid the effort to remove duplicates because in this example the 2 subqueries should not produce duplicate items. More `UNION`s can be added for additional subqueries.
+
+The [apoc.map.mergeList](https://neo4j.com/docs/labs/apoc/current/data-structures/map-functions/#map-functions) function is used (along with the [aggregating function](https://neo4j.com/docs/developer-manual/current/cypher/functions/aggregating/) `COLLECT`) to merge the author and reviewer data for the same book into a single map.",
+          "link": "https://stackoverflow.com/a/61645257",
+          "title": "How to merge and then sort two lists in Cypher?",
+          "uuid": 61645257
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5872"
+      },
+      {
+        "identity": 5871,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 1,
+          "is_accepted": false,
+          "body_markdown": "You can can collect the 1st, collect the 2nd, aggregate the list, unwind return and sort. Try this, modified from this article:
+https://neo4j.com/blog/cypher-union-query-using-collect-clause/
+
+    MATCH (kbook:Book)&lt;-[:WROTE]-(kauthor:Author {name: &#39;Kurt Vonnegut&#39;})
+    WITH collect({name: kbook.name, published: kbook.published, author: kauthor.name}) as rows
+    MATCH(nbook:Book)&lt;-[:WROTE]-(nauthor:Author {name: &#39;Vladimir Nobokov&#39;})
+    WITH rows + collect({name: nbook.name, published: nbook.published, author: nauthor.name}) as allRows
+    UNWIND allRows as row
+    RETURN row
+    ORDER BY row.published",
+          "link": "https://stackoverflow.com/a/61644697",
+          "title": "How to merge and then sort two lists in Cypher?",
+          "uuid": 61644697
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5871"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 568,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 61645257,
+        "body_markdown": "I want to print the books of two authors in order of year published.
+
+**Desired output:**
+```
+[
+  {
+     name: &#39;Player Piano&#39;,
+     published: 1952,
+     author: &#39;Kurt Vonnegut&#39;
+  },
+  {
+     name: &#39;Lolita&#39;,
+     published: 1955,
+     author: &#39;Vladimir Nobokov&#39;
+  },
+  {
+     name: &#39;Cat&#39;s Cradle&#39;,
+     published: 1963,
+     author: &#39;Kurt Vonnegut&#39;
+  }
+]
+```
+
+My query looks like this:
+
+```
+MATCH(kbook:Book)&lt;-[:WROTE]-(author:Author { name: &#39;Kurt Vonnegut&#39; })
+
+MATCH(nbook:Book)&lt;-[:WROTE]-(author:Author { name: &#39;Vladimir Nobokov&#39; })
+WITH kbook, nbook
+
+ORDER BY kbook.published, nbook.published
+RETURN collect(kbook) + collect(nbook)
+```
+
+**My problem**: if amount of Nobokov&#39;s books is less than that of Kurt&#39;s books, Nobokov&#39;s books will repeat until their amounts are equal (and vice versa)",
+        "link": "https://stackoverflow.com/q/61642780",
+        "creation_date": 1588790279,
+        "answer_count": 2,
+        "title": "How to merge and then sort two lists in Cypher?",
+        "uuid": 61642780,
+        "view_count": 82
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:568"
+    },
+    "all_tags": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "answers": [
+      {
+        "identity": 5872,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 2,
+          "is_accepted": true,
+          "body_markdown": "[UPDATED]
+
+Here is a simple and efficient query (which only needs a single `MATCH`). For example, if the list of author names is passed in an `authNames` [parameter](https://neo4j.com/docs/cypher-manual/current/syntax/parameters/):
+
+    MATCH (b)&lt;-[:WROTE]-(a:Author)
+    WHERE a.name IN $authNames
+    WITH {name: b.title, published: b.published, authors: COLLECT(a.name)} AS item
+    ORDER BY b.published
+    RETURN COLLECT(item) AS books
+
+`COLLECT(a.name)` is used to make the `authors` value a list, since a book can generally have multiple authors.
+
+You may also want to create an [index](https://neo4j.com/docs/cypher-manual/current/administration/indexes-for-search-performance/) on `Author(name)` to optimize the query.
+
+### Addendum
+
+If you want to get a date-sorted list of book data (with possibly different properties, from various parts of the DB), you may want to use the new [post-union processing](https://neo4j.com/docs/cypher-manual/current/clauses/call-subquery/#subquery-post-union) support. For example, if you want to get a sorted list of books either authored by an author in `$authNames` or reviewed by a reviewer in `$revNames`:
+
+    CALL {
+      MATCH (b)&lt;-[:WROTE]-(a:Author)
+      WHERE a.name IN $authNames
+      RETURN {name: b.title, published: b.published, authors: COLLECT(a.name)} AS item
+      UNION ALL
+      MATCH (b)&lt;-[:REVIEWED]-(r:Reviewer)
+      WHERE r.name IN $revNames
+      RETURN {name: b.title, published: b.published, reviewers: COLLECT(r.name)} AS item
+    }
+    WITH item.name AS name, apoc.map.mergeList(COLLECT(item)) AS merged
+    ORDER BY merged.published
+    RETURN COLLECT(merged) AS books
+
+[UNION ALL](https://neo4j.com/docs/cypher-manual/current/clauses/union/#query-union) is used (instead of `UNION`) to avoid the effort to remove duplicates because in this example the 2 subqueries should not produce duplicate items. More `UNION`s can be added for additional subqueries.
+
+The [apoc.map.mergeList](https://neo4j.com/docs/labs/apoc/current/data-structures/map-functions/#map-functions) function is used (along with the [aggregating function](https://neo4j.com/docs/developer-manual/current/cypher/functions/aggregating/) `COLLECT`) to merge the author and reviewer data for the same book into a single map.",
+          "link": "https://stackoverflow.com/a/61645257",
+          "title": "How to merge and then sort two lists in Cypher?",
+          "uuid": 61645257
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5872"
+      },
+      {
+        "identity": 5871,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 1,
+          "is_accepted": false,
+          "body_markdown": "You can can collect the 1st, collect the 2nd, aggregate the list, unwind return and sort. Try this, modified from this article:
+https://neo4j.com/blog/cypher-union-query-using-collect-clause/
+
+    MATCH (kbook:Book)&lt;-[:WROTE]-(kauthor:Author {name: &#39;Kurt Vonnegut&#39;})
+    WITH collect({name: kbook.name, published: kbook.published, author: kauthor.name}) as rows
+    MATCH(nbook:Book)&lt;-[:WROTE]-(nauthor:Author {name: &#39;Vladimir Nobokov&#39;})
+    WITH rows + collect({name: nbook.name, published: nbook.published, author: nauthor.name}) as allRows
+    UNWIND allRows as row
+    RETURN row
+    ORDER BY row.published",
+          "link": "https://stackoverflow.com/a/61644697",
+          "title": "How to merge and then sort two lists in Cypher?",
+          "uuid": 61644697
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5871"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 5431,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 66488684,
+        "body_markdown": "I&#39;m pretty new in neo4j and I have troubles to get a well result for my query. I have the next model:
+```
+Player &lt;- HAS_PLAYERS - Game
+
+Node Player: playerId, name,...etc
+Node Game: gameId, gameDate
+Rel. HAS_PLAYERS: result
+```
+Note that a Game could have 1-4 players.
+
+I would like to make a query to suggest future opponents to a player ordered by:
+Previous opponents ordered by `gameDate` (more recent) and then opponents of opponents ordered by `gameDate`.
+
+For example:
+```
+PlayerA &lt;- 2021/02/01 -&gt; PlayerB*
+PlayerA &lt;- 2021/02/01 -&gt; PlayerC*
+PlayerA &lt;- 2021/02/11 -&gt; PlayerB
+
+PlayerB &lt;- 2021/02/04 -&gt; PlayerC
+PlayerB &lt;- 2021/02/20 -&gt; PlayerD
+
+PlayerC &lt;- 2021/02/15 -&gt; PlayerD
+PlayerC &lt;- 2021/12/01 -&gt; PlayerE
+
+PlayerD &lt;- 2021/02/07 -&gt; PlayerE
+PlayerD &lt;- 2021/02/23 -&gt; PlayerF
+
+* = Same game
+
+The result would be:
+
+PlayerB
+PlayerC
+PlayerE
+PlayerD
+```
+Explanation:
+`PlayerB` and `PlayerC` have been opponents before but `PlayerB` is the first one because the last game was more recent than `PlayerC`.
+
+`PlayerE` and `PlayerD` are opponents-of-opponents and `PlayerE` is before because the next game will be in December.
+
+I have the next query but my problem is the query returns *duplicated nodes*:
+```
+# Getting direct opponents
+MATCH (p:Player {userId: &quot;PlayerA&quot;})&lt;-[:HAS_PLAYERS]-(g:Game)-[:HAS_PLAYERS]-&gt;(o:Player)
+WITH p, o, g ORDER BY g.gameDate DESC 
+WITH p, COLLECT(o) AS opponents
+# Getting opponents-of-opponents (ops)
+MATCH (p)-[:HAS_PLAYERS*3]-(gops:Game)--(ops:Player)
+WHERE p.userId &lt;&gt; ops.userId AND NOT ops IN opponents
+# Trying to remove duplicated nodes
+WITH DISTINCT ops, opponents, gops
+WITH opponents, ops, gops ORDER BY gops.gameDate DESC
+# Concat both lists: opponents and opponents-of-opponents
+WITH REDUCE(s = opponents, o2 IN COLLECT(ops) | s + o2) as listAllOpponents
+UNWIND listAllOpponents as opPlayer
+RETURN opPlayer
+```
+It returns something like:
+```
+PlayerB
+PlayerC
+PlayerD
+PlayerE
+PlayerD
+```
+Any help would be appreciated.",
+        "link": "https://stackoverflow.com/q/66316767",
+        "creation_date": 1614001033,
+        "answer_count": 2,
+        "title": "Get nodes sorted by proximity and at the same level sort by date",
+        "uuid": 66316767,
+        "view_count": 41
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5431"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "answers": [
+      {
+        "identity": 2903,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": true,
+          "body_markdown": "This is my solution:
+
+    # Getting direct opponents
+    MATCH (p:Player {userId: &quot;PlayerA&quot;})&lt;-[:HAS_PLAYERS]-(g:Game)-[:HAS_PLAYERS]-&gt;(o:Player)
+    WITH p, o, max(g.gameDate) as maxDate
+    WITH p, o ORDER BY maxDate DESC
+    WITH p, COLLECT(o) AS opponents
+    # Getting opponents-of-opponents (ops)
+    OPTIONAL MATCH (p)-[:HAS_PLAYERS*3]-(gops:Game)--(ops:Player)
+    WHERE p.userId &lt;&gt; ops.userId AND NOT ops IN opponents
+    WITH opponents, ops, max(gops.start) as maxDate
+    WITH opponents, ops ORDER BY maxDate DESC
+    WITH opponents, COLLECT(ops) AS opponentsOfOpponents
+    # Concat both lists: opponents and opponents-of-opponents
+    UNWIND (opponents + opponentsOfOpponents) AS player
+    RETURN player",
+          "link": "https://stackoverflow.com/a/66488684",
+          "title": "Get nodes sorted by proximity and at the same level sort by date",
+          "uuid": 66488684
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2903"
+      },
+      {
+        "identity": 2902,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 1,
+          "is_accepted": false,
+          "body_markdown": "When you aggregate the nodes, it will not remove duplicates so adding the keyword &quot;distinct&quot; will fix it.  Instead of COLLECT(o), use COLLECT(DISTINCT o) as opponents and COLLECT(DISTINCT ops). 
+
+    // Getting direct opponents
+    MATCH (p:Player {userId: &quot;34618&quot;})&lt;-[:HAS_PLAYERS]-(g:Game)-[:HAS_PLAYERS]-&gt;(o:Player)
+    WITH p, o, g ORDER BY g.gameDate DESC 
+    WITH p, COLLECT(DISTINCT o) AS opponents
+    // Getting opponents-of-opponents (ops)
+    MATCH (p)-[:HAS_PLAYERS*3]-(gops:Game)--(ops:Player)
+    WHERE p.userId &lt;&gt; ops.userId AND NOT ops IN opponents
+    // Trying to remove duplicated nodes
+    WITH DISTINCT ops, opponents, gops
+    WITH opponents, ops, gops ORDER BY gops.gameDate DESC
+    // Concat both lists: opponents and opponents-of-opponents
+    WITH REDUCE(s = opponents, o2 IN COLLECT(DISTINCT ops) | s + o2) as listAllOpponents
+    UNWIND listAllOpponents as opPlayer
+    RETURN opPlayer
+
+    Result:
+       PlayerB
+       PlayerC
+       PlayerE
+       PlayerD",
+          "link": "https://stackoverflow.com/a/66322469",
+          "title": "Get nodes sorted by proximity and at the same level sort by date",
+          "uuid": 66322469
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2902"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 5431,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 66488684,
+        "body_markdown": "I&#39;m pretty new in neo4j and I have troubles to get a well result for my query. I have the next model:
+```
+Player &lt;- HAS_PLAYERS - Game
+
+Node Player: playerId, name,...etc
+Node Game: gameId, gameDate
+Rel. HAS_PLAYERS: result
+```
+Note that a Game could have 1-4 players.
+
+I would like to make a query to suggest future opponents to a player ordered by:
+Previous opponents ordered by `gameDate` (more recent) and then opponents of opponents ordered by `gameDate`.
+
+For example:
+```
+PlayerA &lt;- 2021/02/01 -&gt; PlayerB*
+PlayerA &lt;- 2021/02/01 -&gt; PlayerC*
+PlayerA &lt;- 2021/02/11 -&gt; PlayerB
+
+PlayerB &lt;- 2021/02/04 -&gt; PlayerC
+PlayerB &lt;- 2021/02/20 -&gt; PlayerD
+
+PlayerC &lt;- 2021/02/15 -&gt; PlayerD
+PlayerC &lt;- 2021/12/01 -&gt; PlayerE
+
+PlayerD &lt;- 2021/02/07 -&gt; PlayerE
+PlayerD &lt;- 2021/02/23 -&gt; PlayerF
+
+* = Same game
+
+The result would be:
+
+PlayerB
+PlayerC
+PlayerE
+PlayerD
+```
+Explanation:
+`PlayerB` and `PlayerC` have been opponents before but `PlayerB` is the first one because the last game was more recent than `PlayerC`.
+
+`PlayerE` and `PlayerD` are opponents-of-opponents and `PlayerE` is before because the next game will be in December.
+
+I have the next query but my problem is the query returns *duplicated nodes*:
+```
+# Getting direct opponents
+MATCH (p:Player {userId: &quot;PlayerA&quot;})&lt;-[:HAS_PLAYERS]-(g:Game)-[:HAS_PLAYERS]-&gt;(o:Player)
+WITH p, o, g ORDER BY g.gameDate DESC 
+WITH p, COLLECT(o) AS opponents
+# Getting opponents-of-opponents (ops)
+MATCH (p)-[:HAS_PLAYERS*3]-(gops:Game)--(ops:Player)
+WHERE p.userId &lt;&gt; ops.userId AND NOT ops IN opponents
+# Trying to remove duplicated nodes
+WITH DISTINCT ops, opponents, gops
+WITH opponents, ops, gops ORDER BY gops.gameDate DESC
+# Concat both lists: opponents and opponents-of-opponents
+WITH REDUCE(s = opponents, o2 IN COLLECT(ops) | s + o2) as listAllOpponents
+UNWIND listAllOpponents as opPlayer
+RETURN opPlayer
+```
+It returns something like:
+```
+PlayerB
+PlayerC
+PlayerD
+PlayerE
+PlayerD
+```
+Any help would be appreciated.",
+        "link": "https://stackoverflow.com/q/66316767",
+        "creation_date": 1614001033,
+        "answer_count": 2,
+        "title": "Get nodes sorted by proximity and at the same level sort by date",
+        "uuid": 66316767,
+        "view_count": 41
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5431"
+    },
+    "all_tags": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    },
+    "answers": [
+      {
+        "identity": 2903,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": true,
+          "body_markdown": "This is my solution:
+
+    # Getting direct opponents
+    MATCH (p:Player {userId: &quot;PlayerA&quot;})&lt;-[:HAS_PLAYERS]-(g:Game)-[:HAS_PLAYERS]-&gt;(o:Player)
+    WITH p, o, max(g.gameDate) as maxDate
+    WITH p, o ORDER BY maxDate DESC
+    WITH p, COLLECT(o) AS opponents
+    # Getting opponents-of-opponents (ops)
+    OPTIONAL MATCH (p)-[:HAS_PLAYERS*3]-(gops:Game)--(ops:Player)
+    WHERE p.userId &lt;&gt; ops.userId AND NOT ops IN opponents
+    WITH opponents, ops, max(gops.start) as maxDate
+    WITH opponents, ops ORDER BY maxDate DESC
+    WITH opponents, COLLECT(ops) AS opponentsOfOpponents
+    # Concat both lists: opponents and opponents-of-opponents
+    UNWIND (opponents + opponentsOfOpponents) AS player
+    RETURN player",
+          "link": "https://stackoverflow.com/a/66488684",
+          "title": "Get nodes sorted by proximity and at the same level sort by date",
+          "uuid": 66488684
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2903"
+      },
+      {
+        "identity": 2902,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 1,
+          "is_accepted": false,
+          "body_markdown": "When you aggregate the nodes, it will not remove duplicates so adding the keyword &quot;distinct&quot; will fix it.  Instead of COLLECT(o), use COLLECT(DISTINCT o) as opponents and COLLECT(DISTINCT ops). 
+
+    // Getting direct opponents
+    MATCH (p:Player {userId: &quot;34618&quot;})&lt;-[:HAS_PLAYERS]-(g:Game)-[:HAS_PLAYERS]-&gt;(o:Player)
+    WITH p, o, g ORDER BY g.gameDate DESC 
+    WITH p, COLLECT(DISTINCT o) AS opponents
+    // Getting opponents-of-opponents (ops)
+    MATCH (p)-[:HAS_PLAYERS*3]-(gops:Game)--(ops:Player)
+    WHERE p.userId &lt;&gt; ops.userId AND NOT ops IN opponents
+    // Trying to remove duplicated nodes
+    WITH DISTINCT ops, opponents, gops
+    WITH opponents, ops, gops ORDER BY gops.gameDate DESC
+    // Concat both lists: opponents and opponents-of-opponents
+    WITH REDUCE(s = opponents, o2 IN COLLECT(DISTINCT ops) | s + o2) as listAllOpponents
+    UNWIND listAllOpponents as opPlayer
+    RETURN opPlayer
+
+    Result:
+       PlayerB
+       PlayerC
+       PlayerE
+       PlayerD",
+          "link": "https://stackoverflow.com/a/66322469",
+          "title": "Get nodes sorted by proximity and at the same level sort by date",
+          "uuid": 66322469
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2902"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 5109,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "are Neo4j apoc library have opposed of `apoc.text.hexValue`
+
+that can get hexString and return value in hex number or decimal number ?
+
+Thanks.",
+        "link": "https://stackoverflow.com/q/67464896",
+        "creation_date": 1620622158,
+        "answer_count": 2,
+        "title": "Opposed of apoc.text.HexValue in neo4j",
+        "uuid": 67464896,
+        "view_count": 26
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5109"
+    },
+    "all_tags": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "answers": [
+      {
+        "identity": 2570,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": false,
+          "body_markdown": "There is an APOC function that converts a string character into hex. But 
+ there is no function to convert a string &gt; 1 char into hex. https://neo4j.com/labs/apoc/4.1/overview/apoc.text/apoc.text.hexCharAt/
+
+    apoc.text.hexCharAt(text :: STRING?, index :: INTEGER?)
+
+For example: Convert the character &quot;j&quot; into hex. The 5th char (or index 4) of the string Neo4j is converted into hex
+
+    RETURN apoc.text.hexCharAt(&quot;Neo4j&quot;, 4) AS output;
+
+    Result: &quot;006A&quot;
+",
+          "link": "https://stackoverflow.com/a/67470690",
+          "title": "Opposed of apoc.text.HexValue in neo4j",
+          "uuid": 67470690
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2570"
+      },
+      {
+        "identity": 2571,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": false,
+          "body_markdown": "You can create a GH issue for the inverse function.
+
+Until then you can compute it manually too.
+
+```
+with &quot;1FE&quot; as hex 
+return reduce(res=0, c in split(toUpper(hex),&#39;&#39;) 
+| res*16 + 
+case c when &#39;F&#39; then 15 when &#39;E&#39; then 14 when &#39;D&#39; then &#39;13&#39; when &#39;C&#39; then 12 when &#39;B&#39; then 11 when &#39;A&#39; then 10 
+else toInteger(c) end) 
+as value, 0x1FE as comp
+```
+
+btw. Cypher also supports hex values: `return 0x1F`",
+          "link": "https://stackoverflow.com/a/67472144",
+          "title": "Opposed of apoc.text.HexValue in neo4j",
+          "uuid": 67472144
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2571"
+      }
+    ]
+  },
+  {
+    "q": {
+      "identity": 5109,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "are Neo4j apoc library have opposed of `apoc.text.hexValue`
+
+that can get hexString and return value in hex number or decimal number ?
+
+Thanks.",
+        "link": "https://stackoverflow.com/q/67464896",
+        "creation_date": 1620622158,
+        "answer_count": 2,
+        "title": "Opposed of apoc.text.HexValue in neo4j",
+        "uuid": 67464896,
+        "view_count": 26
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5109"
+    },
+    "all_tags": {
+      "identity": 1684,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j-apoc",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j-apoc"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1684"
+    },
+    "answers": [
+      {
+        "identity": 2570,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": false,
+          "body_markdown": "There is an APOC function that converts a string character into hex. But 
+ there is no function to convert a string &gt; 1 char into hex. https://neo4j.com/labs/apoc/4.1/overview/apoc.text/apoc.text.hexCharAt/
+
+    apoc.text.hexCharAt(text :: STRING?, index :: INTEGER?)
+
+For example: Convert the character &quot;j&quot; into hex. The 5th char (or index 4) of the string Neo4j is converted into hex
+
+    RETURN apoc.text.hexCharAt(&quot;Neo4j&quot;, 4) AS output;
+
+    Result: &quot;006A&quot;
+",
+          "link": "https://stackoverflow.com/a/67470690",
+          "title": "Opposed of apoc.text.HexValue in neo4j",
+          "uuid": 67470690
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2570"
+      },
+      {
+        "identity": 2571,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "score": 0,
+          "is_accepted": false,
+          "body_markdown": "You can create a GH issue for the inverse function.
+
+Until then you can compute it manually too.
+
+```
+with &quot;1FE&quot; as hex 
+return reduce(res=0, c in split(toUpper(hex),&#39;&#39;) 
+| res*16 + 
+case c when &#39;F&#39; then 15 when &#39;E&#39; then 14 when &#39;D&#39; then &#39;13&#39; when &#39;C&#39; then 12 when &#39;B&#39; then 11 when &#39;A&#39; then 10 
+else toInteger(c) end) 
+as value, 0x1FE as comp
+```
+
+btw. Cypher also supports hex values: `return 0x1F`",
+          "link": "https://stackoverflow.com/a/67472144",
+          "title": "Opposed of apoc.text.HexValue in neo4j",
+          "uuid": 67472144
+        },
+        "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2571"
+      }
+    ]
+  }
+]

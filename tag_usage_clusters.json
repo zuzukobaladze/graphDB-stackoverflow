@@ -1,0 +1,2178 @@
+﻿[
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 379,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I have the following two triggers named &#39;loadEnrollments&#39; and &#39;loadDeenrollments&#39;.
+
+    CALL apoc.trigger.add(&#39;loadEnrollments&#39;,
+    &quot;UNWIND apoc.trigger.nodesByLabel($assignedLabels, &#39;Enrollment&#39;) AS node
+     MERGE (p1:SPerson { name: node.name, cell: node.cell, created_at: node.created_at})
+     WITH p1, node
+     MATCH (n:SPerson)
+     WITH node, COUNT(n) as size
+     CALL apoc.do.when(
+     size&gt;3,
+     &#39;
+     MATCH(p1:SPerson),(c:Course)
+     WHERE p1.name=node.name AND c.name=\&quot;Paradigm Shifting 101\&quot;
+     CREATE (p1)-[:Waitlist]-&gt;(c)
+	 SET p1.status=2
+     WITH node
+     RETURN NULL&#39;,
+     &#39;
+     MATCH(p1:SPerson),(c:Course)
+     WHERE p1.name=node.name AND c.name=\&quot;Paradigm Shifting 101\&quot;
+     CREATE (p1)-[:Enrolled]-&gt;(c)
+	 SET p1.status=1
+     WITH node
+     RETURN NULL&#39;, {node:node}) YIELD value
+     DETACH DELETE node&quot;,
+
+     { phase: &#39;after&#39; })
+
+
+
+    CALL apoc.trigger.add(&#39;loadDeenrollments&#39;,
+    &quot;
+    UNWIND apoc.trigger.nodesByLabel($assignedLabels, &#39;Deenrollment&#39;) AS node
+     MATCH (p1:SPerson {name: node.name, cell: node.cell})
+     MATCH (c:Course {name: &#39;Paradigm Shifting 101&#39;})
+     CREATE (p1)-[:Deenrolled]-&gt;(c)
+	   SET p1.status=3
+     WITH p1, node,c
+     MATCH (p1:SPerson {name: node.name, cell: node.cell})-[r:Enrolled]-&gt;(c)
+     DELETE r
+     DETACH DELETE node
+     WITH p1,c
+     MATCH (p1)-[r:Enrolled]-&gt;(c)
+     WITH COUNT(r) as k
+     CALL apoc.do.when(
+     k&lt;3,     &#39;
+      MATCH (p1:SPerson)-[:Waitlist]-&gt;(c:Course)
+      WITH min(p1.created_at) AS min
+      MATCH (p1:SPerson),(c:Course)
+      WHERE p1.created_at = min
+      CREATE (p1)-[:Random]-&gt;(c)
+      RETURN p1,c&#39;,
+     &#39;
+     MATCH (n:SPerson) RETURN n
+     &#39;,{k:k}
+     ) YIELD value
+     RETURN NULL&quot;,
+
+     { phase: &#39;after&#39; })
+
+
+When I load both of them and create a &#39;Enrollment&#39; nodes by the following commands. The &#39;loadenrollment&#39; trigger works as desired and create SPerson nodes for cat1,cat2 and cat3 and creates an &#39;enrolled&#39; relationship with the &#39;course&#39; node.
+
+
+    CREATE (:Enrollment { name: &quot;cat1&quot;, cell: &quot;123&quot;, created_at: TIMESTAMP()});
+    CREATE (:Enrollment { name: &quot;cat2&quot;, cell: &quot;123&quot;, created_at: TIMESTAMP()});
+    CREATE (:Enrollment { name: &quot;cat3&quot;, cell: &quot;123&quot;, created_at: TIMESTAMP()});
+
+The Problem occurs when I create the 4th node 
+
+    CREATE (:Enrollment { name: &quot;cat4&quot;, cell: &quot;123&quot;, created_at: TIMESTAMP()});
+Ideally, it should create a SPerson node for cat4 and add a &#39;waitlist&#39; relationship with the &#39;course&#39; node.
+But for some reason when I create that node it adds the &#39;waitlist&#39; relationship but also adds the &#39;Random&#39; relationship that I defined in the second trigger(&#39;loadDeenrollments&#39;). This should never happen as this trigger would only trigger when I create a &#39;Deenrollment&#39; node but for some reason it is executing that trigger.
+
+Also, I tried adding just the &#39;loadEnrollments&#39; trigger and it works as desired(obviously, as there is no &#39;loadDeenrollments&#39; trigger) i.e. creating the four &#39;SPerson&#39; nodes and with three nodes having &#39;enrolled&#39; relationship and one having &#39;waitlist&#39; relationship.
+
+I don&#39;t know whats&#39;s wrong. Any help is appreciated!",
+        "link": "https://stackoverflow.com/q/62975957",
+        "creation_date": 1595129708,
+        "answer_count": 0,
+        "title": "Neo4j- APOC trigger fires without any reason",
+        "uuid": 62975957,
+        "view_count": 71
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:379"
+    },
+    "t2": {
+      "identity": 1684,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j-apoc",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j-apoc"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1684"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 379,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I have the following two triggers named &#39;loadEnrollments&#39; and &#39;loadDeenrollments&#39;.
+
+    CALL apoc.trigger.add(&#39;loadEnrollments&#39;,
+    &quot;UNWIND apoc.trigger.nodesByLabel($assignedLabels, &#39;Enrollment&#39;) AS node
+     MERGE (p1:SPerson { name: node.name, cell: node.cell, created_at: node.created_at})
+     WITH p1, node
+     MATCH (n:SPerson)
+     WITH node, COUNT(n) as size
+     CALL apoc.do.when(
+     size&gt;3,
+     &#39;
+     MATCH(p1:SPerson),(c:Course)
+     WHERE p1.name=node.name AND c.name=\&quot;Paradigm Shifting 101\&quot;
+     CREATE (p1)-[:Waitlist]-&gt;(c)
+	 SET p1.status=2
+     WITH node
+     RETURN NULL&#39;,
+     &#39;
+     MATCH(p1:SPerson),(c:Course)
+     WHERE p1.name=node.name AND c.name=\&quot;Paradigm Shifting 101\&quot;
+     CREATE (p1)-[:Enrolled]-&gt;(c)
+	 SET p1.status=1
+     WITH node
+     RETURN NULL&#39;, {node:node}) YIELD value
+     DETACH DELETE node&quot;,
+
+     { phase: &#39;after&#39; })
+
+
+
+    CALL apoc.trigger.add(&#39;loadDeenrollments&#39;,
+    &quot;
+    UNWIND apoc.trigger.nodesByLabel($assignedLabels, &#39;Deenrollment&#39;) AS node
+     MATCH (p1:SPerson {name: node.name, cell: node.cell})
+     MATCH (c:Course {name: &#39;Paradigm Shifting 101&#39;})
+     CREATE (p1)-[:Deenrolled]-&gt;(c)
+	   SET p1.status=3
+     WITH p1, node,c
+     MATCH (p1:SPerson {name: node.name, cell: node.cell})-[r:Enrolled]-&gt;(c)
+     DELETE r
+     DETACH DELETE node
+     WITH p1,c
+     MATCH (p1)-[r:Enrolled]-&gt;(c)
+     WITH COUNT(r) as k
+     CALL apoc.do.when(
+     k&lt;3,     &#39;
+      MATCH (p1:SPerson)-[:Waitlist]-&gt;(c:Course)
+      WITH min(p1.created_at) AS min
+      MATCH (p1:SPerson),(c:Course)
+      WHERE p1.created_at = min
+      CREATE (p1)-[:Random]-&gt;(c)
+      RETURN p1,c&#39;,
+     &#39;
+     MATCH (n:SPerson) RETURN n
+     &#39;,{k:k}
+     ) YIELD value
+     RETURN NULL&quot;,
+
+     { phase: &#39;after&#39; })
+
+
+When I load both of them and create a &#39;Enrollment&#39; nodes by the following commands. The &#39;loadenrollment&#39; trigger works as desired and create SPerson nodes for cat1,cat2 and cat3 and creates an &#39;enrolled&#39; relationship with the &#39;course&#39; node.
+
+
+    CREATE (:Enrollment { name: &quot;cat1&quot;, cell: &quot;123&quot;, created_at: TIMESTAMP()});
+    CREATE (:Enrollment { name: &quot;cat2&quot;, cell: &quot;123&quot;, created_at: TIMESTAMP()});
+    CREATE (:Enrollment { name: &quot;cat3&quot;, cell: &quot;123&quot;, created_at: TIMESTAMP()});
+
+The Problem occurs when I create the 4th node 
+
+    CREATE (:Enrollment { name: &quot;cat4&quot;, cell: &quot;123&quot;, created_at: TIMESTAMP()});
+Ideally, it should create a SPerson node for cat4 and add a &#39;waitlist&#39; relationship with the &#39;course&#39; node.
+But for some reason when I create that node it adds the &#39;waitlist&#39; relationship but also adds the &#39;Random&#39; relationship that I defined in the second trigger(&#39;loadDeenrollments&#39;). This should never happen as this trigger would only trigger when I create a &#39;Deenrollment&#39; node but for some reason it is executing that trigger.
+
+Also, I tried adding just the &#39;loadEnrollments&#39; trigger and it works as desired(obviously, as there is no &#39;loadDeenrollments&#39; trigger) i.e. creating the four &#39;SPerson&#39; nodes and with three nodes having &#39;enrolled&#39; relationship and one having &#39;waitlist&#39; relationship.
+
+I don&#39;t know whats&#39;s wrong. Any help is appreciated!",
+        "link": "https://stackoverflow.com/q/62975957",
+        "creation_date": 1595129708,
+        "answer_count": 0,
+        "title": "Neo4j- APOC trigger fires without any reason",
+        "uuid": 62975957,
+        "view_count": 71
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:379"
+    },
+    "t2": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 61,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 66230888,
+        "body_markdown": "I have this cypher query
+
+    int[] pIds = new int[] {101, 012}; 
+    var query = _graphClient.Cypher.Read
+                .OptionalMatch($&quot;(p: {Labels.PERSON})&quot;)
+                .Where($&quot;p.Id IN [{pIds}]&quot;) 
+                .Return&lt;Person&gt;(p);
+
+On debugging it looks like this: 
+
+    OPTIONAL MATCH (p: Person)
+    WHERE p.Id IN [System.Int32[]] 
+    RETURN distinct p
+
+****
+
+
+The values that I should pass in this where clause [101, 012], but its not. Because pIds[0] = 101, pIds[1] = 012 - and its never read in the cypher query. 
+
+Where am I going wrong and its failing to pass the values? How should I pass the int[] in the Where IN... 
+",
+        "link": "https://stackoverflow.com/q/65598673",
+        "creation_date": 1609947272,
+        "answer_count": 2,
+        "title": "How to use the int[] in where IN clause in Cypher Query (using C#)",
+        "uuid": 65598673,
+        "view_count": 36
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:61"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 61,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 66230888,
+        "body_markdown": "I have this cypher query
+
+    int[] pIds = new int[] {101, 012}; 
+    var query = _graphClient.Cypher.Read
+                .OptionalMatch($&quot;(p: {Labels.PERSON})&quot;)
+                .Where($&quot;p.Id IN [{pIds}]&quot;) 
+                .Return&lt;Person&gt;(p);
+
+On debugging it looks like this: 
+
+    OPTIONAL MATCH (p: Person)
+    WHERE p.Id IN [System.Int32[]] 
+    RETURN distinct p
+
+****
+
+
+The values that I should pass in this where clause [101, 012], but its not. Because pIds[0] = 101, pIds[1] = 012 - and its never read in the cypher query. 
+
+Where am I going wrong and its failing to pass the values? How should I pass the int[] in the Where IN... 
+",
+        "link": "https://stackoverflow.com/q/65598673",
+        "creation_date": 1609947272,
+        "answer_count": 2,
+        "title": "How to use the int[] in where IN clause in Cypher Query (using C#)",
+        "uuid": 65598673,
+        "view_count": 36
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:61"
+    },
+    "t2": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 5462,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I am matching a full path, deleting the last node and then walking back up the nodes to delete any that have no downward relationships.
+
+This query does what I want:
+
+    MATCH (t:type)-[:HAS]-&gt;(m:model)-[:HAS]-(r:region)-[:HAS]-(p:param)-[:HAS]-(i:init { value: 1613044800})-[init_has:HAS]-(u:{url: &#39;http://something2.png&#39;}) 
+    DELETE init_has, u
+    WITH i,p,r,m,t
+    MATCH (i) WHERE NOT (i)-[:HAS]-&gt;()
+    DETACH DELETE i
+    WITH p,r,m,t
+    MATCH (p) WHERE NOT (p)-[:HAS]-&gt;()
+    DETACH DELETE p
+    WITH r,m,t
+    MATCH (r) WHERE NOT (r)-[:HAS]-&gt;()
+    DETACH DELETE r
+    WITH m,t
+    MATCH (m) WHERE NOT (m)-[:HAS]-&gt;()
+    DETACH DELETE m
+    WITH t
+    MATCH (t) WHERE NOT (t)-[:HAS]-&gt;()
+    DETACH DELETE t
+
+But this query only deletes the first node in the in the WITH statement, `i`:
+
+    MATCH (t:type)-[:HAS]-&gt;(m:model)-[:HAS]-(r:region)-[:HAS]-(p:param)-[:HAS]-(i:init { value: 1613044800})-[init_has:HAS]-(u:{url: &#39;http://something2.png&#39;}) 
+    DELETE init_has, u
+    WITH [i,p,r,m,t] AS parents
+    UNWIND parents AS parent
+    WITH parent 
+    MATCH (parent) WHERE NOT (parent)-[:HAS]-&gt;()
+    DETACH DELETE parent
+
+It leaves the node `p`, which does not have any downward relationships. Why are these queries different? Can I somehow modify the second query to correctly iterate through these nodes and delete them if they have no downward relationships?  
+
+",
+        "link": "https://stackoverflow.com/q/66177868",
+        "creation_date": 1613157778,
+        "answer_count": 1,
+        "title": "Why don&#39;t these Cypher queries do the same thing?",
+        "uuid": 66177868,
+        "view_count": 26
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5462"
+    },
+    "t2": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 5006,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I am trying to return a set of a node from 2 sessions with a condition that returned node should not be present in another session (third session). I am using the following code but it is not working as intended.
+
+```
+MATCH (:Session {session_id: &#39;abc3&#39;})-[:HAS_PRODUCT]-&gt;(p:Product)        
+
+UNWIND [&#39;abc1&#39;, &#39;abc2&#39;] as session_id
+MATCH (target:Session {session_id: session_id})-[r:HAS_PRODUCT]-&gt;(product:Product)
+where p&lt;&gt;product
+
+WITH distinct product.products_id as products_id, r
+RETURN products_id, count(r) as score
+ORDER BY score desc
+```
+
+This query was supposed to return all nodes present in `abc1 &amp; abc2` but not in `abc3`. This query is not excluding all products present in `abc3`. Is there any way I can get it working?
+
+
+**UPDATE 1:**
+I tried to simplify it without `UNWIND` as this
+```
+match (:Session {session_id: &#39;abc3&#39;})-[:HAS_PRODUCT]-&gt;(p:Product)
+MATCH (target:Session {session_id: &#39;abc1&#39;})-[r:HAS_PRODUCT]-&gt;(product:Product)
+where product &lt;&gt; p
+WITH distinct product.products_id as products_id
+RETURN products_id
+```
+Even this is also not working. It is returning all items present in `abc1` without removing those which are already in `abc3`. Seems like `where product &lt;&gt; p` is not working correctly. ",
+        "link": "https://stackoverflow.com/q/67834810",
+        "creation_date": 1622798783,
+        "answer_count": 1,
+        "title": "Do not return set of nodes from a specific path in Cypher",
+        "uuid": 67834810,
+        "view_count": 23
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5006"
+    },
+    "t2": {
+      "identity": 1888,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "redisgraph",
+        "link": "https://stackoverflow.com/questions/tagged/redisgraph"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1888"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 5006,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I am trying to return a set of a node from 2 sessions with a condition that returned node should not be present in another session (third session). I am using the following code but it is not working as intended.
+
+```
+MATCH (:Session {session_id: &#39;abc3&#39;})-[:HAS_PRODUCT]-&gt;(p:Product)        
+
+UNWIND [&#39;abc1&#39;, &#39;abc2&#39;] as session_id
+MATCH (target:Session {session_id: session_id})-[r:HAS_PRODUCT]-&gt;(product:Product)
+where p&lt;&gt;product
+
+WITH distinct product.products_id as products_id, r
+RETURN products_id, count(r) as score
+ORDER BY score desc
+```
+
+This query was supposed to return all nodes present in `abc1 &amp; abc2` but not in `abc3`. This query is not excluding all products present in `abc3`. Is there any way I can get it working?
+
+
+**UPDATE 1:**
+I tried to simplify it without `UNWIND` as this
+```
+match (:Session {session_id: &#39;abc3&#39;})-[:HAS_PRODUCT]-&gt;(p:Product)
+MATCH (target:Session {session_id: &#39;abc1&#39;})-[r:HAS_PRODUCT]-&gt;(product:Product)
+where product &lt;&gt; p
+WITH distinct product.products_id as products_id
+RETURN products_id
+```
+Even this is also not working. It is returning all items present in `abc1` without removing those which are already in `abc3`. Seems like `where product &lt;&gt; p` is not working correctly. ",
+        "link": "https://stackoverflow.com/q/67834810",
+        "creation_date": 1622798783,
+        "answer_count": 1,
+        "title": "Do not return set of nodes from a specific path in Cypher",
+        "uuid": 67834810,
+        "view_count": 23
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5006"
+    },
+    "t2": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 4686,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 69106124,
+        "body_markdown": "I have a database where sentences are related to each other. I have to perform a big update on the whole database, thus I&#39;m trying to parallelize the update.
+
+The relevant cypher query looks like this:
+```
+match (s:Sentence)-[r:RELATED]-(t:Sentence)
+return s as sentence, collect(t.embedding) as neighbours_embeddings
+```
+`embedding` is a list of numbers.
+
+This returns a result like this:
+```
+---------------------------------------
+| sentence   |  neighbours_embeddings |
+---------------------------------------
+| sentence1  | [[1, 2, 3], [4, 5, 6]] | 
+---------------------------------------
+| sentence2  | [[2, 3, 5]]            |
+---------------------------------------
+```
+Now I wanna perform some operations on the neighbours_embeddings and set a property in the corresponding Sentence node.
+
+I&#39;ve looked at different parallelization techniques in Neo4j and as far as I understood, all of them need a list as input. But my input would be a tuple like (sentence, neighbours_embeddings). How do I achieve this?
+
+Full query for interested folks:
+```
+match (s:Sentence)-[r:RELATED]-(t:Sentence)
+with s as sentence, collect(t.embedding) as neighbours
+with sentence, [
+    w in reduce(s=[], neighbour IN neighbours | 
+    case when size(s) = 0 then
+    neighbour else [
+        i in range(0, size(s)-1) |
+        s[i] + neighbour[i]] end) |
+        w / tofloat(size(neighbours))
+    ] as average
+ 
+ with sentence, [
+     i in range(0, size(sentence.embedding)-1) |
+     (0.8 * sentence.embedding[i]) + (0.2 *average[i])
+ ] as unnormalized
+ 
+ with sentence, unnormalized, sqrt(reduce(sum = 0.0, element in unnormalized | sum + element^2)) as divideby
+ set sentence.normalized = [
+     i in range(0, size(unnormalized)-1) | (unnormalized[i] / divideby)
+ ]
+
+```",
+        "link": "https://stackoverflow.com/q/69016244",
+        "creation_date": 1630508400,
+        "answer_count": 1,
+        "title": "Neo4j: Cypher query to parallelize a row of the result from a previous query",
+        "uuid": 69016244,
+        "view_count": 16
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:4686"
+    },
+    "t2": {
+      "identity": 1690,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "parallel-processing",
+        "link": "https://stackoverflow.com/questions/tagged/parallel-processing"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1690"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 4686,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 69106124,
+        "body_markdown": "I have a database where sentences are related to each other. I have to perform a big update on the whole database, thus I&#39;m trying to parallelize the update.
+
+The relevant cypher query looks like this:
+```
+match (s:Sentence)-[r:RELATED]-(t:Sentence)
+return s as sentence, collect(t.embedding) as neighbours_embeddings
+```
+`embedding` is a list of numbers.
+
+This returns a result like this:
+```
+---------------------------------------
+| sentence   |  neighbours_embeddings |
+---------------------------------------
+| sentence1  | [[1, 2, 3], [4, 5, 6]] | 
+---------------------------------------
+| sentence2  | [[2, 3, 5]]            |
+---------------------------------------
+```
+Now I wanna perform some operations on the neighbours_embeddings and set a property in the corresponding Sentence node.
+
+I&#39;ve looked at different parallelization techniques in Neo4j and as far as I understood, all of them need a list as input. But my input would be a tuple like (sentence, neighbours_embeddings). How do I achieve this?
+
+Full query for interested folks:
+```
+match (s:Sentence)-[r:RELATED]-(t:Sentence)
+with s as sentence, collect(t.embedding) as neighbours
+with sentence, [
+    w in reduce(s=[], neighbour IN neighbours | 
+    case when size(s) = 0 then
+    neighbour else [
+        i in range(0, size(s)-1) |
+        s[i] + neighbour[i]] end) |
+        w / tofloat(size(neighbours))
+    ] as average
+ 
+ with sentence, [
+     i in range(0, size(sentence.embedding)-1) |
+     (0.8 * sentence.embedding[i]) + (0.2 *average[i])
+ ] as unnormalized
+ 
+ with sentence, unnormalized, sqrt(reduce(sum = 0.0, element in unnormalized | sum + element^2)) as divideby
+ set sentence.normalized = [
+     i in range(0, size(unnormalized)-1) | (unnormalized[i] / divideby)
+ ]
+
+```",
+        "link": "https://stackoverflow.com/q/69016244",
+        "creation_date": 1630508400,
+        "answer_count": 1,
+        "title": "Neo4j: Cypher query to parallelize a row of the result from a previous query",
+        "uuid": 69016244,
+        "view_count": 16
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:4686"
+    },
+    "t2": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 4686,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 69106124,
+        "body_markdown": "I have a database where sentences are related to each other. I have to perform a big update on the whole database, thus I&#39;m trying to parallelize the update.
+
+The relevant cypher query looks like this:
+```
+match (s:Sentence)-[r:RELATED]-(t:Sentence)
+return s as sentence, collect(t.embedding) as neighbours_embeddings
+```
+`embedding` is a list of numbers.
+
+This returns a result like this:
+```
+---------------------------------------
+| sentence   |  neighbours_embeddings |
+---------------------------------------
+| sentence1  | [[1, 2, 3], [4, 5, 6]] | 
+---------------------------------------
+| sentence2  | [[2, 3, 5]]            |
+---------------------------------------
+```
+Now I wanna perform some operations on the neighbours_embeddings and set a property in the corresponding Sentence node.
+
+I&#39;ve looked at different parallelization techniques in Neo4j and as far as I understood, all of them need a list as input. But my input would be a tuple like (sentence, neighbours_embeddings). How do I achieve this?
+
+Full query for interested folks:
+```
+match (s:Sentence)-[r:RELATED]-(t:Sentence)
+with s as sentence, collect(t.embedding) as neighbours
+with sentence, [
+    w in reduce(s=[], neighbour IN neighbours | 
+    case when size(s) = 0 then
+    neighbour else [
+        i in range(0, size(s)-1) |
+        s[i] + neighbour[i]] end) |
+        w / tofloat(size(neighbours))
+    ] as average
+ 
+ with sentence, [
+     i in range(0, size(sentence.embedding)-1) |
+     (0.8 * sentence.embedding[i]) + (0.2 *average[i])
+ ] as unnormalized
+ 
+ with sentence, unnormalized, sqrt(reduce(sum = 0.0, element in unnormalized | sum + element^2)) as divideby
+ set sentence.normalized = [
+     i in range(0, size(unnormalized)-1) | (unnormalized[i] / divideby)
+ ]
+
+```",
+        "link": "https://stackoverflow.com/q/69016244",
+        "creation_date": 1630508400,
+        "answer_count": 1,
+        "title": "Neo4j: Cypher query to parallelize a row of the result from a previous query",
+        "uuid": 69016244,
+        "view_count": 16
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:4686"
+    },
+    "t2": {
+      "identity": 1684,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j-apoc",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j-apoc"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1684"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 466,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I have a Neo4J Graph and want to add a new Property on the Relationships based on the `ID` of the Relationship, which is already set. The `ID` is a Property and looks like this:
+
+ **id**:16_0beta1_1b500480_1221807483755_439038_8369
+
+In a CSV-File I have stored 400 `IDs` and a `type` corresponding to the `IDs`. Neo4J should load the CSV-File and look through all relationships. When a Relationship `ID` matches an `ID` from the CSV-File it should `set` the new Property like this: `set r.SysML=row.type` and create a new Property on the Relationship:
+
+**SysML**:Block
+
+For the nodes the following clause worked well:
+
+    LOAD CSV WITH HEADERS FROM &quot;file:///SysML.csv&quot; AS row 
+    merge(n:name {id:row.sysID}) 
+    on match set n.SysML=row.type
+For Relationship Property i tried:
+
+    LOAD CSV WITH HEADERS FROM &quot;file:///SysML.csv&quot; AS row 
+    merge ()-[r:rel {id:row.sysID}]-&gt;() 
+    on match set r.SysML=row.type
+
+I couldn&#39;t solve it even with many variations of the relationship...
+",
+        "link": "https://stackoverflow.com/q/62364566",
+        "creation_date": 1592075942,
+        "answer_count": 1,
+        "title": "Neo4J set new property on Relationship by Relationship ID",
+        "uuid": 62364566,
+        "view_count": 51
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:466"
+    },
+    "t2": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 86,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I am new to neo4j and i need your help!
+
+I have create an article node in neo4j and i want to read a csv file which contains info about citations among articles (articleId, --[Cites]-&gt;,articleId). The format of csv file follows 
+
+```
+&quot;1001	9910248&quot;
+&quot;1001	9910268&quot;
+&quot;9304045	9204040&quot;
+&quot;9308122	9203084&quot;
+&quot;9308122	9204035&quot;
+&quot;9308122	9205041
+``` 
+
+1001 is an id of one article and 9910248 is an id of another article. I want to read this file and create the following relationship  (article)-[:CITES]-&gt;(article). How could i do that?
+
+I have tried the below but it didn&#39;t work.
+
+```
+LOAD CSV FROM &quot;file:///C:/Citations.csv&quot; AS line
+FIELDTERMINATOR &quot;\t&quot; 
+MERGE (article:Article {id: line[0]})
+WITH article, SPLIT(article.id, &quot; &quot;) AS art
+MERGE (article)-[:CITES]-&gt;(toarticle:TArticle {id: art})
+
+```
+",
+        "link": "https://stackoverflow.com/q/65382473",
+        "creation_date": 1608483672,
+        "answer_count": 1,
+        "title": "How to take specific char from csv file?",
+        "uuid": 65382473,
+        "view_count": 41
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:86"
+    },
+    "t2": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 447,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 62455687,
+        "body_markdown": "The Problem to solve is:
+
+    List: [x1, y1, z1], [x2, y2, z2] ...[xn, yn, zn]
+
+Output expected: 
+
+    [(x1+x2+..+xn)/n, (y1+y2+..yn)/n, (z1+z2+..+z3)/n]
+
+`
+
+I&#39;m able to perform the addition when I&#39;ve 2 list only and size is fixed using the below statement:
+```
+UNWIND(apoc.coll.zip([1,2,3], [4,5,6])) as output
+
+RETURN COLLECT(apoc.coll.avg(output))
+```
+Output is 
+```
+[2.5, 3.5, 4.5]
+```
+
+But wasn&#39;t not able to compyte for dynamic number of *n* list. The size of list is constant for which avg needs to be computed.
+
+**Neo4j Desktop Graph version**: 3.5.18 
+
+**APOC LIbrary**: 3.5.0.12
+
+Thanks in advance!
+
+",
+        "link": "https://stackoverflow.com/q/62450549",
+        "creation_date": 1592485114,
+        "answer_count": 1,
+        "title": "Compute Avg of list value for each element in Neo4j",
+        "uuid": 62450549,
+        "view_count": 92
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:447"
+    },
+    "t2": {
+      "identity": 1684,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j-apoc",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j-apoc"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1684"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 447,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 62455687,
+        "body_markdown": "The Problem to solve is:
+
+    List: [x1, y1, z1], [x2, y2, z2] ...[xn, yn, zn]
+
+Output expected: 
+
+    [(x1+x2+..+xn)/n, (y1+y2+..yn)/n, (z1+z2+..+z3)/n]
+
+`
+
+I&#39;m able to perform the addition when I&#39;ve 2 list only and size is fixed using the below statement:
+```
+UNWIND(apoc.coll.zip([1,2,3], [4,5,6])) as output
+
+RETURN COLLECT(apoc.coll.avg(output))
+```
+Output is 
+```
+[2.5, 3.5, 4.5]
+```
+
+But wasn&#39;t not able to compyte for dynamic number of *n* list. The size of list is constant for which avg needs to be computed.
+
+**Neo4j Desktop Graph version**: 3.5.18 
+
+**APOC LIbrary**: 3.5.0.12
+
+Thanks in advance!
+
+",
+        "link": "https://stackoverflow.com/q/62450549",
+        "creation_date": 1592485114,
+        "answer_count": 1,
+        "title": "Compute Avg of list value for each element in Neo4j",
+        "uuid": 62450549,
+        "view_count": 92
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:447"
+    },
+    "t2": {
+      "identity": 1999,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "average",
+        "link": "https://stackoverflow.com/questions/tagged/average"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1999"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 447,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 62455687,
+        "body_markdown": "The Problem to solve is:
+
+    List: [x1, y1, z1], [x2, y2, z2] ...[xn, yn, zn]
+
+Output expected: 
+
+    [(x1+x2+..+xn)/n, (y1+y2+..yn)/n, (z1+z2+..+z3)/n]
+
+`
+
+I&#39;m able to perform the addition when I&#39;ve 2 list only and size is fixed using the below statement:
+```
+UNWIND(apoc.coll.zip([1,2,3], [4,5,6])) as output
+
+RETURN COLLECT(apoc.coll.avg(output))
+```
+Output is 
+```
+[2.5, 3.5, 4.5]
+```
+
+But wasn&#39;t not able to compyte for dynamic number of *n* list. The size of list is constant for which avg needs to be computed.
+
+**Neo4j Desktop Graph version**: 3.5.18 
+
+**APOC LIbrary**: 3.5.0.12
+
+Thanks in advance!
+
+",
+        "link": "https://stackoverflow.com/q/62450549",
+        "creation_date": 1592485114,
+        "answer_count": 1,
+        "title": "Compute Avg of list value for each element in Neo4j",
+        "uuid": 62450549,
+        "view_count": 92
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:447"
+    },
+    "t2": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 4693,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "In my neo4j-DB I have several independent graphs which are not connected. 
+There is a Node inside one of these graphs with the label XY_Object having an:
+
+    &lt;id&gt;: 115
+
+Which is connected to several other Nodes with different labels, creating one of these graphs.
+
+Is it possible to fetch this very graph only by that information? I keep trying some similar Queries from SO but apparently I keep applying and modifying them wrong. (I&#39;m only a beginner with Neo4j)
+",
+        "link": "https://stackoverflow.com/q/69003387",
+        "creation_date": 1630432812,
+        "answer_count": 1,
+        "title": "Query a whole graph from starting node",
+        "uuid": 69003387,
+        "view_count": 19
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:4693"
+    },
+    "t2": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 5078,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 67572392,
+        "body_markdown": "I&#39;m trying to port my legacy code to the latest version of Spring Data Neo4j and unable to find the following annotation:
+
+    @Properties (org.neo4j.ogm.annotation.Properties)
+
+
+What should be used instead of this?",
+        "link": "https://stackoverflow.com/q/67555768",
+        "creation_date": 1621162481,
+        "answer_count": 1,
+        "title": "Spring Data Neo4j @Properties annotation",
+        "uuid": 67555768,
+        "view_count": 52
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5078"
+    },
+    "t2": {
+      "identity": 1718,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "spring-data-neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/spring-data-neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1718"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 5078,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 67572392,
+        "body_markdown": "I&#39;m trying to port my legacy code to the latest version of Spring Data Neo4j and unable to find the following annotation:
+
+    @Properties (org.neo4j.ogm.annotation.Properties)
+
+
+What should be used instead of this?",
+        "link": "https://stackoverflow.com/q/67555768",
+        "creation_date": 1621162481,
+        "answer_count": 1,
+        "title": "Spring Data Neo4j @Properties annotation",
+        "uuid": 67555768,
+        "view_count": 52
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5078"
+    },
+    "t2": {
+      "identity": 1779,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j-ogm",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j-ogm"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1779"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 4642,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 69178622,
+        "body_markdown": "I have the following setup:
+
+A doctor can have multiple patients, and every patient can have multiple diagnosis. 
+I need to return for Doctor X, all his associated patients and their associated diagnosis.
+How can I write a nested relationship query as follows? 
+I have the following query for now:
+
+   
+
+     MATCH
+    (p: Patient)-[:PATIENT_AT]-&gt;(d:Doctor),
+    (di:Diagnosis)-[:DIAGNOSIS_BY]-&gt;(d:Doctor),
+    (p:Patient)-[:HAS_DIAGNOSIS]-&gt;(di:Diagnosis)
+    WHERE
+     d.id=1000000
+     RETURN p,di
+  But this is returning me two separate queries. Can I get the same result in one query like:
+
+       patient 1--&gt; all diagnosis
+       patient 2 --&gt; all diagnosis
+
+Or do I need two separate loops?
+
+",
+        "link": "https://stackoverflow.com/q/69178462",
+        "creation_date": 1631625151,
+        "answer_count": 1,
+        "title": "Cypher - get all associated relationships for a node",
+        "uuid": 69178462,
+        "view_count": 40
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:4642"
+    },
+    "t2": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 4736,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 68843437,
+        "body_markdown": "I&#39;ve been using `neo4j` with `py2neo` for a couple of weeks now, and up to now it was fine to just do single node transactions, so I would have different node types
+```python
+class NodeA(GraphObject):
+  ...
+
+class NodeB(GraphObject):
+  ...
+
+# create some nodes from data and simply save them one by one
+for data in dataset:
+  node_a = NodeA(data)
+  node_b = NodeB(data)
+
+  if x:
+    node_a.related_to_b.add(node_b)
+
+  g.merge(node_b)
+  g.merge(node_a)
+```
+Nothing fancy. However, I&#39;m starting to get more nodes and connections, and single transactions don&#39;t really work anymore, as expected. I&#39;ve been looking for ways to do bulk inserts, but can&#39;t find any good ressources. The best I&#39;ve managed to accomplish is using `unwind_merge_nodes_query`, which has two issues:
+1. isn&#39;t that fast (~5 seconds for 700 very basic nodes on my laptop)
+2. edges need to be handled separately
+3. it requires keeping track of all the node ids to be able to handle edge connections
+
+I&#39;ve been writing functions to handle the above mentioned points, but I feel like I&#39;m missing something and that there&#39;s a simpler way to handle batches of data
+",
+        "link": "https://stackoverflow.com/q/68833984",
+        "creation_date": 1629295648,
+        "answer_count": 1,
+        "title": "Correct way to bulk insert / merge nodes and edges",
+        "uuid": 68833984,
+        "view_count": 21
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:4736"
+    },
+    "t2": {
+      "identity": 1722,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "py2neo",
+        "link": "https://stackoverflow.com/questions/tagged/py2neo"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1722"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 4736,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 68843437,
+        "body_markdown": "I&#39;ve been using `neo4j` with `py2neo` for a couple of weeks now, and up to now it was fine to just do single node transactions, so I would have different node types
+```python
+class NodeA(GraphObject):
+  ...
+
+class NodeB(GraphObject):
+  ...
+
+# create some nodes from data and simply save them one by one
+for data in dataset:
+  node_a = NodeA(data)
+  node_b = NodeB(data)
+
+  if x:
+    node_a.related_to_b.add(node_b)
+
+  g.merge(node_b)
+  g.merge(node_a)
+```
+Nothing fancy. However, I&#39;m starting to get more nodes and connections, and single transactions don&#39;t really work anymore, as expected. I&#39;ve been looking for ways to do bulk inserts, but can&#39;t find any good ressources. The best I&#39;ve managed to accomplish is using `unwind_merge_nodes_query`, which has two issues:
+1. isn&#39;t that fast (~5 seconds for 700 very basic nodes on my laptop)
+2. edges need to be handled separately
+3. it requires keeping track of all the node ids to be able to handle edge connections
+
+I&#39;ve been writing functions to handle the above mentioned points, but I feel like I&#39;m missing something and that there&#39;s a simpler way to handle batches of data
+",
+        "link": "https://stackoverflow.com/q/68833984",
+        "creation_date": 1629295648,
+        "answer_count": 1,
+        "title": "Correct way to bulk insert / merge nodes and edges",
+        "uuid": 68833984,
+        "view_count": 21
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:4736"
+    },
+    "t2": {
+      "identity": 1699,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "python",
+        "link": "https://stackoverflow.com/questions/tagged/python"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1699"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 5236,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "Team, 
+
+I am trying to spin up neo4j container and neovis(node) container in a cloud server. The issue is when I provide the internal IP of the neo4j container for ``` const driver = neo4j.driver(&#39;bolt://neo4jcontainerIP&#39;, neo4j.auth.basic(&#39;neo4j&#39;, &#39;password&#39;)); ``` it cannot connect or fetch the data.
+
+But when I provide a public IP of the host where neo4j is running ``` const driver = neo4j.driver(&#39;bolt://publicIP&#39;, neo4j.auth.basic(&#39;neo4j&#39;, &#39;password&#39;)); ``` it works without any issues
+
+
+Can you please assist me how to pull the data into the neovis frontend using neo4j container IP? 
+
+```
+const neo4j = require(&#39;neo4j-driver&#39;);
+
+const driver = neo4j.driver(&#39;bolt://localhost&#39;, neo4j.auth.basic(&#39;neo4j&#39;, &#39;password&#39;));
+
+module.exports = driver;
+```
+
+Your help is greatly appreciated!! ",
+        "link": "https://stackoverflow.com/q/66942415",
+        "creation_date": 1617547472,
+        "answer_count": 0,
+        "title": "Unable to connect to neo4j bolt server using container IP",
+        "uuid": 66942415,
+        "view_count": 16
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5236"
+    },
+    "t2": {
+      "identity": 1684,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j-apoc",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j-apoc"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1684"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 5236,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "Team, 
+
+I am trying to spin up neo4j container and neovis(node) container in a cloud server. The issue is when I provide the internal IP of the neo4j container for ``` const driver = neo4j.driver(&#39;bolt://neo4jcontainerIP&#39;, neo4j.auth.basic(&#39;neo4j&#39;, &#39;password&#39;)); ``` it cannot connect or fetch the data.
+
+But when I provide a public IP of the host where neo4j is running ``` const driver = neo4j.driver(&#39;bolt://publicIP&#39;, neo4j.auth.basic(&#39;neo4j&#39;, &#39;password&#39;)); ``` it works without any issues
+
+
+Can you please assist me how to pull the data into the neovis frontend using neo4j container IP? 
+
+```
+const neo4j = require(&#39;neo4j-driver&#39;);
+
+const driver = neo4j.driver(&#39;bolt://localhost&#39;, neo4j.auth.basic(&#39;neo4j&#39;, &#39;password&#39;));
+
+module.exports = driver;
+```
+
+Your help is greatly appreciated!! ",
+        "link": "https://stackoverflow.com/q/66942415",
+        "creation_date": 1617547472,
+        "answer_count": 0,
+        "title": "Unable to connect to neo4j bolt server using container IP",
+        "uuid": 66942415,
+        "view_count": 16
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5236"
+    },
+    "t2": {
+      "identity": 1955,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "devops",
+        "link": "https://stackoverflow.com/questions/tagged/devops"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1955"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 4875,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 68352180,
+        "body_markdown": "When I&#39;m reading about building recommendation systems with collaborative filtering and they generally don&#39;t talk about graph databases like neo4j. Are graph databases enough to implement the best recommendation systems?
+
+It seems like they can implement realtime recommendations easier than the methods mentioned here: https://eugeneyan.com/writing/real-time-recommendations/
+
+Any weaknesses I should be aware of or is something like neo4j perfectly suited to the task and nothing else is required?
+
+",
+        "link": "https://stackoverflow.com/q/68306891",
+        "creation_date": 1625768520,
+        "answer_count": 1,
+        "title": "Building a product recommendation system, collaborative filtering and graph database",
+        "uuid": 68306891,
+        "view_count": 46
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:4875"
+    },
+    "t2": {
+      "identity": 1826,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "recommendation-engine",
+        "link": "https://stackoverflow.com/questions/tagged/recommendation-engine"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1826"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 4875,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 68352180,
+        "body_markdown": "When I&#39;m reading about building recommendation systems with collaborative filtering and they generally don&#39;t talk about graph databases like neo4j. Are graph databases enough to implement the best recommendation systems?
+
+It seems like they can implement realtime recommendations easier than the methods mentioned here: https://eugeneyan.com/writing/real-time-recommendations/
+
+Any weaknesses I should be aware of or is something like neo4j perfectly suited to the task and nothing else is required?
+
+",
+        "link": "https://stackoverflow.com/q/68306891",
+        "creation_date": 1625768520,
+        "answer_count": 1,
+        "title": "Building a product recommendation system, collaborative filtering and graph database",
+        "uuid": 68306891,
+        "view_count": 46
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:4875"
+    },
+    "t2": {
+      "identity": 1683,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "graph-databases",
+        "link": "https://stackoverflow.com/questions/tagged/graph-databases"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1683"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 5446,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I have some events being sent from a Kafka topic to an existing Neo4j Database. The Database has already around 4000 labels and 11500 relationships. These events being sent from kafka should match their corresponding nodes automatically. Lets say:
+
+There are 3 nodes that represent product a &amp; product b. 
+
+the kafka topic publishes the status of the different products to neo4j:
+product a: available, product b : blocked: product a: blocked, product a: shipped
+
+the graph should be:
+
+(product A)------&gt;(available)-----&gt;(blocked)----&gt;(shipped)
+
+(product B)------&gt;(blocked)
+
+I cannot figure out how to solve this. As far as I can do i get to ingest the events from kafka to neo4j, but after that i do not get to match them with their corresponding product. 
+
+Thankyou very much.",
+        "link": "https://stackoverflow.com/q/66250765",
+        "creation_date": 1613600464,
+        "answer_count": 0,
+        "title": "how to automatically match events sent from kafka in Neo4j",
+        "uuid": 66250765,
+        "view_count": 14
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5446"
+    },
+    "t2": {
+      "identity": 1684,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j-apoc",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j-apoc"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1684"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 5446,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I have some events being sent from a Kafka topic to an existing Neo4j Database. The Database has already around 4000 labels and 11500 relationships. These events being sent from kafka should match their corresponding nodes automatically. Lets say:
+
+There are 3 nodes that represent product a &amp; product b. 
+
+the kafka topic publishes the status of the different products to neo4j:
+product a: available, product b : blocked: product a: blocked, product a: shipped
+
+the graph should be:
+
+(product A)------&gt;(available)-----&gt;(blocked)----&gt;(shipped)
+
+(product B)------&gt;(blocked)
+
+I cannot figure out how to solve this. As far as I can do i get to ingest the events from kafka to neo4j, but after that i do not get to match them with their corresponding product. 
+
+Thankyou very much.",
+        "link": "https://stackoverflow.com/q/66250765",
+        "creation_date": 1613600464,
+        "answer_count": 0,
+        "title": "how to automatically match events sent from kafka in Neo4j",
+        "uuid": 66250765,
+        "view_count": 14
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5446"
+    },
+    "t2": {
+      "identity": 1929,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "apache-kafka",
+        "link": "https://stackoverflow.com/questions/tagged/apache-kafka"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1929"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 5297,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 66720160,
+        "body_markdown": "First, here is what I desire and I then will explain what I have tried.  
+
+In this simplified example I have a graph with nodes `A`, `B`, `C`, and `D`. I have relationships like `A-&gt;B`, `B-&gt;C` and `B-&gt;D` only. I would like to aggregate each of the connections to a node A into a list and subsequently each of the connections to node B into two separate lists: one for `B-&gt;C` connections and one for `B-&gt;D` connections. Something like the below.
+
+```
+{
+ &#39;A&#39;: &#39;A&#39;,
+ &#39;Bs&#39;: [{
+   &#39;B&#39;: &#39;B&#39;,
+   &#39;Cs&#39;: [
+     ...
+   ]
+   &#39;Ds&#39;: [
+     ...
+   ]
+ }, ...]
+}
+```
+Now for my specific use case. I have trip nodes that are connected to waypoints. Waypoints are connected to airports and what I call a POI. I would like to return a trip with a list of its waypoints where each waypoint has two lists: a list of airports and a list of POI. I have not been able to accomplish this successfully and have not found any examples with this exact use case. In addition to the query below, I have tried many other variations with foreach loops and other constructs. I think this is the closest I have come. In the below query, `B-&gt;C` would equate to the `HAS_AIRPORTS` relationship and `B-&gt;D` to the `HAS_POI` relationship. I think my problem comes down to there being multiple aggregations that need to be made on the same level. I am getting some strange output where things seem to be repeating themselves because of the 2 aggregations. Sorry if this is not clear, I am new to the terminology of the cypher query language. Thank you, I am appreciative of any help.
+```
+            MATCH (t:Trip {uid: $tripId})
+            WITH t
+            OPTIONAL MATCH (t)-[:HAS_WAYPOINTS]-(w {active: true})
+            WITH t, w
+            OPTIONAL MATCH (w)-[wa:HAS_AIRPORT]-(a:NeoAirport)
+            WITH t, w, collect(a{.*, active:wa.active}) as airports
+            WITH t, w {.*, airports:airports } as waypoints
+            OPTIONAL MATCH (w)-[wp:HAS_POI {active: true}]-(p:PointOfInterest)
+            WITH t, waypoints, w, collect({source:wp.source, uid:p.uid, placeId:p.placeId}) as pois
+            WITH t, apoc.map.setKey( waypoints, &#39;pointsOfInterest&#39;, pois )
+            WITH t, t {.*, waypoints: collect(waypoints) } as trips
+            OPTIONAL MATCH (t)-[tsa:HAS_START_AIRPORTS]-(sa)
+            WITH t, collect(sa) as sa, trips
+            WITH t, apoc.map.setKey( trips, &#39;startAirports&#39;, sa ) as trips
+            OPTIONAL MATCH (t)-[tea:HAS_START_AIRPORTS]-(ea)
+            WITH t, collect(ea) as ea, trips
+            WITH t, apoc.map.setKey( trips, &#39;endAirports&#39;, ea ) as trips
+            RETURN trips
+```",
+        "link": "https://stackoverflow.com/q/66703705",
+        "creation_date": 1616136741,
+        "answer_count": 1,
+        "title": "Cypher Query - Collect two separate types of nodes connected to a third type of node",
+        "uuid": 66703705,
+        "view_count": 59
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5297"
+    },
+    "t2": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 342,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I&#39;m trying to create a relationship that connects a person to a city -&gt; state -&gt; country without recreating the city/state/country nodes and relationships if they do already exist - so I&#39;d end-up with only one USA node in my graph for example
+
+I start with a person
+```
+CREATE (p:Person {name:&#39;Omar&#39;, Id: &#39;a&#39;})
+RETURN p
+```
+then I&#39;d like to turn this into an `apoc.do.case` statement with apoc
+or turn it into one merge statement using unique the constraint that creates a new node if no node is found or otherwise matches an existing node
+```
+// first case where the city/state/country all exist
+MATCH (locality:Locality{name:&quot;San Diego&quot;})-[:SITUATED_IN]-&gt;(adminArea:AdministrativeArea { name: &#39;California&#39; })-[:SITUATED_IN]-&gt;(country:Country { name: &#39;USA&#39; })
+MERGE (p)-[:SITUATED_IN]-&gt;(locality)-[:SITUATED_IN]-&gt;(adminArea)-[:SITUATED_IN]-&gt;(country)
+return p
+
+// second case where only state/country exist
+MATCH (adminArea:AdministrativeArea { name: &#39;California&#39; })-[:SITUATED_IN]-&gt;(country:Country { name: &#39;USA&#39; })
+MERGE (p)-[:SITUATED_IN]-&gt;(locality:Locality{name:&quot;San Diego&quot;})-[:SITUATED_IN]-&gt;(adminArea)-[:SITUATED_IN]-&gt;(country)
+return p
+
+// third case where only country exists
+MATCH (country:Country { name: &#39;USA&#39; })
+MERGE (p)-[:SITUATED_IN]-&gt;(locality:Locality{name:&quot;San Diego&quot;})-[:SITUATED_IN]-&gt;(adminArea:AdministrativeArea { name: &#39;California&#39; })-[:SITUATED_IN]-&gt;(country)
+return p
+
+// last case where none of city/state/country exist, so I have to create all nodes + relations
+MERGE (p)-[:SITUATED_IN]-&gt;(locality:Locality{name:&quot;San Diego&quot;})-[:SITUATED_IN]-&gt;(adminArea:AdministrativeArea { name: &#39;California&#39; })-[:SITUATED_IN]-&gt;(country:Country { name: &#39;USA&#39; })
+return p
+```
+
+The key here is I only want to end-up with one (California)-&gt;(USA). I don&#39;t want those nodes &amp; relationships to get duplicated",
+        "link": "https://stackoverflow.com/q/63306262",
+        "creation_date": 1596819692,
+        "answer_count": 2,
+        "title": "Conditional partial merge of pattern into graph",
+        "uuid": 63306262,
+        "view_count": 72
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:342"
+    },
+    "t2": {
+      "identity": 1684,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j-apoc",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j-apoc"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1684"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 342,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I&#39;m trying to create a relationship that connects a person to a city -&gt; state -&gt; country without recreating the city/state/country nodes and relationships if they do already exist - so I&#39;d end-up with only one USA node in my graph for example
+
+I start with a person
+```
+CREATE (p:Person {name:&#39;Omar&#39;, Id: &#39;a&#39;})
+RETURN p
+```
+then I&#39;d like to turn this into an `apoc.do.case` statement with apoc
+or turn it into one merge statement using unique the constraint that creates a new node if no node is found or otherwise matches an existing node
+```
+// first case where the city/state/country all exist
+MATCH (locality:Locality{name:&quot;San Diego&quot;})-[:SITUATED_IN]-&gt;(adminArea:AdministrativeArea { name: &#39;California&#39; })-[:SITUATED_IN]-&gt;(country:Country { name: &#39;USA&#39; })
+MERGE (p)-[:SITUATED_IN]-&gt;(locality)-[:SITUATED_IN]-&gt;(adminArea)-[:SITUATED_IN]-&gt;(country)
+return p
+
+// second case where only state/country exist
+MATCH (adminArea:AdministrativeArea { name: &#39;California&#39; })-[:SITUATED_IN]-&gt;(country:Country { name: &#39;USA&#39; })
+MERGE (p)-[:SITUATED_IN]-&gt;(locality:Locality{name:&quot;San Diego&quot;})-[:SITUATED_IN]-&gt;(adminArea)-[:SITUATED_IN]-&gt;(country)
+return p
+
+// third case where only country exists
+MATCH (country:Country { name: &#39;USA&#39; })
+MERGE (p)-[:SITUATED_IN]-&gt;(locality:Locality{name:&quot;San Diego&quot;})-[:SITUATED_IN]-&gt;(adminArea:AdministrativeArea { name: &#39;California&#39; })-[:SITUATED_IN]-&gt;(country)
+return p
+
+// last case where none of city/state/country exist, so I have to create all nodes + relations
+MERGE (p)-[:SITUATED_IN]-&gt;(locality:Locality{name:&quot;San Diego&quot;})-[:SITUATED_IN]-&gt;(adminArea:AdministrativeArea { name: &#39;California&#39; })-[:SITUATED_IN]-&gt;(country:Country { name: &#39;USA&#39; })
+return p
+```
+
+The key here is I only want to end-up with one (California)-&gt;(USA). I don&#39;t want those nodes &amp; relationships to get duplicated",
+        "link": "https://stackoverflow.com/q/63306262",
+        "creation_date": 1596819692,
+        "answer_count": 2,
+        "title": "Conditional partial merge of pattern into graph",
+        "uuid": 63306262,
+        "view_count": 72
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:342"
+    },
+    "t2": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 5494,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I was attempting to migrate the data of database in neo4j into a new database, set on a different machine.
+In order to do so I ran the following command to create an export:
+
+    CALL apoc.export.cypher.query(&#39;MATCH (a:Object)-[r]-(b:Object) WHERE NOT a:Type1 AND NOT a:Type2 RETURN *&#39;, &#39;/data/csv_destination/export.cypher&#39;,{format:&#39;cypher-shell&#39;});
+
+After downloading the APOC library into the other database and placing the export file into the import folder, I tried to run this second command: 
+
+    call apoc.cypher.runFile(&#39;export.cypher&#39;,{format:&#39;cypher-shell&#39;})
+
+For some reason, it imports only the nodes, but not the relationships. I checked the export file and they are definitely specified. In case you wonder, the version of neo4j in the first database is 3.1.14, while on the second it is 4.2.0. Does anyone know how to solve this issue or provide any sort of help?",
+        "link": "https://stackoverflow.com/q/66024135",
+        "creation_date": 1612342417,
+        "answer_count": 1,
+        "title": "Is there a way to migrate a neo4j database with its relationships included?",
+        "uuid": 66024135,
+        "view_count": 51
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5494"
+    },
+    "t2": {
+      "identity": 2040,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "migration",
+        "link": "https://stackoverflow.com/questions/tagged/migration"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:2040"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 5494,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I was attempting to migrate the data of database in neo4j into a new database, set on a different machine.
+In order to do so I ran the following command to create an export:
+
+    CALL apoc.export.cypher.query(&#39;MATCH (a:Object)-[r]-(b:Object) WHERE NOT a:Type1 AND NOT a:Type2 RETURN *&#39;, &#39;/data/csv_destination/export.cypher&#39;,{format:&#39;cypher-shell&#39;});
+
+After downloading the APOC library into the other database and placing the export file into the import folder, I tried to run this second command: 
+
+    call apoc.cypher.runFile(&#39;export.cypher&#39;,{format:&#39;cypher-shell&#39;})
+
+For some reason, it imports only the nodes, but not the relationships. I checked the export file and they are definitely specified. In case you wonder, the version of neo4j in the first database is 3.1.14, while on the second it is 4.2.0. Does anyone know how to solve this issue or provide any sort of help?",
+        "link": "https://stackoverflow.com/q/66024135",
+        "creation_date": 1612342417,
+        "answer_count": 1,
+        "title": "Is there a way to migrate a neo4j database with its relationships included?",
+        "uuid": 66024135,
+        "view_count": 51
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5494"
+    },
+    "t2": {
+      "identity": 1920,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "import",
+        "link": "https://stackoverflow.com/questions/tagged/import"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1920"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "q": {
+      "identity": 5494,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I was attempting to migrate the data of database in neo4j into a new database, set on a different machine.
+In order to do so I ran the following command to create an export:
+
+    CALL apoc.export.cypher.query(&#39;MATCH (a:Object)-[r]-(b:Object) WHERE NOT a:Type1 AND NOT a:Type2 RETURN *&#39;, &#39;/data/csv_destination/export.cypher&#39;,{format:&#39;cypher-shell&#39;});
+
+After downloading the APOC library into the other database and placing the export file into the import folder, I tried to run this second command: 
+
+    call apoc.cypher.runFile(&#39;export.cypher&#39;,{format:&#39;cypher-shell&#39;})
+
+For some reason, it imports only the nodes, but not the relationships. I checked the export file and they are definitely specified. In case you wonder, the version of neo4j in the first database is 3.1.14, while on the second it is 4.2.0. Does anyone know how to solve this issue or provide any sort of help?",
+        "link": "https://stackoverflow.com/q/66024135",
+        "creation_date": 1612342417,
+        "answer_count": 1,
+        "title": "Is there a way to migrate a neo4j database with its relationships included?",
+        "uuid": 66024135,
+        "view_count": 51
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5494"
+    },
+    "t2": {
+      "identity": 1965,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "export",
+        "link": "https://stackoverflow.com/questions/tagged/export"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1965"
+    }
+  }
+]

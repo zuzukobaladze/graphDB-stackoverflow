@@ -1,0 +1,2776 @@
+﻿[
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 61,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 66230888,
+        "body_markdown": "I have this cypher query
+
+    int[] pIds = new int[] {101, 012}; 
+    var query = _graphClient.Cypher.Read
+                .OptionalMatch($&quot;(p: {Labels.PERSON})&quot;)
+                .Where($&quot;p.Id IN [{pIds}]&quot;) 
+                .Return&lt;Person&gt;(p);
+
+On debugging it looks like this: 
+
+    OPTIONAL MATCH (p: Person)
+    WHERE p.Id IN [System.Int32[]] 
+    RETURN distinct p
+
+****
+
+
+The values that I should pass in this where clause [101, 012], but its not. Because pIds[0] = 101, pIds[1] = 012 - and its never read in the cypher query. 
+
+Where am I going wrong and its failing to pass the values? How should I pass the int[] in the Where IN... 
+",
+        "link": "https://stackoverflow.com/q/65598673",
+        "creation_date": 1609947272,
+        "answer_count": 2,
+        "title": "How to use the int[] in where IN clause in Cypher Query (using C#)",
+        "uuid": 65598673,
+        "view_count": 36
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:61"
+    },
+    "t": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 61,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 66230888,
+        "body_markdown": "I have this cypher query
+
+    int[] pIds = new int[] {101, 012}; 
+    var query = _graphClient.Cypher.Read
+                .OptionalMatch($&quot;(p: {Labels.PERSON})&quot;)
+                .Where($&quot;p.Id IN [{pIds}]&quot;) 
+                .Return&lt;Person&gt;(p);
+
+On debugging it looks like this: 
+
+    OPTIONAL MATCH (p: Person)
+    WHERE p.Id IN [System.Int32[]] 
+    RETURN distinct p
+
+****
+
+
+The values that I should pass in this where clause [101, 012], but its not. Because pIds[0] = 101, pIds[1] = 012 - and its never read in the cypher query. 
+
+Where am I going wrong and its failing to pass the values? How should I pass the int[] in the Where IN... 
+",
+        "link": "https://stackoverflow.com/q/65598673",
+        "creation_date": 1609947272,
+        "answer_count": 2,
+        "title": "How to use the int[] in where IN clause in Cypher Query (using C#)",
+        "uuid": 65598673,
+        "view_count": 36
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:61"
+    },
+    "t": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 61,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 66230888,
+        "body_markdown": "I have this cypher query
+
+    int[] pIds = new int[] {101, 012}; 
+    var query = _graphClient.Cypher.Read
+                .OptionalMatch($&quot;(p: {Labels.PERSON})&quot;)
+                .Where($&quot;p.Id IN [{pIds}]&quot;) 
+                .Return&lt;Person&gt;(p);
+
+On debugging it looks like this: 
+
+    OPTIONAL MATCH (p: Person)
+    WHERE p.Id IN [System.Int32[]] 
+    RETURN distinct p
+
+****
+
+
+The values that I should pass in this where clause [101, 012], but its not. Because pIds[0] = 101, pIds[1] = 012 - and its never read in the cypher query. 
+
+Where am I going wrong and its failing to pass the values? How should I pass the int[] in the Where IN... 
+",
+        "link": "https://stackoverflow.com/q/65598673",
+        "creation_date": 1609947272,
+        "answer_count": 2,
+        "title": "How to use the int[] in where IN clause in Cypher Query (using C#)",
+        "uuid": 65598673,
+        "view_count": 36
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:61"
+    },
+    "t": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 5399,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "### Summary
+I&#39;m trying to fetch a `path` from Neo4j using the Neo4jClient package in .NET.  I&#39;m wondering how to deserialize it while maintaining the robust values featured in the `table` response, but I can only seem to access the `text` response instead.
+
+***Disclaimer*** - I *have* seen [this answer](https://stackoverflow.com/questions/15108301/how-do-i-retrieve-a-path-in-neo4jclient), but it&#39;s over 7 years old and hardly relevant anymore — not to mention that the end result looks incredibly convoluted.
+
+### Technology Versions
+- **Neo4j** - 4.2.3
+- **APOC** - 4.2.0.1
+- **Neo4jClient** - 4.1.5
+- **.NET Framework** - 4.7.2
+
+### Data Structure
+I have a Neo4j database that houses three types of nodes.  For the sake of this question, I&#39;m going to water them down to a corporate example, so let&#39;s call the node labels `Employee`, `Department`, and `Project`.  Those nodes are interconnected in the following ways:
+- Every `Employee` has an `EMPLOYED_BY` relationship with a `Department`.
+- Every `Project` has an `OWNED_BY` relationship with a `Department`.
+- An `Employee` could have a `WORKS_ON` relationship with a `Project`.
+
+### Sample Data
+For the sake of this question, this sample data provides a baseline demonstration of the data structure.
+```javascript
+(:Employee {name:&quot;Sarah Bradshaw&quot;})
+-[:EMPLOYED_BY {startDate:&quot;2020-01-01&quot;}]-&gt;
+(:Department {name:&quot;Finance&quot;})
+&lt;-[:OWNED_BY {startDate:&quot;2020-01-01&quot;}]-
+(:Project {name:&quot;Quarterly Earnings&quot;})
+&lt;-[:WORKS_ON {startDate:&quot;2020-06-01&quot;}]-
+(:Employee {name:&quot;Thomas Mitchell&quot;})
+-[:EMPLOYED_BY {startDate:&quot;2019-01-01&quot;}]-&gt;
+(:Department {name:&quot;Administration&quot;})
+```
+[![A visual representation of the above data.][1]][1]
+
+### Cypher Query
+This is the query I&#39;m attempting to duplicate in .NET with the Neo4jClient package.
+```javascript
+MATCH (from:Employee {name:&quot;Sarah Bradshaw&quot;})
+MATCH (to:Employee {name:&quot;Thomas Mitchell&quot;})
+CALL apoc.algo.dijkstra(from, to, &#39;&#39;, &#39;d&#39;)
+YIELD path
+RETURN path
+```
+
+### Responses
+**Table Response**
+```json
+{
+    &quot;start&quot;: {
+        &quot;identity&quot;: 0,
+        &quot;labels&quot;: [ &quot;Employee&quot; ],
+        &quot;properties&quot;: {
+            &quot;name&quot;: &quot;Sarah Bradshaw&quot;
+        }
+    },
+    &quot;end&quot;: {
+        &quot;identity&quot;: 3,
+        &quot;labels&quot;: [ &quot;Employee&quot; ],
+        &quot;properties&quot;: {
+            &quot;name&quot;: &quot;Thomas Mitchell&quot;
+        }
+    },
+    &quot;segments&quot;: [
+        {
+            &quot;start&quot;: {
+                &quot;identity&quot;: 0,
+                &quot;labels&quot;: [ &quot;Employee&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Sarah Bradshaw&quot;
+                }
+            },
+            &quot;relationship&quot;: {
+                &quot;identity&quot;: 0,
+                &quot;start&quot;: 0,
+                &quot;end&quot;: 1,
+                &quot;type&quot;: &quot;EMPLOYED_BY&quot;,
+                &quot;properties&quot;: {
+                    &quot;startDate&quot;: &quot;2020-01-01&quot;
+                }
+            },
+            &quot;end&quot;: {
+                &quot;identity&quot;: 1,
+                &quot;labels&quot;: [ &quot;Department&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Finance&quot;
+                }
+            }
+        },
+        {
+            &quot;start&quot;: {
+                &quot;identity&quot;: 1,
+                &quot;labels&quot;: [ &quot;Department&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Finance&quot;
+                }
+            },
+            &quot;relationship&quot;: {
+                &quot;identity&quot;: 1,
+                &quot;start&quot;: 2,
+                &quot;end&quot;: 1,
+                &quot;type&quot;: &quot;OWNED_BY&quot;,
+                &quot;properties&quot;: {
+                    &quot;startDate&quot;: &quot;2020-01-01&quot;
+                }
+            },
+            &quot;end&quot;: {
+                &quot;identity&quot;: 2,
+                &quot;labels&quot;: [ &quot;Project&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Quarterly Earnings&quot;
+                }
+            }
+        },
+        {
+            &quot;start&quot;: {
+                &quot;identity&quot;: 2,
+                &quot;labels&quot;: [ &quot;Project&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Quarterly Earnings&quot;
+                }
+            },
+            &quot;relationship&quot;: {
+                &quot;identity&quot;: 2,
+                &quot;start&quot;: 3,
+                &quot;end&quot;: 2,
+                &quot;type&quot;: &quot;WORKS_ON&quot;,
+                &quot;properties&quot;: {
+                    &quot;startDate&quot;: &quot;2020-06-01&quot;
+                }
+            },
+            &quot;end&quot;: {
+                &quot;identity&quot;: 3,
+                &quot;labels&quot;: [ &quot;Employee&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Thomas Mitchell&quot;
+                }
+            }
+        }
+    ],
+    &quot;length&quot;: 3.0
+}
+```
+
+**Text Response**
+```json
+[
+    {&quot;name&quot;:&quot;Sarah Bradshaw&quot;},
+    {&quot;startDate&quot;:&quot;2020-01-01&quot;},
+    {&quot;name&quot;:&quot;Finance&quot;},
+    {&quot;name&quot;:&quot;Finance&quot;},
+    {&quot;startDate&quot;:&quot;2020-01-01&quot;},
+    {&quot;name&quot;:&quot;Quarterly Earnings&quot;},
+    {&quot;name&quot;:&quot;Quarterly Earnings&quot;},
+    {&quot;startDate&quot;:&quot;2020-06-01&quot;},
+    {&quot;name&quot;:&quot;Thomas Mitchell&quot;}
+]
+```
+As you can see, the `text` response is basically useless.  Unfortunately, that seems to be the only response value I&#39;m able to retrieve through the Neo4jClient.
+
+### Neo4jClient Query
+This is the derived Neo4jClient syntax based on the above query.  Because I could only fetch the `text` response, I&#39;m deserializing it into a `List` of type `DataNode` — a simple model that reflects the structure of the nodes and their relationships.
+```javascript
+client.Cypher
+.Match(&quot;(from:Employee {name:\&quot;Sarah Bradshaw\&quot;})&quot;)
+.Match(&quot;(to:Employee {name:\&quot;Thomas Mitchell\&quot;})&quot;)
+.Call(&quot;apoc.algo.dijkstra(from, to, &#39;&#39;, &#39;d&#39;)&quot;)
+.Yield(&quot;path&quot;)
+.Return&lt;List&lt;DataNode&gt;&gt;(&quot;path&quot;)
+.ResultsAsync
+.Result;
+```
+
+### The Bottom Line
+While this does get me *something*, the problem is that none of the things that make the path relevant are returned in the `text` response.  I have a collection of nodes and relationships, but I have no idea how they&#39;re interconnected.  The `table` response lists start nodes and end nodes and *that&#39;s* the information I care about.  Is there any way for me to query the `table` response rather than the `text` response?
+
+
+  [1]: https://i.stack.imgur.com/WPBrM.png",
+        "link": "https://stackoverflow.com/q/66401154",
+        "creation_date": 1614444677,
+        "answer_count": 1,
+        "title": "How do I return a Neo4j path with Neo4jClient in .NET?",
+        "uuid": 66401154,
+        "view_count": 54
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5399"
+    },
+    "t": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 5399,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "### Summary
+I&#39;m trying to fetch a `path` from Neo4j using the Neo4jClient package in .NET.  I&#39;m wondering how to deserialize it while maintaining the robust values featured in the `table` response, but I can only seem to access the `text` response instead.
+
+***Disclaimer*** - I *have* seen [this answer](https://stackoverflow.com/questions/15108301/how-do-i-retrieve-a-path-in-neo4jclient), but it&#39;s over 7 years old and hardly relevant anymore — not to mention that the end result looks incredibly convoluted.
+
+### Technology Versions
+- **Neo4j** - 4.2.3
+- **APOC** - 4.2.0.1
+- **Neo4jClient** - 4.1.5
+- **.NET Framework** - 4.7.2
+
+### Data Structure
+I have a Neo4j database that houses three types of nodes.  For the sake of this question, I&#39;m going to water them down to a corporate example, so let&#39;s call the node labels `Employee`, `Department`, and `Project`.  Those nodes are interconnected in the following ways:
+- Every `Employee` has an `EMPLOYED_BY` relationship with a `Department`.
+- Every `Project` has an `OWNED_BY` relationship with a `Department`.
+- An `Employee` could have a `WORKS_ON` relationship with a `Project`.
+
+### Sample Data
+For the sake of this question, this sample data provides a baseline demonstration of the data structure.
+```javascript
+(:Employee {name:&quot;Sarah Bradshaw&quot;})
+-[:EMPLOYED_BY {startDate:&quot;2020-01-01&quot;}]-&gt;
+(:Department {name:&quot;Finance&quot;})
+&lt;-[:OWNED_BY {startDate:&quot;2020-01-01&quot;}]-
+(:Project {name:&quot;Quarterly Earnings&quot;})
+&lt;-[:WORKS_ON {startDate:&quot;2020-06-01&quot;}]-
+(:Employee {name:&quot;Thomas Mitchell&quot;})
+-[:EMPLOYED_BY {startDate:&quot;2019-01-01&quot;}]-&gt;
+(:Department {name:&quot;Administration&quot;})
+```
+[![A visual representation of the above data.][1]][1]
+
+### Cypher Query
+This is the query I&#39;m attempting to duplicate in .NET with the Neo4jClient package.
+```javascript
+MATCH (from:Employee {name:&quot;Sarah Bradshaw&quot;})
+MATCH (to:Employee {name:&quot;Thomas Mitchell&quot;})
+CALL apoc.algo.dijkstra(from, to, &#39;&#39;, &#39;d&#39;)
+YIELD path
+RETURN path
+```
+
+### Responses
+**Table Response**
+```json
+{
+    &quot;start&quot;: {
+        &quot;identity&quot;: 0,
+        &quot;labels&quot;: [ &quot;Employee&quot; ],
+        &quot;properties&quot;: {
+            &quot;name&quot;: &quot;Sarah Bradshaw&quot;
+        }
+    },
+    &quot;end&quot;: {
+        &quot;identity&quot;: 3,
+        &quot;labels&quot;: [ &quot;Employee&quot; ],
+        &quot;properties&quot;: {
+            &quot;name&quot;: &quot;Thomas Mitchell&quot;
+        }
+    },
+    &quot;segments&quot;: [
+        {
+            &quot;start&quot;: {
+                &quot;identity&quot;: 0,
+                &quot;labels&quot;: [ &quot;Employee&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Sarah Bradshaw&quot;
+                }
+            },
+            &quot;relationship&quot;: {
+                &quot;identity&quot;: 0,
+                &quot;start&quot;: 0,
+                &quot;end&quot;: 1,
+                &quot;type&quot;: &quot;EMPLOYED_BY&quot;,
+                &quot;properties&quot;: {
+                    &quot;startDate&quot;: &quot;2020-01-01&quot;
+                }
+            },
+            &quot;end&quot;: {
+                &quot;identity&quot;: 1,
+                &quot;labels&quot;: [ &quot;Department&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Finance&quot;
+                }
+            }
+        },
+        {
+            &quot;start&quot;: {
+                &quot;identity&quot;: 1,
+                &quot;labels&quot;: [ &quot;Department&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Finance&quot;
+                }
+            },
+            &quot;relationship&quot;: {
+                &quot;identity&quot;: 1,
+                &quot;start&quot;: 2,
+                &quot;end&quot;: 1,
+                &quot;type&quot;: &quot;OWNED_BY&quot;,
+                &quot;properties&quot;: {
+                    &quot;startDate&quot;: &quot;2020-01-01&quot;
+                }
+            },
+            &quot;end&quot;: {
+                &quot;identity&quot;: 2,
+                &quot;labels&quot;: [ &quot;Project&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Quarterly Earnings&quot;
+                }
+            }
+        },
+        {
+            &quot;start&quot;: {
+                &quot;identity&quot;: 2,
+                &quot;labels&quot;: [ &quot;Project&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Quarterly Earnings&quot;
+                }
+            },
+            &quot;relationship&quot;: {
+                &quot;identity&quot;: 2,
+                &quot;start&quot;: 3,
+                &quot;end&quot;: 2,
+                &quot;type&quot;: &quot;WORKS_ON&quot;,
+                &quot;properties&quot;: {
+                    &quot;startDate&quot;: &quot;2020-06-01&quot;
+                }
+            },
+            &quot;end&quot;: {
+                &quot;identity&quot;: 3,
+                &quot;labels&quot;: [ &quot;Employee&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Thomas Mitchell&quot;
+                }
+            }
+        }
+    ],
+    &quot;length&quot;: 3.0
+}
+```
+
+**Text Response**
+```json
+[
+    {&quot;name&quot;:&quot;Sarah Bradshaw&quot;},
+    {&quot;startDate&quot;:&quot;2020-01-01&quot;},
+    {&quot;name&quot;:&quot;Finance&quot;},
+    {&quot;name&quot;:&quot;Finance&quot;},
+    {&quot;startDate&quot;:&quot;2020-01-01&quot;},
+    {&quot;name&quot;:&quot;Quarterly Earnings&quot;},
+    {&quot;name&quot;:&quot;Quarterly Earnings&quot;},
+    {&quot;startDate&quot;:&quot;2020-06-01&quot;},
+    {&quot;name&quot;:&quot;Thomas Mitchell&quot;}
+]
+```
+As you can see, the `text` response is basically useless.  Unfortunately, that seems to be the only response value I&#39;m able to retrieve through the Neo4jClient.
+
+### Neo4jClient Query
+This is the derived Neo4jClient syntax based on the above query.  Because I could only fetch the `text` response, I&#39;m deserializing it into a `List` of type `DataNode` — a simple model that reflects the structure of the nodes and their relationships.
+```javascript
+client.Cypher
+.Match(&quot;(from:Employee {name:\&quot;Sarah Bradshaw\&quot;})&quot;)
+.Match(&quot;(to:Employee {name:\&quot;Thomas Mitchell\&quot;})&quot;)
+.Call(&quot;apoc.algo.dijkstra(from, to, &#39;&#39;, &#39;d&#39;)&quot;)
+.Yield(&quot;path&quot;)
+.Return&lt;List&lt;DataNode&gt;&gt;(&quot;path&quot;)
+.ResultsAsync
+.Result;
+```
+
+### The Bottom Line
+While this does get me *something*, the problem is that none of the things that make the path relevant are returned in the `text` response.  I have a collection of nodes and relationships, but I have no idea how they&#39;re interconnected.  The `table` response lists start nodes and end nodes and *that&#39;s* the information I care about.  Is there any way for me to query the `table` response rather than the `text` response?
+
+
+  [1]: https://i.stack.imgur.com/WPBrM.png",
+        "link": "https://stackoverflow.com/q/66401154",
+        "creation_date": 1614444677,
+        "answer_count": 1,
+        "title": "How do I return a Neo4j path with Neo4jClient in .NET?",
+        "uuid": 66401154,
+        "view_count": 54
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5399"
+    },
+    "t": {
+      "identity": 1741,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4jclient",
+        "link": "https://stackoverflow.com/questions/tagged/neo4jclient"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1741"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 5399,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "### Summary
+I&#39;m trying to fetch a `path` from Neo4j using the Neo4jClient package in .NET.  I&#39;m wondering how to deserialize it while maintaining the robust values featured in the `table` response, but I can only seem to access the `text` response instead.
+
+***Disclaimer*** - I *have* seen [this answer](https://stackoverflow.com/questions/15108301/how-do-i-retrieve-a-path-in-neo4jclient), but it&#39;s over 7 years old and hardly relevant anymore — not to mention that the end result looks incredibly convoluted.
+
+### Technology Versions
+- **Neo4j** - 4.2.3
+- **APOC** - 4.2.0.1
+- **Neo4jClient** - 4.1.5
+- **.NET Framework** - 4.7.2
+
+### Data Structure
+I have a Neo4j database that houses three types of nodes.  For the sake of this question, I&#39;m going to water them down to a corporate example, so let&#39;s call the node labels `Employee`, `Department`, and `Project`.  Those nodes are interconnected in the following ways:
+- Every `Employee` has an `EMPLOYED_BY` relationship with a `Department`.
+- Every `Project` has an `OWNED_BY` relationship with a `Department`.
+- An `Employee` could have a `WORKS_ON` relationship with a `Project`.
+
+### Sample Data
+For the sake of this question, this sample data provides a baseline demonstration of the data structure.
+```javascript
+(:Employee {name:&quot;Sarah Bradshaw&quot;})
+-[:EMPLOYED_BY {startDate:&quot;2020-01-01&quot;}]-&gt;
+(:Department {name:&quot;Finance&quot;})
+&lt;-[:OWNED_BY {startDate:&quot;2020-01-01&quot;}]-
+(:Project {name:&quot;Quarterly Earnings&quot;})
+&lt;-[:WORKS_ON {startDate:&quot;2020-06-01&quot;}]-
+(:Employee {name:&quot;Thomas Mitchell&quot;})
+-[:EMPLOYED_BY {startDate:&quot;2019-01-01&quot;}]-&gt;
+(:Department {name:&quot;Administration&quot;})
+```
+[![A visual representation of the above data.][1]][1]
+
+### Cypher Query
+This is the query I&#39;m attempting to duplicate in .NET with the Neo4jClient package.
+```javascript
+MATCH (from:Employee {name:&quot;Sarah Bradshaw&quot;})
+MATCH (to:Employee {name:&quot;Thomas Mitchell&quot;})
+CALL apoc.algo.dijkstra(from, to, &#39;&#39;, &#39;d&#39;)
+YIELD path
+RETURN path
+```
+
+### Responses
+**Table Response**
+```json
+{
+    &quot;start&quot;: {
+        &quot;identity&quot;: 0,
+        &quot;labels&quot;: [ &quot;Employee&quot; ],
+        &quot;properties&quot;: {
+            &quot;name&quot;: &quot;Sarah Bradshaw&quot;
+        }
+    },
+    &quot;end&quot;: {
+        &quot;identity&quot;: 3,
+        &quot;labels&quot;: [ &quot;Employee&quot; ],
+        &quot;properties&quot;: {
+            &quot;name&quot;: &quot;Thomas Mitchell&quot;
+        }
+    },
+    &quot;segments&quot;: [
+        {
+            &quot;start&quot;: {
+                &quot;identity&quot;: 0,
+                &quot;labels&quot;: [ &quot;Employee&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Sarah Bradshaw&quot;
+                }
+            },
+            &quot;relationship&quot;: {
+                &quot;identity&quot;: 0,
+                &quot;start&quot;: 0,
+                &quot;end&quot;: 1,
+                &quot;type&quot;: &quot;EMPLOYED_BY&quot;,
+                &quot;properties&quot;: {
+                    &quot;startDate&quot;: &quot;2020-01-01&quot;
+                }
+            },
+            &quot;end&quot;: {
+                &quot;identity&quot;: 1,
+                &quot;labels&quot;: [ &quot;Department&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Finance&quot;
+                }
+            }
+        },
+        {
+            &quot;start&quot;: {
+                &quot;identity&quot;: 1,
+                &quot;labels&quot;: [ &quot;Department&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Finance&quot;
+                }
+            },
+            &quot;relationship&quot;: {
+                &quot;identity&quot;: 1,
+                &quot;start&quot;: 2,
+                &quot;end&quot;: 1,
+                &quot;type&quot;: &quot;OWNED_BY&quot;,
+                &quot;properties&quot;: {
+                    &quot;startDate&quot;: &quot;2020-01-01&quot;
+                }
+            },
+            &quot;end&quot;: {
+                &quot;identity&quot;: 2,
+                &quot;labels&quot;: [ &quot;Project&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Quarterly Earnings&quot;
+                }
+            }
+        },
+        {
+            &quot;start&quot;: {
+                &quot;identity&quot;: 2,
+                &quot;labels&quot;: [ &quot;Project&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Quarterly Earnings&quot;
+                }
+            },
+            &quot;relationship&quot;: {
+                &quot;identity&quot;: 2,
+                &quot;start&quot;: 3,
+                &quot;end&quot;: 2,
+                &quot;type&quot;: &quot;WORKS_ON&quot;,
+                &quot;properties&quot;: {
+                    &quot;startDate&quot;: &quot;2020-06-01&quot;
+                }
+            },
+            &quot;end&quot;: {
+                &quot;identity&quot;: 3,
+                &quot;labels&quot;: [ &quot;Employee&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Thomas Mitchell&quot;
+                }
+            }
+        }
+    ],
+    &quot;length&quot;: 3.0
+}
+```
+
+**Text Response**
+```json
+[
+    {&quot;name&quot;:&quot;Sarah Bradshaw&quot;},
+    {&quot;startDate&quot;:&quot;2020-01-01&quot;},
+    {&quot;name&quot;:&quot;Finance&quot;},
+    {&quot;name&quot;:&quot;Finance&quot;},
+    {&quot;startDate&quot;:&quot;2020-01-01&quot;},
+    {&quot;name&quot;:&quot;Quarterly Earnings&quot;},
+    {&quot;name&quot;:&quot;Quarterly Earnings&quot;},
+    {&quot;startDate&quot;:&quot;2020-06-01&quot;},
+    {&quot;name&quot;:&quot;Thomas Mitchell&quot;}
+]
+```
+As you can see, the `text` response is basically useless.  Unfortunately, that seems to be the only response value I&#39;m able to retrieve through the Neo4jClient.
+
+### Neo4jClient Query
+This is the derived Neo4jClient syntax based on the above query.  Because I could only fetch the `text` response, I&#39;m deserializing it into a `List` of type `DataNode` — a simple model that reflects the structure of the nodes and their relationships.
+```javascript
+client.Cypher
+.Match(&quot;(from:Employee {name:\&quot;Sarah Bradshaw\&quot;})&quot;)
+.Match(&quot;(to:Employee {name:\&quot;Thomas Mitchell\&quot;})&quot;)
+.Call(&quot;apoc.algo.dijkstra(from, to, &#39;&#39;, &#39;d&#39;)&quot;)
+.Yield(&quot;path&quot;)
+.Return&lt;List&lt;DataNode&gt;&gt;(&quot;path&quot;)
+.ResultsAsync
+.Result;
+```
+
+### The Bottom Line
+While this does get me *something*, the problem is that none of the things that make the path relevant are returned in the `text` response.  I have a collection of nodes and relationships, but I have no idea how they&#39;re interconnected.  The `table` response lists start nodes and end nodes and *that&#39;s* the information I care about.  Is there any way for me to query the `table` response rather than the `text` response?
+
+
+  [1]: https://i.stack.imgur.com/WPBrM.png",
+        "link": "https://stackoverflow.com/q/66401154",
+        "creation_date": 1614444677,
+        "answer_count": 1,
+        "title": "How do I return a Neo4j path with Neo4jClient in .NET?",
+        "uuid": 66401154,
+        "view_count": 54
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5399"
+    },
+    "t": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 5399,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "### Summary
+I&#39;m trying to fetch a `path` from Neo4j using the Neo4jClient package in .NET.  I&#39;m wondering how to deserialize it while maintaining the robust values featured in the `table` response, but I can only seem to access the `text` response instead.
+
+***Disclaimer*** - I *have* seen [this answer](https://stackoverflow.com/questions/15108301/how-do-i-retrieve-a-path-in-neo4jclient), but it&#39;s over 7 years old and hardly relevant anymore — not to mention that the end result looks incredibly convoluted.
+
+### Technology Versions
+- **Neo4j** - 4.2.3
+- **APOC** - 4.2.0.1
+- **Neo4jClient** - 4.1.5
+- **.NET Framework** - 4.7.2
+
+### Data Structure
+I have a Neo4j database that houses three types of nodes.  For the sake of this question, I&#39;m going to water them down to a corporate example, so let&#39;s call the node labels `Employee`, `Department`, and `Project`.  Those nodes are interconnected in the following ways:
+- Every `Employee` has an `EMPLOYED_BY` relationship with a `Department`.
+- Every `Project` has an `OWNED_BY` relationship with a `Department`.
+- An `Employee` could have a `WORKS_ON` relationship with a `Project`.
+
+### Sample Data
+For the sake of this question, this sample data provides a baseline demonstration of the data structure.
+```javascript
+(:Employee {name:&quot;Sarah Bradshaw&quot;})
+-[:EMPLOYED_BY {startDate:&quot;2020-01-01&quot;}]-&gt;
+(:Department {name:&quot;Finance&quot;})
+&lt;-[:OWNED_BY {startDate:&quot;2020-01-01&quot;}]-
+(:Project {name:&quot;Quarterly Earnings&quot;})
+&lt;-[:WORKS_ON {startDate:&quot;2020-06-01&quot;}]-
+(:Employee {name:&quot;Thomas Mitchell&quot;})
+-[:EMPLOYED_BY {startDate:&quot;2019-01-01&quot;}]-&gt;
+(:Department {name:&quot;Administration&quot;})
+```
+[![A visual representation of the above data.][1]][1]
+
+### Cypher Query
+This is the query I&#39;m attempting to duplicate in .NET with the Neo4jClient package.
+```javascript
+MATCH (from:Employee {name:&quot;Sarah Bradshaw&quot;})
+MATCH (to:Employee {name:&quot;Thomas Mitchell&quot;})
+CALL apoc.algo.dijkstra(from, to, &#39;&#39;, &#39;d&#39;)
+YIELD path
+RETURN path
+```
+
+### Responses
+**Table Response**
+```json
+{
+    &quot;start&quot;: {
+        &quot;identity&quot;: 0,
+        &quot;labels&quot;: [ &quot;Employee&quot; ],
+        &quot;properties&quot;: {
+            &quot;name&quot;: &quot;Sarah Bradshaw&quot;
+        }
+    },
+    &quot;end&quot;: {
+        &quot;identity&quot;: 3,
+        &quot;labels&quot;: [ &quot;Employee&quot; ],
+        &quot;properties&quot;: {
+            &quot;name&quot;: &quot;Thomas Mitchell&quot;
+        }
+    },
+    &quot;segments&quot;: [
+        {
+            &quot;start&quot;: {
+                &quot;identity&quot;: 0,
+                &quot;labels&quot;: [ &quot;Employee&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Sarah Bradshaw&quot;
+                }
+            },
+            &quot;relationship&quot;: {
+                &quot;identity&quot;: 0,
+                &quot;start&quot;: 0,
+                &quot;end&quot;: 1,
+                &quot;type&quot;: &quot;EMPLOYED_BY&quot;,
+                &quot;properties&quot;: {
+                    &quot;startDate&quot;: &quot;2020-01-01&quot;
+                }
+            },
+            &quot;end&quot;: {
+                &quot;identity&quot;: 1,
+                &quot;labels&quot;: [ &quot;Department&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Finance&quot;
+                }
+            }
+        },
+        {
+            &quot;start&quot;: {
+                &quot;identity&quot;: 1,
+                &quot;labels&quot;: [ &quot;Department&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Finance&quot;
+                }
+            },
+            &quot;relationship&quot;: {
+                &quot;identity&quot;: 1,
+                &quot;start&quot;: 2,
+                &quot;end&quot;: 1,
+                &quot;type&quot;: &quot;OWNED_BY&quot;,
+                &quot;properties&quot;: {
+                    &quot;startDate&quot;: &quot;2020-01-01&quot;
+                }
+            },
+            &quot;end&quot;: {
+                &quot;identity&quot;: 2,
+                &quot;labels&quot;: [ &quot;Project&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Quarterly Earnings&quot;
+                }
+            }
+        },
+        {
+            &quot;start&quot;: {
+                &quot;identity&quot;: 2,
+                &quot;labels&quot;: [ &quot;Project&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Quarterly Earnings&quot;
+                }
+            },
+            &quot;relationship&quot;: {
+                &quot;identity&quot;: 2,
+                &quot;start&quot;: 3,
+                &quot;end&quot;: 2,
+                &quot;type&quot;: &quot;WORKS_ON&quot;,
+                &quot;properties&quot;: {
+                    &quot;startDate&quot;: &quot;2020-06-01&quot;
+                }
+            },
+            &quot;end&quot;: {
+                &quot;identity&quot;: 3,
+                &quot;labels&quot;: [ &quot;Employee&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Thomas Mitchell&quot;
+                }
+            }
+        }
+    ],
+    &quot;length&quot;: 3.0
+}
+```
+
+**Text Response**
+```json
+[
+    {&quot;name&quot;:&quot;Sarah Bradshaw&quot;},
+    {&quot;startDate&quot;:&quot;2020-01-01&quot;},
+    {&quot;name&quot;:&quot;Finance&quot;},
+    {&quot;name&quot;:&quot;Finance&quot;},
+    {&quot;startDate&quot;:&quot;2020-01-01&quot;},
+    {&quot;name&quot;:&quot;Quarterly Earnings&quot;},
+    {&quot;name&quot;:&quot;Quarterly Earnings&quot;},
+    {&quot;startDate&quot;:&quot;2020-06-01&quot;},
+    {&quot;name&quot;:&quot;Thomas Mitchell&quot;}
+]
+```
+As you can see, the `text` response is basically useless.  Unfortunately, that seems to be the only response value I&#39;m able to retrieve through the Neo4jClient.
+
+### Neo4jClient Query
+This is the derived Neo4jClient syntax based on the above query.  Because I could only fetch the `text` response, I&#39;m deserializing it into a `List` of type `DataNode` — a simple model that reflects the structure of the nodes and their relationships.
+```javascript
+client.Cypher
+.Match(&quot;(from:Employee {name:\&quot;Sarah Bradshaw\&quot;})&quot;)
+.Match(&quot;(to:Employee {name:\&quot;Thomas Mitchell\&quot;})&quot;)
+.Call(&quot;apoc.algo.dijkstra(from, to, &#39;&#39;, &#39;d&#39;)&quot;)
+.Yield(&quot;path&quot;)
+.Return&lt;List&lt;DataNode&gt;&gt;(&quot;path&quot;)
+.ResultsAsync
+.Result;
+```
+
+### The Bottom Line
+While this does get me *something*, the problem is that none of the things that make the path relevant are returned in the `text` response.  I have a collection of nodes and relationships, but I have no idea how they&#39;re interconnected.  The `table` response lists start nodes and end nodes and *that&#39;s* the information I care about.  Is there any way for me to query the `table` response rather than the `text` response?
+
+
+  [1]: https://i.stack.imgur.com/WPBrM.png",
+        "link": "https://stackoverflow.com/q/66401154",
+        "creation_date": 1614444677,
+        "answer_count": 1,
+        "title": "How do I return a Neo4j path with Neo4jClient in .NET?",
+        "uuid": 66401154,
+        "view_count": 54
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5399"
+    },
+    "t": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 5399,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "### Summary
+I&#39;m trying to fetch a `path` from Neo4j using the Neo4jClient package in .NET.  I&#39;m wondering how to deserialize it while maintaining the robust values featured in the `table` response, but I can only seem to access the `text` response instead.
+
+***Disclaimer*** - I *have* seen [this answer](https://stackoverflow.com/questions/15108301/how-do-i-retrieve-a-path-in-neo4jclient), but it&#39;s over 7 years old and hardly relevant anymore — not to mention that the end result looks incredibly convoluted.
+
+### Technology Versions
+- **Neo4j** - 4.2.3
+- **APOC** - 4.2.0.1
+- **Neo4jClient** - 4.1.5
+- **.NET Framework** - 4.7.2
+
+### Data Structure
+I have a Neo4j database that houses three types of nodes.  For the sake of this question, I&#39;m going to water them down to a corporate example, so let&#39;s call the node labels `Employee`, `Department`, and `Project`.  Those nodes are interconnected in the following ways:
+- Every `Employee` has an `EMPLOYED_BY` relationship with a `Department`.
+- Every `Project` has an `OWNED_BY` relationship with a `Department`.
+- An `Employee` could have a `WORKS_ON` relationship with a `Project`.
+
+### Sample Data
+For the sake of this question, this sample data provides a baseline demonstration of the data structure.
+```javascript
+(:Employee {name:&quot;Sarah Bradshaw&quot;})
+-[:EMPLOYED_BY {startDate:&quot;2020-01-01&quot;}]-&gt;
+(:Department {name:&quot;Finance&quot;})
+&lt;-[:OWNED_BY {startDate:&quot;2020-01-01&quot;}]-
+(:Project {name:&quot;Quarterly Earnings&quot;})
+&lt;-[:WORKS_ON {startDate:&quot;2020-06-01&quot;}]-
+(:Employee {name:&quot;Thomas Mitchell&quot;})
+-[:EMPLOYED_BY {startDate:&quot;2019-01-01&quot;}]-&gt;
+(:Department {name:&quot;Administration&quot;})
+```
+[![A visual representation of the above data.][1]][1]
+
+### Cypher Query
+This is the query I&#39;m attempting to duplicate in .NET with the Neo4jClient package.
+```javascript
+MATCH (from:Employee {name:&quot;Sarah Bradshaw&quot;})
+MATCH (to:Employee {name:&quot;Thomas Mitchell&quot;})
+CALL apoc.algo.dijkstra(from, to, &#39;&#39;, &#39;d&#39;)
+YIELD path
+RETURN path
+```
+
+### Responses
+**Table Response**
+```json
+{
+    &quot;start&quot;: {
+        &quot;identity&quot;: 0,
+        &quot;labels&quot;: [ &quot;Employee&quot; ],
+        &quot;properties&quot;: {
+            &quot;name&quot;: &quot;Sarah Bradshaw&quot;
+        }
+    },
+    &quot;end&quot;: {
+        &quot;identity&quot;: 3,
+        &quot;labels&quot;: [ &quot;Employee&quot; ],
+        &quot;properties&quot;: {
+            &quot;name&quot;: &quot;Thomas Mitchell&quot;
+        }
+    },
+    &quot;segments&quot;: [
+        {
+            &quot;start&quot;: {
+                &quot;identity&quot;: 0,
+                &quot;labels&quot;: [ &quot;Employee&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Sarah Bradshaw&quot;
+                }
+            },
+            &quot;relationship&quot;: {
+                &quot;identity&quot;: 0,
+                &quot;start&quot;: 0,
+                &quot;end&quot;: 1,
+                &quot;type&quot;: &quot;EMPLOYED_BY&quot;,
+                &quot;properties&quot;: {
+                    &quot;startDate&quot;: &quot;2020-01-01&quot;
+                }
+            },
+            &quot;end&quot;: {
+                &quot;identity&quot;: 1,
+                &quot;labels&quot;: [ &quot;Department&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Finance&quot;
+                }
+            }
+        },
+        {
+            &quot;start&quot;: {
+                &quot;identity&quot;: 1,
+                &quot;labels&quot;: [ &quot;Department&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Finance&quot;
+                }
+            },
+            &quot;relationship&quot;: {
+                &quot;identity&quot;: 1,
+                &quot;start&quot;: 2,
+                &quot;end&quot;: 1,
+                &quot;type&quot;: &quot;OWNED_BY&quot;,
+                &quot;properties&quot;: {
+                    &quot;startDate&quot;: &quot;2020-01-01&quot;
+                }
+            },
+            &quot;end&quot;: {
+                &quot;identity&quot;: 2,
+                &quot;labels&quot;: [ &quot;Project&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Quarterly Earnings&quot;
+                }
+            }
+        },
+        {
+            &quot;start&quot;: {
+                &quot;identity&quot;: 2,
+                &quot;labels&quot;: [ &quot;Project&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Quarterly Earnings&quot;
+                }
+            },
+            &quot;relationship&quot;: {
+                &quot;identity&quot;: 2,
+                &quot;start&quot;: 3,
+                &quot;end&quot;: 2,
+                &quot;type&quot;: &quot;WORKS_ON&quot;,
+                &quot;properties&quot;: {
+                    &quot;startDate&quot;: &quot;2020-06-01&quot;
+                }
+            },
+            &quot;end&quot;: {
+                &quot;identity&quot;: 3,
+                &quot;labels&quot;: [ &quot;Employee&quot; ],
+                &quot;properties&quot;: {
+                    &quot;name&quot;: &quot;Thomas Mitchell&quot;
+                }
+            }
+        }
+    ],
+    &quot;length&quot;: 3.0
+}
+```
+
+**Text Response**
+```json
+[
+    {&quot;name&quot;:&quot;Sarah Bradshaw&quot;},
+    {&quot;startDate&quot;:&quot;2020-01-01&quot;},
+    {&quot;name&quot;:&quot;Finance&quot;},
+    {&quot;name&quot;:&quot;Finance&quot;},
+    {&quot;startDate&quot;:&quot;2020-01-01&quot;},
+    {&quot;name&quot;:&quot;Quarterly Earnings&quot;},
+    {&quot;name&quot;:&quot;Quarterly Earnings&quot;},
+    {&quot;startDate&quot;:&quot;2020-06-01&quot;},
+    {&quot;name&quot;:&quot;Thomas Mitchell&quot;}
+]
+```
+As you can see, the `text` response is basically useless.  Unfortunately, that seems to be the only response value I&#39;m able to retrieve through the Neo4jClient.
+
+### Neo4jClient Query
+This is the derived Neo4jClient syntax based on the above query.  Because I could only fetch the `text` response, I&#39;m deserializing it into a `List` of type `DataNode` — a simple model that reflects the structure of the nodes and their relationships.
+```javascript
+client.Cypher
+.Match(&quot;(from:Employee {name:\&quot;Sarah Bradshaw\&quot;})&quot;)
+.Match(&quot;(to:Employee {name:\&quot;Thomas Mitchell\&quot;})&quot;)
+.Call(&quot;apoc.algo.dijkstra(from, to, &#39;&#39;, &#39;d&#39;)&quot;)
+.Yield(&quot;path&quot;)
+.Return&lt;List&lt;DataNode&gt;&gt;(&quot;path&quot;)
+.ResultsAsync
+.Result;
+```
+
+### The Bottom Line
+While this does get me *something*, the problem is that none of the things that make the path relevant are returned in the `text` response.  I have a collection of nodes and relationships, but I have no idea how they&#39;re interconnected.  The `table` response lists start nodes and end nodes and *that&#39;s* the information I care about.  Is there any way for me to query the `table` response rather than the `text` response?
+
+
+  [1]: https://i.stack.imgur.com/WPBrM.png",
+        "link": "https://stackoverflow.com/q/66401154",
+        "creation_date": 1614444677,
+        "answer_count": 1,
+        "title": "How do I return a Neo4j path with Neo4jClient in .NET?",
+        "uuid": 66401154,
+        "view_count": 54
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5399"
+    },
+    "t": {
+      "identity": 1852,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": ".net",
+        "link": "https://stackoverflow.com/questions/tagged/.net"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1852"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 5285,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 67229762,
+        "body_markdown": "In the documentation of Neo4j for **apoc.load.jsonParams** there is an example how to make a POST request:
+
+    CALL apoc.load.jsonParams(
+      &quot;https://neo4j.com/docs/search/&quot;,
+      {method: &quot;POST&quot;},
+      apoc.convert.toJson({query: &quot;subquery&quot;, version: &quot;4.0&quot;})
+    );
+
+but unfortunately this is not sufficient for me because I also need a body with parameters for the POST request:
+
+    [HttpPost(&quot;getJson&quot;)]
+    [Produces(&quot;application/json&quot;)]
+    public async Task&lt;JsonResult&gt; GetJson(int id, [FromBody] List&lt;string&gt; params)
+
+My try:
+
+    CALL apoc.load.jsonParams(&quot;http://192.168.1.128:4040/api/getJson?id=17&quot;,{method: &quot;POST&quot;}, &quot;$.BusinessData[*]&quot;) YIELD value WITH [&quot;DATA1&quot;, &quot;DATA2&quot;] as body return *
+
+Error message:
+
+    Failed to invoke procedure `apoc.load.jsonParams`: Caused by: java.lang.RuntimeException: Can&#39;t read url or key http://192.168.1.128:4040/api/getJson?id=17 as json: Server returned HTTP response code: 500 for URL
+
+So how must the apoc call look like to fullfill the POST request?",
+        "link": "https://stackoverflow.com/q/66759334",
+        "creation_date": 1616486931,
+        "answer_count": 1,
+        "title": "apoc.load.jsonParams as POST request with Body input parameters",
+        "uuid": 66759334,
+        "view_count": 76
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5285"
+    },
+    "t": {
+      "identity": 1752,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "rest",
+        "link": "https://stackoverflow.com/questions/tagged/rest"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1752"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 5285,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 67229762,
+        "body_markdown": "In the documentation of Neo4j for **apoc.load.jsonParams** there is an example how to make a POST request:
+
+    CALL apoc.load.jsonParams(
+      &quot;https://neo4j.com/docs/search/&quot;,
+      {method: &quot;POST&quot;},
+      apoc.convert.toJson({query: &quot;subquery&quot;, version: &quot;4.0&quot;})
+    );
+
+but unfortunately this is not sufficient for me because I also need a body with parameters for the POST request:
+
+    [HttpPost(&quot;getJson&quot;)]
+    [Produces(&quot;application/json&quot;)]
+    public async Task&lt;JsonResult&gt; GetJson(int id, [FromBody] List&lt;string&gt; params)
+
+My try:
+
+    CALL apoc.load.jsonParams(&quot;http://192.168.1.128:4040/api/getJson?id=17&quot;,{method: &quot;POST&quot;}, &quot;$.BusinessData[*]&quot;) YIELD value WITH [&quot;DATA1&quot;, &quot;DATA2&quot;] as body return *
+
+Error message:
+
+    Failed to invoke procedure `apoc.load.jsonParams`: Caused by: java.lang.RuntimeException: Can&#39;t read url or key http://192.168.1.128:4040/api/getJson?id=17 as json: Server returned HTTP response code: 500 for URL
+
+So how must the apoc call look like to fullfill the POST request?",
+        "link": "https://stackoverflow.com/q/66759334",
+        "creation_date": 1616486931,
+        "answer_count": 1,
+        "title": "apoc.load.jsonParams as POST request with Body input parameters",
+        "uuid": 66759334,
+        "view_count": 76
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5285"
+    },
+    "t": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 5285,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 67229762,
+        "body_markdown": "In the documentation of Neo4j for **apoc.load.jsonParams** there is an example how to make a POST request:
+
+    CALL apoc.load.jsonParams(
+      &quot;https://neo4j.com/docs/search/&quot;,
+      {method: &quot;POST&quot;},
+      apoc.convert.toJson({query: &quot;subquery&quot;, version: &quot;4.0&quot;})
+    );
+
+but unfortunately this is not sufficient for me because I also need a body with parameters for the POST request:
+
+    [HttpPost(&quot;getJson&quot;)]
+    [Produces(&quot;application/json&quot;)]
+    public async Task&lt;JsonResult&gt; GetJson(int id, [FromBody] List&lt;string&gt; params)
+
+My try:
+
+    CALL apoc.load.jsonParams(&quot;http://192.168.1.128:4040/api/getJson?id=17&quot;,{method: &quot;POST&quot;}, &quot;$.BusinessData[*]&quot;) YIELD value WITH [&quot;DATA1&quot;, &quot;DATA2&quot;] as body return *
+
+Error message:
+
+    Failed to invoke procedure `apoc.load.jsonParams`: Caused by: java.lang.RuntimeException: Can&#39;t read url or key http://192.168.1.128:4040/api/getJson?id=17 as json: Server returned HTTP response code: 500 for URL
+
+So how must the apoc call look like to fullfill the POST request?",
+        "link": "https://stackoverflow.com/q/66759334",
+        "creation_date": 1616486931,
+        "answer_count": 1,
+        "title": "apoc.load.jsonParams as POST request with Body input parameters",
+        "uuid": 66759334,
+        "view_count": 76
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5285"
+    },
+    "t": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 5285,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 67229762,
+        "body_markdown": "In the documentation of Neo4j for **apoc.load.jsonParams** there is an example how to make a POST request:
+
+    CALL apoc.load.jsonParams(
+      &quot;https://neo4j.com/docs/search/&quot;,
+      {method: &quot;POST&quot;},
+      apoc.convert.toJson({query: &quot;subquery&quot;, version: &quot;4.0&quot;})
+    );
+
+but unfortunately this is not sufficient for me because I also need a body with parameters for the POST request:
+
+    [HttpPost(&quot;getJson&quot;)]
+    [Produces(&quot;application/json&quot;)]
+    public async Task&lt;JsonResult&gt; GetJson(int id, [FromBody] List&lt;string&gt; params)
+
+My try:
+
+    CALL apoc.load.jsonParams(&quot;http://192.168.1.128:4040/api/getJson?id=17&quot;,{method: &quot;POST&quot;}, &quot;$.BusinessData[*]&quot;) YIELD value WITH [&quot;DATA1&quot;, &quot;DATA2&quot;] as body return *
+
+Error message:
+
+    Failed to invoke procedure `apoc.load.jsonParams`: Caused by: java.lang.RuntimeException: Can&#39;t read url or key http://192.168.1.128:4040/api/getJson?id=17 as json: Server returned HTTP response code: 500 for URL
+
+So how must the apoc call look like to fullfill the POST request?",
+        "link": "https://stackoverflow.com/q/66759334",
+        "creation_date": 1616486931,
+        "answer_count": 1,
+        "title": "apoc.load.jsonParams as POST request with Body input parameters",
+        "uuid": 66759334,
+        "view_count": 76
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5285"
+    },
+    "t": {
+      "identity": 1684,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j-apoc",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j-apoc"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1684"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 5285,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 67229762,
+        "body_markdown": "In the documentation of Neo4j for **apoc.load.jsonParams** there is an example how to make a POST request:
+
+    CALL apoc.load.jsonParams(
+      &quot;https://neo4j.com/docs/search/&quot;,
+      {method: &quot;POST&quot;},
+      apoc.convert.toJson({query: &quot;subquery&quot;, version: &quot;4.0&quot;})
+    );
+
+but unfortunately this is not sufficient for me because I also need a body with parameters for the POST request:
+
+    [HttpPost(&quot;getJson&quot;)]
+    [Produces(&quot;application/json&quot;)]
+    public async Task&lt;JsonResult&gt; GetJson(int id, [FromBody] List&lt;string&gt; params)
+
+My try:
+
+    CALL apoc.load.jsonParams(&quot;http://192.168.1.128:4040/api/getJson?id=17&quot;,{method: &quot;POST&quot;}, &quot;$.BusinessData[*]&quot;) YIELD value WITH [&quot;DATA1&quot;, &quot;DATA2&quot;] as body return *
+
+Error message:
+
+    Failed to invoke procedure `apoc.load.jsonParams`: Caused by: java.lang.RuntimeException: Can&#39;t read url or key http://192.168.1.128:4040/api/getJson?id=17 as json: Server returned HTTP response code: 500 for URL
+
+So how must the apoc call look like to fullfill the POST request?",
+        "link": "https://stackoverflow.com/q/66759334",
+        "creation_date": 1616486931,
+        "answer_count": 1,
+        "title": "apoc.load.jsonParams as POST request with Body input parameters",
+        "uuid": 66759334,
+        "view_count": 76
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5285"
+    },
+    "t": {
+      "identity": 1970,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "post",
+        "link": "https://stackoverflow.com/questions/tagged/post"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1970"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 4862,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 68405652,
+        "body_markdown": "`&gt;,=` is working but less than operator is not working in cypher neo4j.
+
+What may be the reason ?
+",
+        "link": "https://stackoverflow.com/q/68404421",
+        "creation_date": 1626417061,
+        "title": "Less than operator issue in neo4j",
+        "answer_count": 1,
+        "uuid": 68404421,
+        "view_count": 39
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:4862"
+    },
+    "t": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 4862,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 68405652,
+        "body_markdown": "`&gt;,=` is working but less than operator is not working in cypher neo4j.
+
+What may be the reason ?
+",
+        "link": "https://stackoverflow.com/q/68404421",
+        "creation_date": 1626417061,
+        "title": "Less than operator issue in neo4j",
+        "answer_count": 1,
+        "uuid": 68404421,
+        "view_count": 39
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:4862"
+    },
+    "t": {
+      "identity": 1803,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher-shell",
+        "link": "https://stackoverflow.com/questions/tagged/cypher-shell"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1803"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 4862,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 68405652,
+        "body_markdown": "`&gt;,=` is working but less than operator is not working in cypher neo4j.
+
+What may be the reason ?
+",
+        "link": "https://stackoverflow.com/q/68404421",
+        "creation_date": 1626417061,
+        "title": "Less than operator issue in neo4j",
+        "answer_count": 1,
+        "uuid": 68404421,
+        "view_count": 39
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:4862"
+    },
+    "t": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 4927,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 68117583,
+        "body_markdown": "I use the Neo4J .NET driver to get some data from a Neo4J database. I need to create a session in a `using` block, however, if I am working on a specific version of database, I need to also pass one argument to a method in the `using` block. Here is code without argument:
+
+    using (var conn = GraphDatabase.Driver(connectionString, AuthTokens.Basic(user, pass)).Session())
+    {
+        // ...some logic...
+    }
+
+And with argument:
+
+    using (var conn = GraphDatabase.Driver(connectionString, AuthTokens.Basic(user, pass)).Session(SessionConfigBuilder.ForDatabase(db)))
+    {
+        // ...some logic...
+    }
+
+I need to call one of mentioned `using` blocks in a method depending on the version passed as an argument. I am wondering how I can solve this problem? Create a custom object which returns a session, put the logic in a private method and create two ifs with either of `using` in each of them?
+",
+        "link": "https://stackoverflow.com/q/68117332",
+        "creation_date": 1624543595,
+        "answer_count": 1,
+        "title": "Deciding whether or not to pass an argument to a method in a using statement",
+        "uuid": 68117332,
+        "view_count": 43
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:4927"
+    },
+    "t": {
+      "identity": 1852,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": ".net",
+        "link": "https://stackoverflow.com/questions/tagged/.net"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1852"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 4927,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 68117583,
+        "body_markdown": "I use the Neo4J .NET driver to get some data from a Neo4J database. I need to create a session in a `using` block, however, if I am working on a specific version of database, I need to also pass one argument to a method in the `using` block. Here is code without argument:
+
+    using (var conn = GraphDatabase.Driver(connectionString, AuthTokens.Basic(user, pass)).Session())
+    {
+        // ...some logic...
+    }
+
+And with argument:
+
+    using (var conn = GraphDatabase.Driver(connectionString, AuthTokens.Basic(user, pass)).Session(SessionConfigBuilder.ForDatabase(db)))
+    {
+        // ...some logic...
+    }
+
+I need to call one of mentioned `using` blocks in a method depending on the version passed as an argument. I am wondering how I can solve this problem? Create a custom object which returns a session, put the logic in a private method and create two ifs with either of `using` in each of them?
+",
+        "link": "https://stackoverflow.com/q/68117332",
+        "creation_date": 1624543595,
+        "answer_count": 1,
+        "title": "Deciding whether or not to pass an argument to a method in a using statement",
+        "uuid": 68117332,
+        "view_count": 43
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:4927"
+    },
+    "t": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 4927,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "accepted_answer_id": 68117583,
+        "body_markdown": "I use the Neo4J .NET driver to get some data from a Neo4J database. I need to create a session in a `using` block, however, if I am working on a specific version of database, I need to also pass one argument to a method in the `using` block. Here is code without argument:
+
+    using (var conn = GraphDatabase.Driver(connectionString, AuthTokens.Basic(user, pass)).Session())
+    {
+        // ...some logic...
+    }
+
+And with argument:
+
+    using (var conn = GraphDatabase.Driver(connectionString, AuthTokens.Basic(user, pass)).Session(SessionConfigBuilder.ForDatabase(db)))
+    {
+        // ...some logic...
+    }
+
+I need to call one of mentioned `using` blocks in a method depending on the version passed as an argument. I am wondering how I can solve this problem? Create a custom object which returns a session, put the logic in a private method and create two ifs with either of `using` in each of them?
+",
+        "link": "https://stackoverflow.com/q/68117332",
+        "creation_date": 1624543595,
+        "answer_count": 1,
+        "title": "Deciding whether or not to pass an argument to a method in a using statement",
+        "uuid": 68117332,
+        "view_count": 43
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:4927"
+    },
+    "t": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 416,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "When calling `db.schema.nodeTypeProperties()` from within the Neo4J Broswer, the Code side tab returns the complete JSON schema in the Response drop-down. Is it possible to retrieve this JSON result in C# or Java using the Neo4J.Driver? I would like to deserialize the JSON text into C# classes.
+
+[Screen-cap of Response drop-down from db.schema.nodeTypeProperties()][1]
+
+I have explored the Neo4J.Driver `IDriver`, `IAsyncSession` and `IResultCursor` calls and cannot find a way to retrieve the JSON dataset.
+
+
+  [1]: https://i.stack.imgur.com/NI5yl.png",
+        "link": "https://stackoverflow.com/q/62687370",
+        "creation_date": 1593651259,
+        "answer_count": 1,
+        "title": "Neo4J CYPHER in C# or Java: Return JSON output from “call db.schema.nodeTypeProperties()”?",
+        "uuid": 62687370,
+        "view_count": 219
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:416"
+    },
+    "t": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 416,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "When calling `db.schema.nodeTypeProperties()` from within the Neo4J Broswer, the Code side tab returns the complete JSON schema in the Response drop-down. Is it possible to retrieve this JSON result in C# or Java using the Neo4J.Driver? I would like to deserialize the JSON text into C# classes.
+
+[Screen-cap of Response drop-down from db.schema.nodeTypeProperties()][1]
+
+I have explored the Neo4J.Driver `IDriver`, `IAsyncSession` and `IResultCursor` calls and cannot find a way to retrieve the JSON dataset.
+
+
+  [1]: https://i.stack.imgur.com/NI5yl.png",
+        "link": "https://stackoverflow.com/q/62687370",
+        "creation_date": 1593651259,
+        "answer_count": 1,
+        "title": "Neo4J CYPHER in C# or Java: Return JSON output from “call db.schema.nodeTypeProperties()”?",
+        "uuid": 62687370,
+        "view_count": 219
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:416"
+    },
+    "t": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 416,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "When calling `db.schema.nodeTypeProperties()` from within the Neo4J Broswer, the Code side tab returns the complete JSON schema in the Response drop-down. Is it possible to retrieve this JSON result in C# or Java using the Neo4J.Driver? I would like to deserialize the JSON text into C# classes.
+
+[Screen-cap of Response drop-down from db.schema.nodeTypeProperties()][1]
+
+I have explored the Neo4J.Driver `IDriver`, `IAsyncSession` and `IResultCursor` calls and cannot find a way to retrieve the JSON dataset.
+
+
+  [1]: https://i.stack.imgur.com/NI5yl.png",
+        "link": "https://stackoverflow.com/q/62687370",
+        "creation_date": 1593651259,
+        "answer_count": 1,
+        "title": "Neo4J CYPHER in C# or Java: Return JSON output from “call db.schema.nodeTypeProperties()”?",
+        "uuid": 62687370,
+        "view_count": 219
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:416"
+    },
+    "t": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 416,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "When calling `db.schema.nodeTypeProperties()` from within the Neo4J Broswer, the Code side tab returns the complete JSON schema in the Response drop-down. Is it possible to retrieve this JSON result in C# or Java using the Neo4J.Driver? I would like to deserialize the JSON text into C# classes.
+
+[Screen-cap of Response drop-down from db.schema.nodeTypeProperties()][1]
+
+I have explored the Neo4J.Driver `IDriver`, `IAsyncSession` and `IResultCursor` calls and cannot find a way to retrieve the JSON dataset.
+
+
+  [1]: https://i.stack.imgur.com/NI5yl.png",
+        "link": "https://stackoverflow.com/q/62687370",
+        "creation_date": 1593651259,
+        "answer_count": 1,
+        "title": "Neo4J CYPHER in C# or Java: Return JSON output from “call db.schema.nodeTypeProperties()”?",
+        "uuid": 62687370,
+        "view_count": 219
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:416"
+    },
+    "t": {
+      "identity": 1695,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "java",
+        "link": "https://stackoverflow.com/questions/tagged/java"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1695"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 416,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "When calling `db.schema.nodeTypeProperties()` from within the Neo4J Broswer, the Code side tab returns the complete JSON schema in the Response drop-down. Is it possible to retrieve this JSON result in C# or Java using the Neo4J.Driver? I would like to deserialize the JSON text into C# classes.
+
+[Screen-cap of Response drop-down from db.schema.nodeTypeProperties()][1]
+
+I have explored the Neo4J.Driver `IDriver`, `IAsyncSession` and `IResultCursor` calls and cannot find a way to retrieve the JSON dataset.
+
+
+  [1]: https://i.stack.imgur.com/NI5yl.png",
+        "link": "https://stackoverflow.com/q/62687370",
+        "creation_date": 1593651259,
+        "answer_count": 1,
+        "title": "Neo4J CYPHER in C# or Java: Return JSON output from “call db.schema.nodeTypeProperties()”?",
+        "uuid": 62687370,
+        "view_count": 219
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:416"
+    },
+    "t": {
+      "identity": 1770,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "json",
+        "link": "https://stackoverflow.com/questions/tagged/json"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1770"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 545,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "What&#39;s the best way of setting multiple labels in this CYPHER command?
+
+Setting properties works with substitution but i can&#39;t work out how to set labels (either with or without substitution.)
+
+
+```
+var cypherQuery = _graphClient.Cypher
+    .Merge(&quot;(n:Node { Token: {token} })&quot;)
+    .OnCreate().Set(&quot;n = {properties}&quot;)
+    .OnMatch().Set(&quot;n = {properties}&quot;)
+    .WithParams(new
+    {
+        token = principalMetaNode.Token,
+        properties = parameterMap
+});
+```
+
+(principalMetaNode.Token is a Guid.)",
+        "link": "https://stackoverflow.com/q/61776420",
+        "creation_date": 1589377772,
+        "answer_count": 1,
+        "title": "How to add multiple labels using Neo4jClient",
+        "uuid": 61776420,
+        "view_count": 238
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:545"
+    },
+    "t": {
+      "identity": 1802,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": ".net-core",
+        "link": "https://stackoverflow.com/questions/tagged/.net-core"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1802"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 545,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "What&#39;s the best way of setting multiple labels in this CYPHER command?
+
+Setting properties works with substitution but i can&#39;t work out how to set labels (either with or without substitution.)
+
+
+```
+var cypherQuery = _graphClient.Cypher
+    .Merge(&quot;(n:Node { Token: {token} })&quot;)
+    .OnCreate().Set(&quot;n = {properties}&quot;)
+    .OnMatch().Set(&quot;n = {properties}&quot;)
+    .WithParams(new
+    {
+        token = principalMetaNode.Token,
+        properties = parameterMap
+});
+```
+
+(principalMetaNode.Token is a Guid.)",
+        "link": "https://stackoverflow.com/q/61776420",
+        "creation_date": 1589377772,
+        "answer_count": 1,
+        "title": "How to add multiple labels using Neo4jClient",
+        "uuid": 61776420,
+        "view_count": 238
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:545"
+    },
+    "t": {
+      "identity": 1741,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4jclient",
+        "link": "https://stackoverflow.com/questions/tagged/neo4jclient"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1741"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 545,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "What&#39;s the best way of setting multiple labels in this CYPHER command?
+
+Setting properties works with substitution but i can&#39;t work out how to set labels (either with or without substitution.)
+
+
+```
+var cypherQuery = _graphClient.Cypher
+    .Merge(&quot;(n:Node { Token: {token} })&quot;)
+    .OnCreate().Set(&quot;n = {properties}&quot;)
+    .OnMatch().Set(&quot;n = {properties}&quot;)
+    .WithParams(new
+    {
+        token = principalMetaNode.Token,
+        properties = parameterMap
+});
+```
+
+(principalMetaNode.Token is a Guid.)",
+        "link": "https://stackoverflow.com/q/61776420",
+        "creation_date": 1589377772,
+        "answer_count": 1,
+        "title": "How to add multiple labels using Neo4jClient",
+        "uuid": 61776420,
+        "view_count": 238
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:545"
+    },
+    "t": {
+      "identity": 1682,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "cypher",
+        "link": "https://stackoverflow.com/questions/tagged/cypher"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1682"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 545,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "What&#39;s the best way of setting multiple labels in this CYPHER command?
+
+Setting properties works with substitution but i can&#39;t work out how to set labels (either with or without substitution.)
+
+
+```
+var cypherQuery = _graphClient.Cypher
+    .Merge(&quot;(n:Node { Token: {token} })&quot;)
+    .OnCreate().Set(&quot;n = {properties}&quot;)
+    .OnMatch().Set(&quot;n = {properties}&quot;)
+    .WithParams(new
+    {
+        token = principalMetaNode.Token,
+        properties = parameterMap
+});
+```
+
+(principalMetaNode.Token is a Guid.)",
+        "link": "https://stackoverflow.com/q/61776420",
+        "creation_date": 1589377772,
+        "answer_count": 1,
+        "title": "How to add multiple labels using Neo4jClient",
+        "uuid": 61776420,
+        "view_count": 238
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:545"
+    },
+    "t": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 545,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "What&#39;s the best way of setting multiple labels in this CYPHER command?
+
+Setting properties works with substitution but i can&#39;t work out how to set labels (either with or without substitution.)
+
+
+```
+var cypherQuery = _graphClient.Cypher
+    .Merge(&quot;(n:Node { Token: {token} })&quot;)
+    .OnCreate().Set(&quot;n = {properties}&quot;)
+    .OnMatch().Set(&quot;n = {properties}&quot;)
+    .WithParams(new
+    {
+        token = principalMetaNode.Token,
+        properties = parameterMap
+});
+```
+
+(principalMetaNode.Token is a Guid.)",
+        "link": "https://stackoverflow.com/q/61776420",
+        "creation_date": 1589377772,
+        "answer_count": 1,
+        "title": "How to add multiple labels using Neo4jClient",
+        "uuid": 61776420,
+        "view_count": 238
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:545"
+    },
+    "t": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    }
+  },
+  {
+    "t1": {
+      "identity": 1679,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "neo4j",
+        "link": "https://stackoverflow.com/questions/tagged/neo4j"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1679"
+    },
+    "t2": {
+      "identity": 1742,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "c#",
+        "link": "https://stackoverflow.com/questions/tagged/c#"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1742"
+    },
+    "question": {
+      "identity": 5022,
+      "labels": [
+        "Question"
+      ],
+      "properties": {
+        "body_markdown": "I&#39;m completely new in the GraphDatabase world and also in writing Cypher Statements. 
+
+I have a project, where I want to store wiring diagram information inside a graph database (Neo4J). There are different types of Nodes like f.e. WiringDiagram [WD] Node (will be my start node in many cases) and regarding this WD Node all components like fuseboxes, ICU&#39;s or sensors are linked via relationships. Plugs also can contain Pins, and Pins are connected via Connectionlines. 
+
+The first version is already stored in the Neo4j Database, have a look at the following image.
+
+[![Graphdatabase Schema][1]][1]
+Now I have a question which way is best to post-process this data. I want the data extracted for one specific wiring Diagram. 
+So if I would say I want all information about WiringDiagram with ID 123, I should get all components, Pins and Connectenlines which are there. How should the Cypher look like here? 
+I want the data best in C# Data models (if possible). Because afterwards I want to try to generate an SVG out of the data.
+
+As you can see in the image, the cypher statement looks currently like this. &quot;MATCH (w:WiringDiagram)&lt;-[r:partOf]-(n)-[*2..]-(l) RETURN * LIMIT 50&quot; But with this statement I get strange results in my C# Project...
+
+I would be happy about any help. I&#39;m also open to go forward with another programming language if it fits better for this approach. Happy to hear any suggestions
+
+
+  [1]: https://i.stack.imgur.com/rQhiD.png",
+        "link": "https://stackoverflow.com/q/67785379",
+        "creation_date": 1622536303,
+        "answer_count": 1,
+        "title": "Get all Nodes and Relationships with Propperties outgoing from one StartNode",
+        "uuid": 67785379,
+        "view_count": 27
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:5022"
+    },
+    "t": {
+      "identity": 1683,
+      "labels": [
+        "Tag"
+      ],
+      "properties": {
+        "name": "graph-databases",
+        "link": "https://stackoverflow.com/questions/tagged/graph-databases"
+      },
+      "elementId": "4:3afd030f-3dd3-47e4-9159-6695ff123cff:1683"
+    }
+  }
+]

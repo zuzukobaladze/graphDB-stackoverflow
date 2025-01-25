@@ -1,0 +1,252 @@
+{
+  "uuid": "d7fe0ede-2950-4d57-a269-3a3b4a827711",
+  "title": "StackOverflow",
+  "version": "2.4",
+  "settings": {
+    "pagenumber": 2,
+    "editable": true,
+    "fullscreenEnabled": false,
+    "parameters": {},
+    "theme": "light"
+  },
+  "pages": [
+    {
+      "title": "User and Content interaction",
+      "reports": [
+        {
+          "id": "dfd9ca20-c781-4a65-90c9-540a587c601a",
+          "title": "Most active users",
+          "query": "MATCH (u:User)-[:PROVIDED]->(a:Answer)\nRETURN u.display_name AS User, COUNT(a) AS Answers\nORDER BY Answers DESC\nLIMIT 10",
+          "width": 6,
+          "height": 7,
+          "x": 0,
+          "y": 0,
+          "type": "bar",
+          "selection": {
+            "index": "User",
+            "value": "Answers",
+            "key": "(none)"
+          },
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "8db2308c-b36e-4d26-81f9-5277fc3ca6d5",
+          "title": "Most answered questions",
+          "query": "MATCH (q:Question)<-[:ANSWERED]-(a:Answer)\nRETURN q.title AS Question, COUNT(a) AS AnswerCount\nORDER BY AnswerCount DESC\nLIMIT 20\n\n\n",
+          "width": 18,
+          "height": 3,
+          "x": 6,
+          "y": 0,
+          "type": "table",
+          "selection": {},
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "0f9e5a24-45c9-430c-9cf7-02e2b7ecb5cd",
+          "title": "Most used tags in questions",
+          "query": "MATCH (t:Tag)<-[:TAGGED]-(q:Question)\nRETURN t.name AS Tag, COUNT(q) AS QuestionCount\nORDER BY QuestionCount DESC\nLIMIT 5\n\n\n",
+          "width": 12,
+          "height": 4,
+          "x": 6,
+          "y": 7,
+          "type": "pie",
+          "selection": {
+            "index": "Tag",
+            "value": "QuestionCount",
+            "key": "(none)"
+          },
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "022916c8-e5d6-4da8-9ae7-afb10ca7681f",
+          "title": "Most commented answers",
+          "query": "MATCH (q:Question)<-[:COMMENTED_ON]-(c:Comment)\nMATCH (q)<-[:ANSWERED]-(a:Answer)\nRETURN a.body_markdown AS Answer, COUNT(c) AS CommentCount\nORDER BY CommentCount DESC\nLIMIT 10\n\n\n",
+          "width": 18,
+          "height": 4,
+          "x": 6,
+          "y": 3,
+          "type": "table",
+          "selection": {},
+          "settings": {}
+        },
+        {
+          "id": "0dc29e3f-bdb9-49b0-9ae1-db8606548727",
+          "title": "Most commenting users",
+          "query": "MATCH (u:User)-[:COMMENTED]->(c:Comment)\nRETURN u.display_name AS User, COUNT(c) AS CommentCount\nORDER BY CommentCount DESC\nLIMIT 10\n\n\n",
+          "width": 6,
+          "height": 4,
+          "x": 0,
+          "y": 7,
+          "type": "bar",
+          "selection": {
+            "index": "User",
+            "value": "CommentCount",
+            "key": "(none)"
+          },
+          "settings": {},
+          "schema": []
+        }
+      ]
+    },
+    {
+      "title": "Content Quality and Trends",
+      "reports": [
+        {
+          "id": "583b0cfe-e724-47fb-9915-f97c6d620f97",
+          "title": "Most rated answers",
+          "query": "MATCH (a:Answer)\nRETURN a.body_markdown AS Answer, a.score AS Rating\nORDER BY Rating DESC\nLIMIT 10\n\n\n",
+          "width": 24,
+          "height": 4,
+          "x": 0,
+          "y": 0,
+          "type": "table",
+          "selection": {},
+          "settings": {}
+        },
+        {
+          "id": "1dfd2a57-de1e-4933-bed8-6eddc27e3d42",
+          "title": "Most viewed questions",
+          "query": "MATCH (q:Question)\nRETURN q.title AS Question, q.view_count AS ViewCount\nORDER BY ViewCount DESC\nLIMIT 10\n\n\n",
+          "width": 23,
+          "height": 4,
+          "x": 0,
+          "y": 4,
+          "type": "pie",
+          "selection": {
+            "index": "Question",
+            "value": "ViewCount",
+            "key": "(none)"
+          },
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "7c1b00f2-cb8d-4cfd-9cc3-7fec3260588f",
+          "title": "Most popular tags over time",
+          "query": "MATCH (t:Tag)<-[:TAGGED]-(q:Question)\nRETURN t.name AS Tag, q.creation_date AS Date, COUNT(q) AS QuestionCount\nORDER BY Date\nLIMIT 10",
+          "width": 23,
+          "height": 4,
+          "x": 0,
+          "y": 8,
+          "type": "table",
+          "selection": {},
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "ece6f2f2-f628-48e3-9f6f-c77bfaa230dc",
+          "title": "Users with most provided answers",
+          "query": "MATCH (u:User)-[:PROVIDED]->(a:Answer)\nRETURN u.display_name AS User, COUNT(a) AS AnswerCount\nORDER BY AnswerCount DESC\nLIMIT 10",
+          "width": 23,
+          "height": 5,
+          "x": 0,
+          "y": 12,
+          "type": "pie",
+          "selection": {
+            "index": "User",
+            "value": "AnswerCount",
+            "key": "(none)"
+          },
+          "settings": {},
+          "schema": []
+        }
+      ]
+    },
+    {
+      "title": "Community dynamics",
+      "reports": [
+        {
+          "id": "bb529f4c-1885-4175-9d0c-259b2b399d29",
+          "title": "Knowledge flow network",
+          "query": "// Top Contributors Network\nMATCH (u:User)\nOPTIONAL MATCH (u)-[p:PROVIDED]->(a:Answer)\nOPTIONAL MATCH (a)-[ans:ANSWERED]->(q:Question)\nOPTIONAL MATCH (q)-[t:TAGGED]->(tag:Tag)\nWITH u, a, q, tag, p, ans, t\nWHERE a IS NOT NULL\nRETURN DISTINCT u, a, q, tag, p, ans, t\nLIMIT 100",
+          "width": 23,
+          "height": 8,
+          "x": 0,
+          "y": 0,
+          "type": "graph",
+          "selection": {
+            "User": "(label)",
+            "Answer": "title",
+            "Question": "title",
+            "Tag": "name",
+            "PROVIDED": "(label)",
+            "ANSWERED": "(label)",
+            "TAGGED": "(label)"
+          },
+          "settings": {
+            "frozen": false,
+            "nodePositions": {}
+          },
+          "schema": [
+            [
+              "User",
+              "display_name",
+              "uuid"
+            ],
+            [
+              "Answer",
+              "score",
+              "is_accepted",
+              "body_markdown",
+              "link",
+              "title",
+              "uuid"
+            ],
+            [
+              "Question",
+              "body_markdown",
+              "link",
+              "creation_date",
+              "answer_count",
+              "title",
+              "uuid",
+              "view_count",
+              "accepted_answer_id"
+            ],
+            [
+              "Tag",
+              "name",
+              "link"
+            ],
+            [
+              "PROVIDED"
+            ],
+            [
+              "ANSWERED"
+            ],
+            [
+              "TAGGED"
+            ]
+          ]
+        },
+        {
+          "id": "8649c1fc-78f6-4c41-b78f-78f743a17132",
+          "title": "Question Activity Timeline",
+          "query": "// Shows question activity over time with answers and comments\nMATCH (q:Question)\nWITH q.creation_date as timestamp,\n     date.truncate('day', datetime({epochSeconds: q.creation_date})) as day\nWITH day, count(*) as questions\nOPTIONAL MATCH (q:Question)\nWHERE date.truncate('day', datetime({epochSeconds: q.creation_date})) = day\nOPTIONAL MATCH (q)<-[:ANSWERED]-(a:Answer)\nOPTIONAL MATCH (q)<-[:COMMENTED_ON]-(c:Comment)\nWITH day, \n     questions,\n     count(DISTINCT a) as answers,\n     count(DISTINCT c) as comments\nRETURN day.year + '-' + day.month + '-' + day.day as date,\n       questions,\n       answers,\n       comments\nORDER BY day\n\n\n",
+          "width": 20,
+          "height": 4,
+          "x": 0,
+          "y": 8,
+          "type": "line",
+          "selection": {
+            "x": "date",
+            "value": [
+              "questions",
+              "answers"
+            ]
+          },
+          "settings": {},
+          "schema": []
+        }
+      ]
+    }
+  ],
+  "parameters": {},
+  "extensions": {
+    "active": true,
+    "activeReducers": []
+  }
+}
